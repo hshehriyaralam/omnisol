@@ -1,15 +1,26 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 
 /* 🎨 Tailwind Theme Tokens (Design System) */
 @theme {
   /* ✅ Custom Fonts */
   --font-main: "Gilroy", sans-serif;
   --font-heading: "Gilroy", sans-serif;
+   --font-poppins: "Poppins", sans-serif;
 
   /* ✅ Custom Colors */
   --color-orange: #FD741D;
   --color-orange-100: #A72201;
   --color-hero: #A12400;
+  --color-badgeBorder: #6D2D05;
+  --color-badgeText: #6D2D05;
+  --color-ReadmoreText: #CD6114;
+
+
+
+
+
 
   --color-text-dark: #1e293b;
   --color-accent: #38bdf8;
