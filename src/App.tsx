@@ -1,10 +1,16 @@
 
-function App() {
+import './App.css'
 
+function App() {
 
   return (
     <>
-      <h1>Omnisol</h1>
+      <div>
+        <p  className='font-heading'>Hello </p>
+        <button className='bg-orange-100' >
+          click
+        </button>
+      </div>
     </>
   )
 }
