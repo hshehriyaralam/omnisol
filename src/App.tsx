@@ -4,14 +4,11 @@ import './App.css'
 function App() {
 
   return (
-    <>
-      <div>
-        <p  className='font-heading'>Hello </p>
-        <button className='bg-orange-100' >
-          click
-        </button>
-      </div>
-    </>
+    <div className='w-full h-screen  flex justify-center items-center' >
+    <div  className='border w-[90%]  min-h-screen py-10  '>
+
+    </div>
+    </div>
   )
 }
 
