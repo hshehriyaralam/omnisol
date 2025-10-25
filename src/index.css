@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -6,13 +7,18 @@
 @theme {
   /* ✅ Custom Fonts */
   --font-main: "Gilroy", sans-serif;
-  --font-heading: "Gilroy", sans-serif;
-   --font-poppins: "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
   /* ✅ Custom Colors */
   --color-orange: #FD741D;
   --color-orange-100: #A72201;
   --color-hero: #A12400;
+  --color-bgDark: #410001;
+  --color-line: #FCDCB9;
+  --color-iconColor: #1E1E1E;
+  --color-footerBg: #F5F6FD;
+  --color-border: #FFE3D9;
+  --color-textColor:#050101;
   --color-badgeBorder: #6D2D05;
   --color-badgeText: #6D2D05;
   --color-ReadmoreText: #CD6114;

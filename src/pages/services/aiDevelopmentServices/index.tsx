@@ -1,3 +1,5 @@
+import LettingSection from "../../../components/commons/LettingSection"
+import GradientSection from "../../../components/commons/GradientSection"
 import HeadingSection from "../../../components/common/headingSec";
 import ImageandTextSection from "../../../components/common/ImageAndTextSection";
 import finTechImage from "../../../../public/Images/Services/AI-Development/Fintech.webp"
@@ -8,11 +10,12 @@ import MissingYourIndustry from "../../../components/common/MissingYourIndustry"
 import Hero from "../../../components/common/hero";
 import AnimatedSection from "../../../layouts/AnimatedSection";
 
-
-
 const AiDevelopmentServices = () => {
   return (
     <>
+      
+      <LettingSection />
+      <GradientSection />
     <Hero 
     Heading={"Build Intelligent, Automated Systems with Custom AI Development Services"}
     description={"Transform your business operations with AI that learns, adapts, and delivers measurable results — designed, developed, and deployed by Omnisol."}
