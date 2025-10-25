@@ -1,9 +1,12 @@
-
+import LettingSection from "../../../components/commons/LettingSection"
+import GradientSection from "../../../components/commons/GradientSection"
 
 const AiDevelopmentServices = () => {
   return (
     <div>
-      <h1>aiDevelopmentServices</h1>
+      
+      <LettingSection />
+      <GradientSection />
     </div>
   )
 }
