@@ -1,8 +1,9 @@
-import React from "react";
+import AnimatedSection from "../../layouts/AnimatedSection";
 
 const MissingYourIndustry = () => {
   return (
-    <div
+    <AnimatedSection>
+<div
       className="w-[90%] md:w-[1000px] mx-auto my-10 rounded-xl bg-[#F3EFE8] flex flex-col md:flex-row justify-between items-center gap-4 px-6 py-6 md:py-12  "
     >
       {/* 📝 Text Section */}
@@ -10,11 +11,13 @@ const MissingYourIndustry = () => {
         <h1 className="font-main font-bold text-[20px]  md:text-[26px] text-black">
           Missing your industry?
         </h1>
-        <p className="max-w-[270px] font-main font-medium text-[16px]  md:text-[20px] text-black">
+        <p className="max-w-300px]   font-main font-medium text-[16px]  md:text-[20px] text-black">
           Contact us to get customized solution for you
         </p>
       </div>
-    </div>
+    </div> 
+    </AnimatedSection>
+    
   );
 };
 
