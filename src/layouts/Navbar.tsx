@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../public/Images/Logo.webp";
+import GradientButton  from "../ui/Button/Button";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,11 +56,11 @@ const Navbar = () => {
       </div>
 
       {/* Right Button */}
-      <Link to="/contact"  className="z-50">
-        <button className="px-6 py-2 bg-gradient-to-r from-[#F07056] to-[#EB8642] rounded-full text-white font-[Poppins] text-[16px] hover:scale-105 transition-transform duration-300 shadow-md  ">
-          Let’s Talk
-        </button>
-      </Link>
+     <GradientButton 
+      text="Let’s Talk"
+      className="hidden md:block z-50  h-[50px] md:h-[60px] w-[120px] md:w-[150px] text-[14px] md:text-[16px]"
+      
+     />
 
       {/* Mobile Menu Icon */}
       <div
