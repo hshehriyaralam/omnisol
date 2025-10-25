@@ -18,13 +18,13 @@
   --color-text-dark: #1e293b;
   --color-accent: #38bdf8;
 
-  --color-para:#191919;
- --color-testimonial:#f1faff;
- --color-testimonial-border:#80BCF9;
+  --color-para: #191919;
+  --color-testimonial: #f1faff;
+  --color-testimonial-border: #80BCF9;
 
- --color-star:#EA5732 ;
+  --color-star: #EA5732;
 
-  --color-faq:#D1C0E7 ;
+  --color-faq: #D1C0E7;
 
   /* ✅ Custom Spacing / Radius */
   --radius-main: 1rem;
@@ -65,4 +65,9 @@
   src: url("../public/Font/Gilroy-Heavy.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
+}
+
+.slick-track {
+  display: flex;
+  gap: 10px;
 }

@@ -42,13 +42,13 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className='relative  py-30 z-10'>
-            <div className="w-[95%] mx-auto">
-                <div className="flex gap-x-4">
+        <section className='relative py-16 sm:py-20 lg:py-30 z-10'>
+            <div className="w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-x-4 overflow-x-auto pb-4 sm:pb-0">
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
-                            className={`flex flex-col bg-testimonial border-2 p-4 w-50 rounded-[14px] gap-y-3 cursor-pointer transition-all duration-700 ease-out hover:opacity-100 hover:shadow-lg relative overflow-hidden hover:ring-2 hover:ring-blue-200 ${activeTestimonial === index
+                            className={`flex flex-col bg-testimonial border-2 p-3 sm:p-4 w-full sm:w-48 lg:w-50 flex-shrink-0 rounded-[14px] gap-y-3 cursor-pointer transition-all duration-700 ease-out hover:opacity-100 hover:shadow-lg relative overflow-hidden hover:ring-2 hover:ring-blue-200 ${activeTestimonial === index
                                 ? 'opacity-100 transform  shadow-2xl border-blue-400 ring-2 ring-blue-200'
                                 : 'opacity-50  border-testimonial-border'
                                 }`}
@@ -63,8 +63,8 @@ const Testimonials = () => {
                                 <img src={testimonial.img} alt={testimonial.name} />
                             </div>
                             <div className="font-main ">
-                                <h4 className="font-semibold">{testimonial.name}</h4>
-                                <span className="font-regular">{testimonial.position}</span>
+                                <h4 className="font-semibold text-sm sm:text-base">{testimonial.name}</h4>
+                                <span className="font-regular text-xs sm:text-sm">{testimonial.position}</span>
                             </div>
                         </div>
                     ))}
@@ -74,7 +74,7 @@ const Testimonials = () => {
                         ? 'opacity-0 translate-y-8 scale-98 blur-sm'
                         : 'opacity-100 translate-y-0 scale-100 blur-0'
                         }`}>
-                        <p className="font-main text-2xl text-para my-10 w-[60%] font-medium leading-relaxed">
+                        <p className="font-main text-lg sm:text-xl lg:text-2xl text-para my-6 sm:my-8 lg:my-10 w-full sm:w-[80%] lg:w-[60%] font-medium leading-relaxed">
                             <span className="inline-block transition-all duration-500 ease-out">
                                 {testimonials[activeTestimonial].text}
                             </span>
@@ -88,7 +88,7 @@ const Testimonials = () => {
                     </div>
                 </div>
             </div>
-            <div className='absolute top-[75%] right-0 -translate-y-1/2 w-1/3'>
+            <div className='hidden lg:block absolute top-[75%] right-0 -translate-y-1/2 w-1/3'>
                 <img src="/testimonial_img.png" alt="" />
             </div>
 
