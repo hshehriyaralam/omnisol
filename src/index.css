@@ -11,9 +11,20 @@
   --color-orange-100: #A72201;
   --color-hero: #A12400;
   --color-gray: #F5F5F5;
+  --color-orange-400: #FFF7F0;
+
+  --color-orange-dark: #6D2D05;
 
   --color-text-dark: #1e293b;
   --color-accent: #38bdf8;
+
+  --color-para:#191919;
+ --color-testimonial:#f1faff;
+ --color-testimonial-border:#80BCF9;
+
+ --color-star:#EA5732 ;
+
+  --color-faq:#D1C0E7 ;
 
   /* ✅ Custom Spacing / Radius */
   --radius-main: 1rem;

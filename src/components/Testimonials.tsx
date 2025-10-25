@@ -1,0 +1,99 @@
+import { useState } from 'react';
+
+const Testimonials = () => {
+    const [activeTestimonial, setActiveTestimonial] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const handleTestimonialClick = (index: number) => {
+        if (index !== activeTestimonial) {
+            setIsAnimating(true);
+            setTimeout(() => {
+                setActiveTestimonial(index);
+                setTimeout(() => setIsAnimating(false), 100);
+            }, 300);
+        }
+    };
+
+    const testimonials = [
+        {
+            name: "Bob Glazebrook",
+            position: "Principal, Visual Engineering Inc.",
+            img: "/avatar.png",
+            text: "OmnisolAI demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They're very well thought out and have an excellent response to feedback."
+        },
+        {
+            name: "Craig Barber",
+            position: "Senior Developer, Tech Solutions",
+            img: "/avatar_1.png",
+            text: "Working with OmnisolAI has been a game-changer for our development process. Their AI solutions are innovative, reliable, and perfectly tailored to our business needs. Highly recommended for any tech-forward company."
+        },
+        {
+            name: "Sarah Johnson",
+            position: "CTO, InnovateCorp",
+            img: "/avatar_1.png",
+            text: "The team at OmnisolAI delivered beyond our expectations. Their deep understanding of AI technologies and seamless integration capabilities made our project a huge success. Outstanding professional service."
+        },
+        {
+            name: "Michael Chen",
+            position: "Product Manager, DataFlow Inc.",
+            img: "/avatar_1.png",
+            text: "Exceptional AI development services! OmnisolAI not only met our technical requirements but also provided valuable insights that improved our overall product strategy. A truly collaborative partnership."
+        }
+    ];
+
+    return (
+        <section className='relative  py-30 z-10'>
+            <div className="w-[95%] mx-auto">
+                <div className="flex gap-x-4">
+                    {testimonials.map((testimonial, index) => (
+                        <div
+                            key={index}
+                            className={`flex flex-col bg-testimonial border-2 p-4 w-50 rounded-[14px] gap-y-3 cursor-pointer transition-all duration-700 ease-out hover:opacity-100 hover:shadow-lg relative overflow-hidden hover:ring-2 hover:ring-blue-200 ${activeTestimonial === index
+                                ? 'opacity-100 transform  shadow-2xl border-blue-400 ring-2 ring-blue-200'
+                                : 'opacity-50  border-testimonial-border'
+                                }`}
+                            onClick={() => handleTestimonialClick(index)}
+                            style={{
+                                background: activeTestimonial === index
+                                    ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.1))'
+                                    : ''
+                            }}
+                        >
+                            <div>
+                                <img src={testimonial.img} alt={testimonial.name} />
+                            </div>
+                            <div className="font-main ">
+                                <h4 className="font-semibold">{testimonial.name}</h4>
+                                <span className="font-regular">{testimonial.position}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="relative overflow-hidden">
+                    <div className={`transition-all duration-600 ease-out transform ${isAnimating
+                        ? 'opacity-0 translate-y-8 scale-98 blur-sm'
+                        : 'opacity-100 translate-y-0 scale-100 blur-0'
+                        }`}>
+                        <p className="font-main text-2xl text-para my-10 w-[60%] font-medium leading-relaxed">
+                            <span className="inline-block transition-all duration-500 ease-out">
+                                {testimonials[activeTestimonial].text}
+                            </span>
+                        </p>
+                        <i className="fa-solid fa-star text-star"></i>
+                        <i className="fa-solid fa-star text-star"></i>
+                        <i className="fa-solid fa-star text-star"></i>
+                        <i className="fa-solid fa-star text-star"></i>
+                        <i className="fa-solid fa-star text-star"></i>
+                        <span className="font-main text-black inline-block pl-4 text-lg leading-[1]">5.0</span>
+                    </div>
+                </div>
+            </div>
+            <div className='absolute top-[75%] right-0 -translate-y-1/2 w-1/3'>
+                <img src="/testimonial_img.png" alt="" />
+            </div>
+
+        </section>
+    );
+}
+
+export default Testimonials;
