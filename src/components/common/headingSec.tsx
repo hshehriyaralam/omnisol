@@ -1,29 +1,68 @@
-import type HeadingsTypes from "../../types/Service"
-
+import type { HeadingsTypes } from "../../types/Service";
 
 export default function HeadingSection({
   Heading,
   Title,
   Description,
+  align = "center",
+  button,
+  imageSrc,
+  imageAlt = "Section Image",
 }: HeadingsTypes) {
+  const alignmentClasses =
+    align === "left"
+      ? "items-start text-left md:flex-row md:justify-between"
+      : "items-center text-center md:flex-col";
+
   return (
-    <div className="flex flex-col items-center justify-center text-center px-4 py-8  gap-2 ">
-      {/* 🔹 Heading (Poppins Regular 20px) */}
-      <div className="px-6 py-2 border border-badgeBorder rounded-full flex items-center justify-center">
-        <h1 className="font-poppins text-[14px] sm:text-[16px] md:text-[18px] font-normal leading-[100%] text-badgeText">
-          {Heading}
-        </h1>
+    <div
+      className={`flex flex-col md:flex-row gap-8 md:gap-12 px-4 py-8 md:py-16 ${alignmentClasses}`}
+    >
+      {/* Left Content Section */}
+      <div
+        className={`flex flex-col ${
+          align === "left" ? "items-start text-left" : "items-center text-center"
+        } justify-center flex-1 gap-4`}
+      >
+        {/* 🔹 Heading */}
+        <div className="px-6 py-2 border border-badgeBorder rounded-full flex items-center justify-center">
+          <h1 className="font-poppins text-[14px] sm:text-[16px] md:text-[18px] font-normal leading-[100%] text-badgeText">
+            {Heading}
+          </h1>
+        </div>
+
+        {/* 🔸 Title */}
+        <h2
+          className={`font-main font-medium text-[26px] md:text-[48px] leading-[110%] md:leading-[60px] tracking-[-0.01em] text-black max-w-[900px] ${
+            align === "left" ? "text-left" : "text-center"
+          }`}
+        >
+          {Title}
+        </h2>
+
+        {/* 🔸 Description */}
+        <p
+          className={`font-main font-medium text-[16px] md:text-[22px] tracking-[-0.018em] text-gray-700 max-w-[750px] ${
+            align === "left" ? "text-left" : "text-center"
+          }`}
+        >
+          {Description}
+        </p>
+
+        {/* 🔸 Optional Button */}
+        {button && <div className="mt-4">{button}</div>}
       </div>
 
-      {/* 🔸 Title (Gilroy-Medium 64px / 74px) */}
-      <h2 className="font-main  font-medium text-[26px]  md:text-[48px]  leading-[110%] md:leading-[74px] tracking-[-0.01em] text-black  md:text-right text-center max-w-[900px]  ">
-        {Title}
-      </h2>
-
-      {/* 🔸 Description (Gilroy-Medium 32px / 38px) */}
-      <p className="font-main  font-normal  text-[16px] md:text-[22px]  tracking-[-0.018em] text-gray-700 text-center max-w-[750px]">
-        {Description}
-      </p>
+      {/* Right Side Image (Optional) */}
+      {imageSrc && (
+        <div className="flex-1 flex justify-right ">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="w-full max-w-[400px] md:max-w-[530px] h-auto object-contain"
+          />
+        </div>
+      )}
     </div>
   );
 }
