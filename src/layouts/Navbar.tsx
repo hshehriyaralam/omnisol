@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../public/Images/Logo.webp";
 import GradientButton from "../ui/Button/Button";
-import SecButton from "../components/common/secButton";
+import SecButton from "../components/commons/secButton";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
