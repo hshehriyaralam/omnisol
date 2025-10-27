@@ -32,3 +32,32 @@ export    interface HeroSectionProps{
   cardDescTwo: string
   cardDescThree:string
 }
+
+
+export interface WhyAgenticCardProps {
+  title: string;
+  description: string;
+  image: string;
+
+}
+
+export interface WhyAgenticProps {
+  badgeText: string;
+  mainHeading: string;
+  descriptionOne : string,
+  descriptionTwo? : string,
+  cards: WhyAgenticCardProps[]; 
+}
+
+
+export type Step = {
+  id: number;
+  step: string;
+  title: string;
+  description: string;
+};
+
+export type StepsSectionProps = {
+  stepsData: Step[];
+  direction?: "left" | "right"; 
+};

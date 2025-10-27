@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 
 /* 🎨 Tailwind Theme Tokens (Design System) */
@@ -8,6 +10,7 @@
   /* ✅ Custom Fonts */
   --font-main: "Gilroy", sans-serif;
   --font-poppins: "Poppins", sans-serif;
+  --font-libresans: "Libre Sans", sans-serif;
 
   /* ✅ Custom Colors */
   --color-orange: #FD741D;
@@ -20,6 +23,7 @@
   --color-border: #FFE3D9;
   --color-textColor:#050101;
   --color-badgeBorder: #6D2D05;
+  --color-badgeBg: #FFF7F0;
   --color-badgeText: #6D2D05;
   --color-ReadmoreText: #CD6114;
   --color-NavLinks: #C8420C;
@@ -36,6 +40,18 @@
   --color-cardBgSeven: #E1E0EF;
   --color-cardBgEight: #E5EEFF;
   --color-cardBgNine: #FFE5E5;
+  --color-cardBorder: #DCE4E8;
+  --color-weBuildBg: #140500;
+  --color-weBuildText: #FFD2B5;
+  --color-AiCardBg: #F5F5F5;
+  --color-AiCardText: #191919;
+  --color-rounedCardBg: #B21A1A;
+
+
+
+
+
+
 
 
 
@@ -103,7 +119,7 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../public/Font/Gilroy-Heavy.woff2") format("woff2");
+  src: url("/Font/Gilroy-Heavy.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
 }
