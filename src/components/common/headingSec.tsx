@@ -20,9 +20,8 @@ export default function HeadingSection({
     >
       {/* Left Content Section */}
       <div
-        className={`flex flex-col ${
-          align === "left" ? "items-start text-left" : "items-center text-center"
-        } justify-center flex-1 gap-4`}
+        className={`flex flex-col ${align === "left" ? "items-start text-left" : "items-center text-center"
+          } justify-center flex-1 gap-4`}
       >
         {/* 🔹 Heading */}
         <div className="px-6 py-2 border border-badgeBorder rounded-full flex items-center justify-center">
@@ -33,36 +32,37 @@ export default function HeadingSection({
 
         {/* 🔸 Title */}
         <h2
-          className={`font-main font-medium text-[26px] md:text-[48px] leading-[110%] md:leading-[60px] tracking-[-0.01em] text-black max-w-[900px] ${
-            align === "left" ? "text-left" : "text-center"
-          }`}
+          className={`font-main font-medium text-[26px] md:text-[48px] leading-[110%] md:leading-[60px] tracking-[-0.01em] text-black max-w-[900px] ${align === "left" ? "text-left" : "text-center"
+            }`}
         >
           {Title}
         </h2>
+        {Description && (
+          < p
+            className={`font-main font-medium text-[16px] md:text-[22px] tracking-[-0.018em] text-gray-700 max-w-[750px] ${align === "left" ? "text-left" : "text-center"
+              }`}
+          >
+            {Description}
+          </p>
+        )}
 
-        {/* 🔸 Description */}
-        <p
-          className={`font-main font-medium text-[16px] md:text-[22px] tracking-[-0.018em] text-gray-700 max-w-[750px] ${
-            align === "left" ? "text-left" : "text-center"
-          }`}
-        >
-          {Description}
-        </p>
 
         {/* 🔸 Optional Button */}
         {button && <div className="mt-4">{button}</div>}
       </div>
 
       {/* Right Side Image (Optional) */}
-      {imageSrc && (
-        <div className="flex-1 flex justify-right ">
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            className="w-full max-w-[400px] md:max-w-[530px] h-auto object-contain"
-          />
-        </div>
-      )}
-    </div>
+      {
+        imageSrc && (
+          <div className="flex-1 flex justify-right ">
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              className="w-full max-w-[400px] md:max-w-[530px] h-auto object-contain"
+            />
+          </div>
+        )
+      }
+    </div >
   );
 }
