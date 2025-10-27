@@ -43,7 +43,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
     >
       {/* Text */}
       <span
-        className="absolute left-6 text-white font-main
+        className="absolute left-6 text-white font-main whitespace-nowrap
       transition-all duration-500 ease-in-out
       group-hover:left-[95%] group-hover:-translate-x-full"
       >
