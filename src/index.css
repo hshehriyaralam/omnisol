@@ -32,9 +32,21 @@
 
 
 
+  --color-gray: #F5F5F5;
+  --color-orange-400: #FFF7F0;
+
+  --color-orange-dark: #6D2D05;
 
   --color-text-dark: #1e293b;
   --color-accent: #38bdf8;
+
+  --color-para: #191919;
+  --color-testimonial: #f1faff;
+  --color-testimonial-border: #80BCF9;
+
+  --color-star: #EA5732;
+
+  --color-faq: #D1C0E7;
 
   /* ✅ Custom Spacing / Radius */
   --radius-main: 1rem;
@@ -44,28 +56,28 @@
 /* 💾 Load all Gilroy font weights under one family */
 @font-face {
   font-family: "Gilroy";
-  src: url("../public/Font/Gilroy-Light.woff2") format("woff2");
+  src: url("/Font/Gilroy-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../public/Font/Gilroy-Regular.woff2") format("woff2");
+  src: url("/Font/Gilroy-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../public/Font/Gilroy-Medium.woff2") format("woff2");
+  src: url("/Font/Gilroy-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../public/Font/Gilroy-Bold.woff2") format("woff2");
+  src: url("/Font/Gilroy-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
@@ -75,4 +87,9 @@
   src: url("../public/Font/Gilroy-Heavy.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
+}
+
+.slick-track {
+  display: flex;
+  gap: 10px;
 }
