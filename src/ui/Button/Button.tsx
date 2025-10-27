@@ -18,7 +18,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
     >
       {/* Text */}
       <span
-        className="relative text-base md:text-lg md:px-5 font-poppins 
+        className="relative text-base md:text-md md:px-5 font-poppins 
         transition-all duration-500 ease-in-out 
         group-hover:translate-x-[110px]"
       >

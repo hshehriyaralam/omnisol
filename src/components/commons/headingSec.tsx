@@ -1,0 +1,62 @@
+import type { HeadingsTypes } from "../../types/Service";
+export default function HeadingSection({
+  Heading,
+  Title,
+  Description,
+  align = "center",
+  button,
+  imageSrc,
+  imageAlt = "Section Image",
+}: HeadingsTypes) {
+  const alignmentClasses =
+    align === "left"
+      ? "items-start text-left md:flex-row md:justify-between"
+      : "items-center text-center md:flex-col";
+  return (
+    <div
+      className={`flex flex-col md:flex-row gap-8 md:gap-12 px-4 py-8 md:py-16 ${alignmentClasses}`}
+    >
+      {/* Left Content Section */}
+      <div
+        className={`flex flex-col ${
+          align === "left" ? "items-start text-left" : "items-center text-center"
+        } justify-center flex-1 gap-4`}
+      >
+        {/* :small_blue_diamond: Heading */}
+        <div className="px-6 py-2 border border-badgeBorder rounded-full flex items-center justify-center">
+          <h1 className="font-poppins text-[14px]   font-normal leading-[100%] text-badgeText">
+            {Heading}
+          </h1>
+        </div>
+        {/* :small_orange_diamond: Title */}
+        <h2
+          className={`font-main     font-medium text-[26px]  md:text-[34px]  2xl:text-[34px]   leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black max-w-[500px]   ${
+            align === "left" ? "text-left" : "text-center"
+          }`}
+        >
+          {Title}
+        </h2>
+        {/* :small_orange_diamond: Description */}
+        <p
+          className={`font-main font-medium text-[16px] md:text-[20px] tracking-[-0.018em] text-gray-700 max-w-[750px] ${
+            align === "left" ? "text-left" : "text-center"
+          }`}
+        >
+          {Description}
+        </p>
+        {/* :small_orange_diamond: Optional Button */}
+        {button && <div className="mt-4">{button}</div>}
+      </div>
+      {/* Right Side Image (Optional) */}
+      {imageSrc && (
+        <div className="flex-1 flex justify-right ">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="w-full max-w-[400px] md:max-w-[530px] h-auto object-contain"
+          />
+        </div>
+      )}
+    </div>
+  );
+}
