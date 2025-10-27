@@ -1,12 +1,12 @@
 import React from "react";
-import type { GradientButtonProps } from "../../types/ButtonTypes";
-// import { button } from "framer-motion/client";
+import type { GradientButtonProps } from "../../types/Button.types";
 
 const GradientButton: React.FC<GradientButtonProps> = ({
   text,
   fromColor = "from-[#FD741D]",
   toColor = "to-[#A72201]",
   className = "",
+  width='w-[200px]',
 }) => {
   return (
     // <button 
@@ -40,11 +40,11 @@ const GradientButton: React.FC<GradientButtonProps> = ({
     <button
       className={`group relative flex items-center justify-between gap-x-3
     rounded-full bg-gradient-to-b ${fromColor} ${toColor}
-    h-[60px] w-[200px] overflow-hidden transition-all duration-500 !hover:bg-black`}
+    h-[60px] ${width} overflow-hidden transition-all duration-500 !hover:bg-black ${className}`}
     >
       {/* Text */}
       <span
-        className="absolute left-6 text-white font-main
+        className="absolute left-6 text-white font-main whitespace-nowrap
       transition-all duration-500 ease-in-out
       group-hover:left-[95%] group-hover:-translate-x-full"
       >
@@ -54,9 +54,10 @@ const GradientButton: React.FC<GradientButtonProps> = ({
       {/* Icon */}
       <span
         className="absolute right-6 w-10 h-10 md:w-[50px] md:h-[50px]
+        left:unset
       bg-white rounded-full flex items-center justify-center
       transition-all duration-500 ease-in-out
-      group-hover:right-[130px]"
+      group-hover:right-[95%] group-hover:translate-x-[95%]"
       >
         <img src="/Button/Icon.png" className="w-6 h-6" alt="" />
       </span>

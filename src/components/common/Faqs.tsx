@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import HeadingSection from "./headingSec";
+import SecButton from "./secButton";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -43,10 +44,9 @@ const Faqs = () => {
                 Heading={"FAQs"}
                 Title={"Frequently Asked Questions"}
                 Description={"Omnisol’s AI development adapts to the rhythm of your business "}
-                headingAlign='start'
-                titleAlign='left'
+                align="left"
             />
-            <Slider {...settings}>
+            <Slider {...settings} className="faqs">
                 <div className="group h-80 sm:h-90 lg:h-100 bg-faq rounded-xl flex flex-col justify-end p-4 sm:p-5 lg:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-2 sm:mx-3">
                     {/* Background image overlay with smooth transition */}
                     <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out rounded-xl"
@@ -61,7 +61,7 @@ const Faqs = () => {
                     <div className="absolute inset-0 p-4 sm:p-5 lg:p-6 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">
                         <h3 className="font-medium text-base sm:text-lg mb-2">What industries can benefit from AI-powered solutions?</h3>
                         <p className="text-xs sm:text-sm mb-3">AI solutions can be applied to various industries, including healthcare, manufacturing, retail, fintech, and more. AI can help optimize processes, enhance customer experience, and improve decision-making.</p>
-                        <button className="text-white bg-black px-3 sm:px-4 lg:px-5 py-1 sm:py-1.5 text-xs sm:text-sm hover:bg-gray-800 transition-colors duration-200">Contact Us</button>
+                       <SecButton text='Contact Us'/>
                     </div>
                 </div>
                 <div className="group h-80 sm:h-90 lg:h-100 bg-faq rounded-xl flex flex-col justify-end p-4 sm:p-5 lg:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-2 sm:mx-3">
@@ -78,7 +78,7 @@ const Faqs = () => {
                     <div className="absolute inset-0 p-4 sm:p-5 lg:p-6 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">
                         <h3 className="font-medium text-base sm:text-lg mb-2">What is an AI Proof of Concept (PoC)?</h3>
                         <p className="text-xs sm:text-sm mb-3">An AI PoC is a small-scale demonstration of how AI can solve specific business challenges. It validates the feasibility and potential value before full implementation.</p>
-                        <button className="text-white bg-black px-3 sm:px-4 lg:px-5 py-1 sm:py-1.5 text-xs sm:text-sm hover:bg-gray-800 transition-colors duration-200">Contact Us</button>
+                        <SecButton text='Contact Us'/>
                     </div>
                 </div>
                 <div className="group h-80 sm:h-90 lg:h-100 bg-faq rounded-xl flex flex-col justify-end p-4 sm:p-5 lg:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-2 sm:mx-3">
@@ -95,7 +95,7 @@ const Faqs = () => {
                     <div className="absolute inset-0 p-4 sm:p-5 lg:p-6 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">
                         <h3 className="font-medium text-base sm:text-lg mb-2">Can you integrate AI into existing systems?</h3>
                         <p className="text-xs sm:text-sm mb-3">Yes, we specialize in seamless AI integration with existing software and systems through APIs, ensuring minimal disruption to your current operations.</p>
-                        <button className="text-white bg-black px-3 sm:px-4 lg:px-5 py-1 sm:py-1.5 text-xs sm:text-sm hover:bg-gray-800 transition-colors duration-200">Contact Us</button>
+                       <SecButton text='Contact Us'/>
                     </div>
                 </div>
                 <div className="group h-80 sm:h-90 lg:h-100 bg-faq rounded-xl flex flex-col justify-end p-4 sm:p-5 lg:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-2 sm:mx-3">
@@ -112,7 +112,7 @@ const Faqs = () => {
                     <div className="absolute inset-0 p-4 sm:p-5 lg:p-6 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">
                         <h3 className="font-medium text-base sm:text-lg mb-2">How can I get started with Omnisol?</h3>
                         <p className="text-xs sm:text-sm mb-3">Getting started is easy! Contact us for a consultation where we'll discuss your needs and create a customized AI strategy for your business.</p>
-                        <button className="text-white bg-black px-3 sm:px-4 lg:px-5 py-1 sm:py-1.5 text-xs sm:text-sm hover:bg-gray-800 transition-colors duration-200">Contact Us</button>
+                        <SecButton text='Contact Us' className="py-4" />
                     </div>
                 </div>
                 

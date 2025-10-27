@@ -8,4 +8,5 @@ export interface GradientButtonProps {
   icon?: IconDefinition;  
   iconColor?: string;
   className?: string;
+  width?: string | number;
 }
