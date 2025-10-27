@@ -55,7 +55,7 @@ const Faqs = () => {
                     <div className="flex flex-col justify-end h-full group-hover:hidden relative z-10 transition-all duration-300">
                         <p className="font-medium text-base sm:text-lg">What industries can benefit from AI-powered solutions?</p>
                     </div>
-                    <div className="absolute top-0 right-6 sm:right-8 lg:right-12 group-hover:opacity-0 transition-all duration-500 z-10">
+                    <div className="absolute top-0 right-6 sm:right-8 lg:right-27.5 group-hover:opacity-0 transition-all duration-500 z-10">
                         <img src="/Omnisol_logo.png" alt="" className="w-8 sm:w-10 lg:w-auto" />
                     </div>
                     <div className="absolute inset-0 p-4 sm:p-5 lg:p-6 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">
@@ -72,7 +72,7 @@ const Faqs = () => {
                     <div className="flex flex-col justify-end h-full group-hover:hidden relative z-10 transition-all duration-300">
                         <p className="font-medium text-base sm:text-lg">What is an AI Proof of Concept (PoC)?</p>
                     </div>
-                    <div className="absolute top-0 right-6 sm:right-8 lg:right-12 group-hover:opacity-0 transition-all duration-500 z-10">
+                    <div className="absolute top-0 right-6 sm:right-8 lg:right-27.5 group-hover:opacity-0 transition-all duration-500 z-10">
                         <img src="/Omnisol_logo.png" alt="" className="w-8 sm:w-10 lg:w-auto" />
                     </div>
                     <div className="absolute inset-0 p-4 sm:p-5 lg:p-6 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">
@@ -89,7 +89,7 @@ const Faqs = () => {
                     <div className="flex flex-col justify-end h-full group-hover:hidden relative z-10 transition-all duration-300">
                         <p className="font-medium text-base sm:text-lg">Can you integrate AI into existing software or systems?</p>
                     </div>
-                    <div className="absolute top-0 right-6 sm:right-8 lg:right-12 group-hover:opacity-0 transition-all duration-500 z-10">
+                    <div className="absolute top-0 right-6 sm:right-8 lg:right-27.5 group-hover:opacity-0 transition-all duration-500 z-10">
                         <img src="/Omnisol_logo.png" alt="" className="w-8 sm:w-10 lg:w-auto" />
                     </div>
                     <div className="absolute inset-0 p-4 sm:p-5 lg:p-6 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">
@@ -106,7 +106,7 @@ const Faqs = () => {
                     <div className="flex flex-col justify-end h-full group-hover:hidden relative z-10 transition-all duration-300">
                         <p className="font-medium text-base sm:text-lg">How can I get started with Omnisol's AI solutions?</p>
                     </div>
-                    <div className="absolute top-0 right-6 sm:right-8 lg:right-12 group-hover:opacity-0 transition-all duration-500 z-10">
+                    <div className="absolute top-0 right-6 sm:right-8 lg:right-27.5 group-hover:opacity-0 transition-all duration-500 z-10">
                         <img src="/Omnisol_logo.png" alt="" className="w-8 sm:w-10 lg:w-auto" />
                     </div>
                     <div className="absolute inset-0 p-4 sm:p-5 lg:p-6 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">

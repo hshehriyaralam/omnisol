@@ -8,6 +8,7 @@ import Spotify from "../../../public/Images/Hero/Spotify.webp"
 
 
 const Hero = ({Heading,description,ButtonText,LeftHeading,LeftDesciption,cardDescOne,cardDescTwo,cardDescThree}:HeroSectionProps) => {
+  
   const cardData = [
     cardDescOne,
     cardDescTwo,

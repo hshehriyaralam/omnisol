@@ -1,6 +1,7 @@
-import { createBrowserRouter,RouterProvider } from "react-router-dom";
-import  AiDevelopmentServices from "./pages/services/aiDevelopmentServices/index"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AiDevelopmentServices from "./pages/services/aiDevelopmentServices/index"
 import MainLayout from "./layouts/MainLayout"
+import Landingpage from "./pages/Landingpage";
 
 
 const router = createBrowserRouter([
@@ -9,7 +10,8 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     // errorElement: <ErrorPage />,
     children: [
-      { path: "services/aiDevelopmentServices", element: <AiDevelopmentServices />},
+      { index: true, element: <Landingpage /> },
+      { path: "services/aiDevelopmentServices", element: <AiDevelopmentServices /> },
     ],
   },
 ]);
