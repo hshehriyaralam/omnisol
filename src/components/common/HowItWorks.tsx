@@ -14,7 +14,7 @@ const HowItWorks = () => (
                     <div>
                         <img src="/discover.png" alt="Discover" className="w-12 sm:w-15" />
                     </div>
-                    <div className="hidden lg:block absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
+                    <div className="hidden lg:flex absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
                         <div className="p-2 rounded-full w-7 h-7 flex justify-center items-center bg-black">
                             <img src="/arrow.png" alt="" />
                         </div>
@@ -28,7 +28,7 @@ const HowItWorks = () => (
                     <div>
                         <img src="/design.png" alt="Design" className="w-12 sm:w-15" />
                     </div>
-                    <div className="hidden lg:block absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
+                    <div className="hidden lg:flex absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
                         <div className="p-2 rounded-full w-7 h-7 flex justify-center items-center bg-black">
                             <img src="/arrow.png" alt="" />
                         </div>
@@ -42,7 +42,7 @@ const HowItWorks = () => (
                     <div>
                         <img src="/develop.png" alt="Develop" className="w-12 sm:w-15" />
                     </div>
-                    <div className="hidden lg:block absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
+                    <div className="hidden lg:flex absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
                         <div className="p-2 rounded-full w-7 h-7 flex justify-center items-center bg-black">
                             <img src="/arrow.png" alt="" />
                         </div>

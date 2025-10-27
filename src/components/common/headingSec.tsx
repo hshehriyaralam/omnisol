@@ -5,9 +5,10 @@ export default function HeadingSection({
   Heading,
   Title,
   Description,
+  headingAlign = "center",
 }: HeadingsTypes) {
   return (
-    <div className="flex flex-col items-center justify-center text-center px-4 py-8  gap-2 ">
+    <div className={`flex flex-col items-${headingAlign} justify-center text-center px-4 py-8  gap-2 `}>
       {/* 🔹 Heading (Poppins Regular 20px) */}
       <div className="px-6 py-2 border border-badgeBorder rounded-full flex items-center justify-center">
         <h1 className="font-poppins text-[14px] sm:text-[16px] md:text-[18px] font-normal leading-[100%] text-badgeText">

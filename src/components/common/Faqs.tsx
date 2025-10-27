@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import HeadingSection from "./headingSec";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -36,8 +37,15 @@ const Faqs = () => {
     };
 
     return (
-        <section className="w-[90%] sm:w-[85%] lg:w-[80%] mx-auto my-12 sm:my-16 lg:my-20 px-4 sm:px-6 lg:px-0">
+        <section className="relative py-16 sm:py-20 lg:py-30 z-10">
             {/* <div className="grid grid-cols-4  gap-8 "> */}
+            <HeadingSection
+                Heading={"FAQs"}
+                Title={"Frequently Asked Questions"}
+                Description={"Omnisol’s AI development adapts to the rhythm of your business "}
+                headingAlign='start'
+                titleAlign='left'
+            />
             <Slider {...settings}>
                 <div className="group h-80 sm:h-90 lg:h-100 bg-faq rounded-xl flex flex-col justify-end p-4 sm:p-5 lg:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-2 sm:mx-3">
                     {/* Background image overlay with smooth transition */}

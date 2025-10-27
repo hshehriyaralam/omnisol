@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import HeadingSection from './common/headingSec';
 
 const Testimonials = () => {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -43,6 +44,12 @@ const Testimonials = () => {
 
     return (
         <section className='relative py-16 sm:py-20 lg:py-30 z-10'>
+            <HeadingSection
+                Heading={"Loved by Human"}
+                Title={"What clients think about OmnisolAI"}
+                headingAlign='start'
+                titleAlign='left'
+            />
             <div className="w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-x-4 overflow-x-auto pb-4 sm:pb-0">
                     {testimonials.map((testimonial, index) => (

@@ -9,6 +9,9 @@ import RetailManufacturing from "../../../../public/Images/Services/AI-Developme
 import MissingYourIndustry from "../../../components/common/MissingYourIndustry";
 import Hero from "../../../components/common/hero";
 import AnimatedSection from "../../../layouts/AnimatedSection";
+import HowItWorks from "../../../components/common/HowItWorks";
+import Testimonials from "../../../components/Testimonials";
+import Faqs from "../../../components/common/Faqs";
 
 const AiDevelopmentServices = () => {
   return (
@@ -25,6 +28,13 @@ const AiDevelopmentServices = () => {
       />
 
       <div >
+        <div className=" mt-8  md:mt-20" >
+          <HeadingSection
+            Heading={"Simply with AI"}
+            Title={"How It Works"}
+            Description={"We don’t do guesswork. We build intelligence — step by step."} imageSrc={""} heading={""} description={""} />
+        </div>
+        <HowItWorks />
         <AnimatedSection>
           <div className=" mt-8  md:mt-20" >
             <HeadingSection
@@ -67,8 +77,11 @@ const AiDevelopmentServices = () => {
 
         {/*  Missing Your Industris*/}
         <MissingYourIndustry />
+
       </div>
-            <LettingSection />
+      <LettingSection />
+      <Testimonials />
+      <Faqs />
       <GradientSection />
     </>
   )
