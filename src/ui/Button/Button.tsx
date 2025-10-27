@@ -1,6 +1,5 @@
 import React from "react";
-import type { GradientButtonProps } from "../../types/ButtonTypes";
-// import { button } from "framer-motion/client";
+import type { GradientButtonProps } from "../../types/Button.types";
 
 const GradientButton: React.FC<GradientButtonProps> = ({
   text,

@@ -15,7 +15,7 @@ const LettingSection = () => {
         </p>
         <GradientButton
         text="Contact"
-        icon={faArrowRight}
+        //  className= "w-[200px] h-[60px]"
         fromColor="from-orange"
         toColor="to-orange-100"
       />
