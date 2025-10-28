@@ -18,7 +18,14 @@ const MissingYourIndustry = () => {
         </p>
       </div>
 
-       <GradientButton text={"Contact"} className="!h-[55px] sm:!h-[60px] !w-[230px] sm:!w-[250px] md:!w-[240px]" />
+            <GradientButton
+            text="Contact"
+            width="200px"
+            height="60px"
+            arrowSize="22px"
+            arrowBgSize="45px"
+            fontSize="18px"
+          />
     </div> 
     </AnimatedSection>
     

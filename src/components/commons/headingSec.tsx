@@ -23,14 +23,14 @@ export default function HeadingSection({
         } justify-center flex-1 gap-4`}
       >
         {/* :small_blue_diamond: Heading */}
-        <div className="px-6 py-2 border border-badgeBorder rounded-full flex items-center justify-center">
+        <div className="px-6 py-2 border border-badgeBorder  bg-badgeBg rounded-full flex items-center justify-center">
           <h1 className="font-poppins text-[14px]   font-normal leading-[100%] text-badgeText">
             {Heading}
           </h1>
         </div>
         {/* :small_orange_diamond: Title */}
         <h2
-          className={`font-main     font-medium text-[26px]  md:text-[34px]  2xl:text-[34px]   leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black max-w-[500px]   ${
+          className={`font-main     font-medium text-[26px]  md:text-[34px]  2xl:text-[34px]   leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black max-w-[500px]      ${
             align === "left" ? "text-left" : "text-center"
           }`}
         >
@@ -38,7 +38,7 @@ export default function HeadingSection({
         </h2>
         {/* :small_orange_diamond: Description */}
         <p
-          className={`font-main font-medium text-[16px] md:text-[20px] tracking-[-0.018em] text-gray-700 max-w-[750px] ${
+          className={`font-main font-medium text-[16px] md:text-[20px] tracking-[-0.018em] text-gray-700 md:max-w-[750px] 2xl:max-w-[750px]   max-w-[300px]     ${
             align === "left" ? "text-left" : "text-center"
           }`}
         >

@@ -6,9 +6,10 @@ import MissingYourIndustry from "../components/commons/MissingYourIndustry";
 import GradientSection from "../components/commons/GradientSection";
 import Faqs from "../components/commons/Faqs";
 import Testimonials from "../components/Testimonials";
-import LettingSection from "../components/commons/LettingSection";
+// import LettingSection from "../components/commons/LettingSection";
 import GradientButton from "../ui/Button/Button";
 import WhoWeAre from "../components/commons/WhoWeAre";
+import DynamicBgSection from "../components/commons/DynamicBgSection";
 
 const Landingpage = () => {
     return (
@@ -78,12 +79,13 @@ const Landingpage = () => {
                         // className=" z-50  h-[50px] md:h-[60px] w-[120px] md:w-[150px] text-[14px] md:text-[16px]"
 
                         />
+                        
                     </div>
                     <div>
                     </div>
                 </div>
                 <div className="font-main text-black w-[65%] mx-auto text-center mt-20">
-                    <h4 className="font-semibold text-4xl leading-[1.7]">Our flexible team <span className=""><img className='inline h-10' src='/public/Images/Hero/Avtars.webp' alt="" /></span>             has a wide range of skills, which lets us look at projects from a complete point of view that combines creativity <span><img className='inline h-10' src="/public/sunset.png" alt="" /></span> and usefulness <span><img className='inline h-10' src="/public/ai.png" alt="" /></span>        .</h4>
+                    <h4 className="font-semibold text-4xl leading-[1.7]">Our flexible team <span className=""><img className='inline h-10' src='/Images/Hero/Avtars.webp' alt="" /></span>             has a wide range of skills, which lets us look at projects from a complete point of view that combines creativity <span><img className='inline h-10' src="/sunset.png" alt="" /></span> and usefulness <span><img className='inline h-10' src="/ai.png" alt="" /></span>        .</h4>
                 </div>
             </section>
 
@@ -130,7 +132,8 @@ const Landingpage = () => {
             </div>
             {/*  Missing Your Industris*/}
             <MissingYourIndustry />
-            <LettingSection />
+            {/* <LettingSection /> */}
+            <DynamicBgSection />
             <Testimonials />
             <Faqs />
             <GradientSection />

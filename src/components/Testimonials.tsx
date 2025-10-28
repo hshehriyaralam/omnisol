@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import HeadingSection from './commons/headingSec';
 
 const Testimonials = () => {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -43,13 +42,28 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className='relative py-16 sm:py-20 lg:py-30 z-10'>
-            <HeadingSection
-                Heading={"Loved by Human"}
-                Title={"What clients think about OmnisolAI"}
-                align='left'
-            />
-            <div className="w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
+        <section className='relative  py-16 sm:py-20 lg:py-30 z-10'>
+             <div
+      className={`flex flex-col md:flex-row gap-8 md:gap-12 px-4 py-8  md:mx-40  2xl:mx-60 text-center  md:text-left 2xl:text-left `}
+    >
+      {/* Left Content Section */}
+      <div
+        className={`flex flex-col justify-center flex-1 gap-4`}>
+
+        <div className=" w-[180px] px-6 py-2  bg-badgeBg border border-badgeBorder rounded-full flex items-center justify-center mx-auto  md:mx-0   2xl:mx-0">
+          <h1 className="font-poppins text-[14px]   font-normal leading-[100%] text-badgeText">
+            Loved by Human
+          </h1>
+        </div>
+        <h2
+          className={`font-main   font-medium text-[26px]  md:text-[36px]  2xl:text-[36px]   leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black `}
+        >
+          What clients think about OmnisolAI
+        </h2>
+
+      </div>
+    </div>
+            <div className="w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-x-4 overflow-x-auto pb-4 sm:pb-0">
                     {testimonials.map((testimonial, index) => (
                         <div
@@ -94,7 +108,7 @@ const Testimonials = () => {
                     </div>
                 </div>
             </div>
-            <div className='hidden lg:block absolute top-[75%] right-0 -translate-y-1/2 w-1/3'>
+            <div className='hidden lg:block absolute top-[75%] right-0 -translate-y-1/2 w-1/4'>
                 <img src="/testimonial_img.png" alt="" />
             </div>
 

@@ -12,11 +12,13 @@ const LettingSection = () => {
           Dozens of US startups and SMEs are thriving on the sheer talent and dedication of our talented teams.
         </p>
         <GradientButton
-        text="Contact"
-        //  className= "w-[200px] h-[60px]"
-        fromColor="from-orange"
-        toColor="to-orange-100"
-      />
+            text="Contact"
+            width="200px"
+            height="60px"
+            arrowSize="22px"
+            arrowBgSize="42px"
+            fontSize="18px"
+          />
       </div>
 
       {/* Right Side Numbers */}

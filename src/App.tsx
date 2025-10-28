@@ -1,14 +1,14 @@
 import Landingpage from "./pages/Landingpage";
-import ChatbotDevelopmentService from "./pages/services/chatbotDevelopmentService"
+import ChatbotDevelopmentService from "./pages/services/chatbotDevelopmentService";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainLayout from "./layouts/MainLayout"
-import AiDevelopmentServices from "./pages/services/aiDevelopmentServices/index"
+import MainLayout from "./layouts/MainLayout";
+import AiDevelopmentServices from "./pages/services/aiDevelopmentServices/index";
 import AiAgents from "./pages/services/aiAgents/index";
 import GenerativeAi from "./pages/services/generativeAi/index";
 import AiPoc from "./pages/services/aiPoc/index";
 import DataMigration from "./pages/services/dataMigration";
-
-
+import AiConsulting from "./pages/services/aiConsulting";
+import DigitalTransformation from "./pages/services/digitalTransformation";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +17,20 @@ const router = createBrowserRouter([
     // errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Landingpage /> },
-      { path: "services/aiDevelopmentServices", element: <AiDevelopmentServices /> },
-      { path: "/services/chatbotDevelopmentService", element: <ChatbotDevelopmentService /> },
-      { path: "/services/aiAgents", element: <AiAgents /> },
-      { path: "/services/generativeAi", element: <GenerativeAi /> },
-      { path: "/services/aiPoc", element: <AiPoc /> },
-      { path: "/services/dataMigration", element: <DataMigration /> },
+      {
+        path: "/services/aidevelopmentservices",
+        element: <AiDevelopmentServices />,
+      },
+      { path: "/services/aiagents", element: <AiAgents /> },
+      {
+        path: "/services/chatbotdevelopmentservice",
+        element: <ChatbotDevelopmentService />,
+      },
+      { path: "/services/generativeai", element: <GenerativeAi /> },
+      { path: "/services/aipoc", element: <AiPoc /> },
+      { path: "/services/datamigration", element: <DataMigration /> },
+      { path: "/services/aiconsulting", element: <AiConsulting /> },
+      { path: "/services/digitaltransformation", element: <DigitalTransformation /> },
     ],
   },
 ]);
