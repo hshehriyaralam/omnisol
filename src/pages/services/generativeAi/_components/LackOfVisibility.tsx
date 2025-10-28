@@ -25,21 +25,21 @@ const LackOfVisibility = () => {
   }, [inView, controls]);
 
   // ✅ Steps animation (Left se in)
-  const stepVariant: Variants = {
-    hidden: { opacity: 0, x: -80 },
-    visible: (index: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: {
-        delay: index * 0.25,
-        duration: 1.4,
-        ease: [0.25, 0.1, 0.25, 1],
-        type: "spring",
-        stiffness: 60,
-        damping: 14,
-      },
-    }),
-  };
+  // const stepVariant: Variants = {
+  //   hidden: { opacity: 0, x: -80 },
+  //   visible: (index: number) => ({
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: {
+  //       delay: index * 0.25,
+  //       duration: 1.4,
+  //       ease: [0.25, 0.1, 0.25, 1],
+  //       type: "spring",
+  //       stiffness: 60,
+  //       damping: 14,
+  //     },
+  //   }),
+  // };
 
   // ✅ Image animation (Right se in)
   const imageVariant: Variants = {

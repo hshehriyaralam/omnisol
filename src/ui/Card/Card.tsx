@@ -1,5 +1,5 @@
 import React from "react";
-import type { CardProps } from "../../types/Card.Types";
+import type { CardProps } from "../../types/Card.types";
 
 const Card: React.FC<CardProps> = ({
   heading,

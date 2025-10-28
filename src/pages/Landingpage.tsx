@@ -1,14 +1,14 @@
-import HeadingSection from "../components/common/headingSec"
-import Hero from "../components/common/hero"
+import HeadingSection from "../components/commons/headingSec"
+import Hero from "../components/commons/hero"
 import AnimatedSection from "../layouts/AnimatedSection"
-import ImageandTextSection from "../components/common/ImageAndTextSection";
-import MissingYourIndustry from "../components/common/MissingYourIndustry";
+import ImageandTextSection from "../components/commons/ImageAndTextSection";
+import MissingYourIndustry from "../components/commons/MissingYourIndustry";
 import GradientSection from "../components/commons/GradientSection";
-import Faqs from "../components/common/Faqs";
+import Faqs from "../components/commons/Faqs";
 import Testimonials from "../components/Testimonials";
 import LettingSection from "../components/commons/LettingSection";
 import GradientButton from "../ui/Button/Button";
-// import WhoWeAre from "../components/common/WhoWeAre";
+import WhoWeAre from "../components/commons/WhoWeAre";
 
 const Landingpage = () => {
     return (
@@ -25,9 +25,8 @@ const Landingpage = () => {
 
             />
 
-            {/* Who We Are Section 
+            {/* Who We Are Section */}
             <WhoWeAre />
-            */}
 
             <section className="w-[95%] mx-auto">
                 <AnimatedSection>

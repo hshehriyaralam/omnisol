@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import HeadingSection from './common/headingSec';
+import HeadingSection from './commons/headingSec';
 
 const Testimonials = () => {
     const [activeTestimonial, setActiveTestimonial] = useState(0);

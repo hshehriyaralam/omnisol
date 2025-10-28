@@ -6,6 +6,18 @@ import SecButton from "../components/commons/secButton";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdowns, setOpenDropdowns] = useState({
+    services: false,
+    consulting: false,
+    company: false,
+  });
+
+  const toggleDropdown = (section: keyof typeof openDropdowns) => {
+    setOpenDropdowns(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
 
   return (
     <nav className="w-full mx-auto bg-hero  py-4 flex justify-between items-center px-4 md:px-10 relative">
@@ -117,55 +129,203 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Right Button */}
+      {/* Right Button 
       <GradientButton
         text="Let’s Talk"
-        className="hidden lg:block z-50  h-[50px] md:h-[60px] w-[120px] md:w-[150px] text-[14px] md:text-[16px]"
-
+        className="!h-[55px] sm:!h-[60px] !w-[250px] sm:!w-[280px] md:!w-[290px]"
       />
+      */}
+      <div className="z-50">
+        <GradientButton
+          text={"Let's Talk"}
+          className="!h-[55px] sm:!h-[60px] !w-[250px] sm:!w-[280px] md:!w-[200px]"
+        />
+      </div>
+      {/* :white_check_mark: Mobile Menu Icon (Hamburger / Close) */}
+      <div
+        className="md:hidden z-50 cursor-pointer flex flex-col justify-center items-center w-8 h-8"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {/* Hamburger Lines */}
+        <span
+          className={`block w-6 h-[2px] bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[8px]" : ""
+            }`}
+        ></span>
+        <span
+          className={`block w-6 h-[2px] bg-white my-[6px] transition-all duration-300 ${menuOpen ? "opacity-0" : ""
+            }`}
+        ></span>
+        <span
+          className={`block w-6 h-[2px] bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[8px]" : ""
+            }`}
+        ></span>
+      </div>
 
-      {/* Mobile Menu Icon */}
+      {/* Mobile Menu Icon
       <div
         className="md:hidden text-white text-[24px] cursor-pointer"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <i className={`fa-solid ${menuOpen ? "fa-xmark" : "fa-bars"}`}></i>
       </div>
+       */}
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="z">
-          <Link
-            to="/services"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-NavLinks transition-all"
-          >
-            Services +
-          </Link>
-          <Link
-            to="/blog"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-NavLinks transition-all"
-          >
-            Blog
-          </Link>
-          <Link
-            to="/careers"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-NavLinks transition-all relative"
-          >
-            We are hiring
-            <span className="absolute   -top-2 right-[-24px] text-[10px] text-[#00FF00] font-semibold">
-              NEW
-            </span>
-          </Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            <button className="px-6 py-2 bg-gradient-to-r from-[#F07056] to-[#EB8642] rounded-full text-white font-[Poppins] text-[16px] hover:scale-105 transition-transform duration-300 shadow-md">
-              Let’s Talk
-            </button>
-          </Link>
+      {/* Mobile Menu */}
+      <div className={`fixed top-0 right-0 bg-white w-full h-full z-50 overflow-y-auto font-main transition-transform duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
+        <div className="relative w-full h-full">
+          {/* Header with Menu title and close button */}
+          <div className="flex justify-between items-center p-4 border-b border-gray-200 ">
+            <h2 className="text-xl font-medium text-black">Menu</h2>
+            <div
+              className="cursor-pointer"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <i className="fa-solid fa-xmark text-black text-xl"></i>
+            </div>
+          </div>
+
+          {/* Menu Content */}
+          <div className="p-4 space-y-4">
+            <ul>
+              {/* Services Dropdown */}
+              <li className="border-b border-gray-100 pb-4">
+                <div
+                  className="flex justify-between items-center cursor-pointer"
+                  onClick={() => toggleDropdown('services')}
+                >
+                  <span className="text-lg font-medium text-black">Services</span>
+                  <i className={`fa-solid ${openDropdowns.services ? 'fa-chevron-up' : 'fa-chevron-down'} text-sm text-gray-600 transition-transform`}></i>
+                </div>
+
+                {/* Services Submenu */}
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openDropdowns.services ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                  <div className="mt-3 pl-4 space-y-3">
+                    <Link to="/services/ai-development" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      AI Development Service
+                    </Link>
+                    <Link to="/services/ai-agent" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      AI Agent Development
+                    </Link>
+                    <Link to="/services/ai-gen" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      AI Gen Development
+                    </Link>
+                    <Link to="/services/ai-chatbot" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      AI Chatbot Development
+                    </Link>
+                    <Link to="/services/ai-poc" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      AI Proof of Concept
+                    </Link>
+                  </div>
+                </div>
+              </li>
+
+              {/* Consulting Dropdown */}
+              <li className="border-b border-gray-100 py-4">
+                <div
+                  className="flex justify-between items-center cursor-pointer"
+                  onClick={() => toggleDropdown('consulting')}
+                >
+                  <span className="text-lg font-medium text-black">Consulting</span>
+                  <i className={`fa-solid ${openDropdowns.consulting ? 'fa-chevron-up' : 'fa-chevron-down'} text-sm text-gray-600 transition-transform`}></i>
+                </div>
+
+                {/* Consulting Submenu */}
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openDropdowns.consulting ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                  <div className="mt-3 pl-4 space-y-3">
+                    <Link to="/consulting/strategy" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      AI Strategy Consulting
+                    </Link>
+                    <Link to="/consulting/implementation" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      AI Implementation
+                    </Link>
+                    <Link to="/consulting/assessment" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      AI Readiness Assessment
+                    </Link>
+                    <Link to="/consulting/transformation" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      Digital Transformation
+                    </Link>
+                  </div>
+                </div>
+              </li>
+
+              {/* Company Dropdown */}
+              <li className="border-b border-gray-100 py-4">
+                <div
+                  className="flex justify-between items-center cursor-pointer"
+                  onClick={() => toggleDropdown('company')}
+                >
+                  <span className="text-lg font-medium text-black">Company</span>
+                  <i className={`fa-solid ${openDropdowns.company ? 'fa-chevron-up' : 'fa-chevron-down'} text-sm text-gray-600 transition-transform`}></i>
+                </div>
+
+                {/* Company Submenu */}
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openDropdowns.company ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                  <div className="mt-3 pl-4 space-y-3">
+                    <Link to="/about" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      About Us
+                    </Link>
+                    <Link to="/team" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      Our Team
+                    </Link>
+                    <Link to="/careers" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      Careers
+                    </Link>
+                    <Link to="/contact" className="block text-gray-600 hover:text-black transition-colors py-1" onClick={() => setMenuOpen(false)}>
+                      Contact Us
+                    </Link>
+                  </div>
+                </div>
+              </li>
+
+              {/* Engagement Models Dropdown */}
+              <li className="border-b border-gray-100 py-4">
+                <Link to='' className="flex justify-between">
+                  <span className="text-lg font-medium text-black">Engagement Models</span>
+                  <i className="fa-solid  fa-chevron-down text-sm text-gray-600 transition-transform"></i>
+                </Link>
+
+              </li>
+
+            </ul>
+
+            {/* Engagement Models - Expanded Content */}
+            <div className="bg-header-sub rounded-lg p-4 mb-4">
+              {/* Expanded content */}
+              <h4 className="font-semibold text-black mb-2">Engagement Models we have</h4>
+              <p className="text-sm text-gray-700 mb-4">For tailored AI solutions specific to your needs.</p>
+
+              <div className="space-y-3">
+                <div className="bg-header-box rounded-lg p-3">
+                  <h5 className="font-medium text-header-sub-color">Project-based delivery</h5>
+                </div>
+                <div className="bg-header-box rounded-lg p-3">
+                  <h5 className="font-medium text-header-sub-color">Dedicated Team</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom CTA Section  */}
+          <div className='p-4'>
+            <div className="bg-[url('/FooterAssests/Bg.png')] text-white bg-no-repeat bg-cover bg-scroll bg-right rounded-lg p-6 text-white">
+              <h3 className="text-lg font-semibold mb-3">Should AI be the next step for your business?</h3>
+              <p className="text-sm mb-4 leading-relaxed">Book a free consultation call with us to explore whether AI is the right fit for your processes. Our AI experts will assess your workflows, uncover opportunities, and identify practical use cases where AI may add real value to your goals.</p>
+              <button
+                className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+
         </div>
-      )}
+      </div>
     </nav>
   );
 };
