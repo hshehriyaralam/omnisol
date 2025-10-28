@@ -50,8 +50,10 @@ const Hero = ({
 
   // ✅ Detect current route
   const location = useLocation();
-  const isAiPocRoute = location.pathname === "/services/aiPoc";
-  const isDataMigrationRoute = location.pathname === "/services/dataMigration";
+  const isAiPocRoute = location.pathname === "/services/aipoc";
+  const isDataMigrationRoute  = location.pathname === "/services/dataMigration" ||
+  location.pathname === "/services/aiConsulting";
+
 
   // ✅ Detect screen size dynamically
   useEffect(() => {

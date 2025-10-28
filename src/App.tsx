@@ -5,6 +5,7 @@ import AiAgents from "./pages/services/aiAgents/index";
 import GenerativeAi from "./pages/services/generativeAi/index";
 import AiPoc from "./pages/services/aiPoc/index";
 import DataMigration from "./pages/services/dataMigration";
+import AiConsulting from "./pages/services/aiConsulting";
 
 
 
@@ -14,11 +15,12 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     // errorElement: <ErrorPage />,
     children: [
-      { path: "/services/aiDevelopmentServices", element: <AiDevelopmentServices />},
-      { path: "/services/aiAgents", element: <AiAgents />},
-      { path: "/services/generativeAi", element: <GenerativeAi />},
-      { path: "/services/aiPoc", element: <AiPoc />},
-      { path: "/services/dataMigration", element: <DataMigration />},
+      { path: "/services/aidevelopmentservices", element: <AiDevelopmentServices />},
+      { path: "/services/aisgents", element: <AiAgents />},
+      { path: "/services/generativeai", element: <GenerativeAi />},
+      { path: "/services/aipoc", element: <AiPoc />},
+      { path: "/services/datamigration", element: <DataMigration />},
+      { path: "/services/aiconsulting", element: <AiConsulting />},
 ],
   },
 ]);
