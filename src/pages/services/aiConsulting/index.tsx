@@ -4,9 +4,54 @@ import HeadingSection from "../../../components/commons/headingSec";
 import ImageandTextSection from "../../../components/commons/ImageAndTextSection";
 import MissingYourIndustry from "../../../components/commons/MissingYourIndustry";
 import Hero from "../../../components/commons/hero";
+import LayoutCards from "../../../components/commons/layoutCards";
+import Testimonials from "../../../components/Testimonials";
+import Faqs from "../../../components/commons/Faqs";
 
 
 const AiConsulting = () => {
+
+
+const cardsData = [
+  {
+    id: 1,
+    title: "AI Readiness Assessment",
+    description: "Understand where your business stands and what’s needed to adopt AI successfully."
+  },
+  {
+    id: 2,
+    title: "Opportunity Mapping",
+    description:
+      "Spot the AI use cases that deliver the biggest business impact.",
+  customDiv: (
+  <div className="w-full h-full flex justify-end  md:mt-14 2xl:mt-14   ">
+   <img src="/Images/Services/LogosSection.webp"
+   className="md:w-68  md:h-50 2xl:w-68  2xl:h-50  w-42  "
+   alt="LogosSection" />
+  </div>
+),
+
+
+
+  },
+  {
+    id: 3,
+    title: "Strategy & Roadmap Design",
+    description:
+      "Create a clear, actionable path from idea to implementation."
+  },
+  {
+    id: 4,
+    title: "Risk & Compliance Guidance",
+    description: "Ensure your AI initiatives are responsible, secure, and compliant."
+  },
+  {
+    id: 5,
+    title: "Executive Enablement",
+    description: "Equip leaders with the insight to make confident AI decisions."
+  },
+];
+
   return (
      <>
           <Hero
@@ -19,7 +64,14 @@ const AiConsulting = () => {
             cardDescTwo={"Eliminate duplicates, errors, and outdated records."}
             cardDescThree={"End-to-end encryption and adherence to global data standards."}
           />
-    
+
+          <div className="my-20" >
+           <LayoutCards 
+      cards={cardsData}
+      shadowCards={[3]} 
+    />
+    <Testimonials/>
+       </div>
          <div >
               <div className=" mt-8  md:mt-20" >
                 <HeadingSection
@@ -63,6 +115,10 @@ const AiConsulting = () => {
             <MissingYourIndustry />
           </div>
                 <LettingSection />
+                 
+                 <div className="w-[80%] mx-auto" >
+                <Faqs />
+                 </div>
           <GradientSection />
         </>
   )

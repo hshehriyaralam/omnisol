@@ -1,8 +1,8 @@
 
-export  interface HeadingsTypes {
+export  interface HeadingsTypes{
   Heading: string;
   Title: string;
-  Description: string;
+  Description?: string;
   align?: "left" | "center";
   button?: React.ReactNode;
   imageSrc?: string;

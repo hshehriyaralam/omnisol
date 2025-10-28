@@ -1,5 +1,9 @@
 import LettingSection from "../../../components/commons/LettingSection"
 import GradientSection from "../../../components/commons/GradientSection"
+import AnimatedSection from "../../../layouts/AnimatedSection";
+import HowItWorks from "../../../components/commons/HowItWorks";
+import Testimonials from "../../../components/Testimonials";
+import Faqs from "../../../components/commons/Faqs";
 import HeadingSection from "../../../components/commons/headingSec";
 import ImageandTextSection from "../../../components/commons/ImageAndTextSection";
 import MissingYourIndustry from "../../../components/commons/MissingYourIndustry";
@@ -20,13 +24,22 @@ const AiDevelopmentServices = () => {
         cardDescThree={"Learns and improves with every iteration"}
       />
 
-     <div >
+      <div >
+        <div className=" mt-8  md:mt-20" >
+          <HeadingSection
+            Heading={"Simply with AI"}
+            Title={"How It Works"}
+            Description={"We don’t do guesswork. We build intelligence — step by step."} imageSrc={""}  />
+        </div>
+        <HowItWorks />
+        <AnimatedSection>
           <div className=" mt-8  md:mt-20" >
             <HeadingSection
               Heading={"Industries"}
               Title={"Your industry, our intelligence."}
-              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."} />
+              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."}  />
           </div>
+        </AnimatedSection>
         {/* Images and text Sections */}
         <div className="flex flex-col gap-4  py-10 ">
           <ImageandTextSection
@@ -61,8 +74,11 @@ const AiDevelopmentServices = () => {
 
         {/*  Missing Your Industris*/}
         <MissingYourIndustry />
+
       </div>
-            <LettingSection />
+      <LettingSection />
+      <Testimonials />
+      <Faqs />
       <GradientSection />
     </>
   )

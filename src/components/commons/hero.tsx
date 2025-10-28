@@ -100,8 +100,16 @@ const Hero = ({
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
   }}>
+<div
+  className="absolute inset-0 z-10 pointer-events-none"
+  style={{
+    backgroundImage:
+      window.innerWidth < 768
+        ? "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.9) 90%, rgba(0,0,0,1) 100%)"
+        : "radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,1) 100%)",
+  }}
+/>
 
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,0,0,0.2)_0%,_rgba(0,0,0,0.8)_80%,_rgba(0,0,0,1)_100%)] z-10 pointer-events-none" />
 
  
 
@@ -115,10 +123,14 @@ const Hero = ({
           {description}
         </p>
 
-        <GradientButton
-          text={ButtonText}
-          className="!h-[55px] sm:!h-[60px] !w-[250px] sm:!w-[280px] md:!w-[290px]"
-        />
+              <GradientButton
+            text={ButtonText}
+            width="250px"
+            height="55px"
+            arrowSize="22px"
+            arrowBgSize="42px"
+            fontSize="15px"
+          />
       </div>
 
       {/* ---------- For /services/aiPoc Route ---------- */}
@@ -259,7 +271,7 @@ const Hero = ({
                     src={`/Images/Hero/${name}.webp`}
                     alt={name}
                     className={`w-[80px] sm:w-[100px] h-auto opacity-80 hover:opacity-100 transition-all ${
-                      name !== "n8n" ? "invert brightness-0" : ""
+                      name !== "n8n" ? "sm:w-[80px]  invert brightness-0" : ""
                     }`}
                   />
                 </div>

@@ -103,7 +103,14 @@ const HowWeBuild = () => {
           your ecosystem.
         </p>
 
-        <GradientButton text="Start Your AI Project" className="!w-[220px]" />
+         <GradientButton
+          text="Start You Agent Project"
+          width="230px"
+          height="60px"
+          arrowSize="22px"
+          arrowBgSize="40px"
+          fontSize="16px"
+        />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import HeadingSection from "../../../components/commons/headingSec";
 import ImageandTextSection from "../../../components/commons/ImageAndTextSection";
 import MissingYourIndustry from "../../../components/commons/MissingYourIndustry";
 import Hero from "../../../components/commons/hero";
+import Testimonials from "../../../components/Testimonials";
 
 
 const DataMigration = () => {
@@ -20,6 +21,7 @@ const DataMigration = () => {
         cardDescThree={"End-to-end encryption and adherence to global data standards."}
       />
 
+      <Testimonials />
      <div >
           <div className=" mt-8  md:mt-20" >
             <HeadingSection

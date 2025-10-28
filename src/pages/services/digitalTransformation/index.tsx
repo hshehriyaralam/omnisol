@@ -8,72 +8,71 @@ import AnimatedSection from "../../../layouts/AnimatedSection";
 import LettingSection from "../../../components/commons/LettingSection"
 import GradientSection from "../../../components/commons/GradientSection"
 import GradientButton from "../../../ui/Button/Button";
-import StepsDecsriptions from "../../../components/commons/stepsDescriptions";
-import { motion } from "framer-motion";
+// import StepsDecsriptions from "../../../components/commons/stepsDescriptions";
+// import { motion } from "framer-motion";
 
 
-const AiPoc = () => {
+const DigitalTransformation = () => {
 
 
-   const stepsData = [
-    { id: 1, step: "01", title: "Discovery & Planning", description:"We learn your business goals, define success metrics, and agree on what “good” looks like." },
-    { id: 2, step: "02", title: "Use Case & Idea Validation", description: "Together, we pick the right AI use cases that offer the biggest impact and best chance of success." },
-    { id: 3, step: "03", title: "Data Preparation", description: "We gather, clean, and prepare the data your AI needs to perform well." },
-    { id: 4, step: "04", title: "Prototype Development (PoC)", description: "We create a small-scale version of your solution to test technical and business feasibility." },
-     { id: 5, step: "05", title: "MVP Build-Out", description: "We expand the prototype into a functional product with a user interface and essential integrations." },
-      { id: 6, step: "06", title: "Testing & Feedback", description: "Real users interact with the MVP, and we refine based on insights." },
-       { id: 7, step: "07", title: "Scale & Launch", description: "Once proven, we scale your AI product for full deployment and long-term success." },
-  ];
+  //  const stepsData = [
+  //   { id: 1, step: "01", title: "Discovery & Planning", description:"We learn your business goals, define success metrics, and agree on what “good” looks like." },
+  //   { id: 2, step: "02", title: "Use Case & Idea Validation", description: "Together, we pick the right AI use cases that offer the biggest impact and best chance of success." },
+  //   { id: 3, step: "03", title: "Data Preparation", description: "We gather, clean, and prepare the data your AI needs to perform well." },
+  //   { id: 4, step: "04", title: "Prototype Development (PoC)", description: "We create a small-scale version of your solution to test technical and business feasibility." },
+  //    { id: 5, step: "05", title: "MVP Build-Out", description: "We expand the prototype into a functional product with a user interface and essential integrations." },
+  //     { id: 6, step: "06", title: "Testing & Feedback", description: "Real users interact with the MVP, and we refine based on insights." },
+  //      { id: 7, step: "07", title: "Scale & Launch", description: "Once proven, we scale your AI product for full deployment and long-term success." },
+  // ];
 
 
   return (
     <>
       <Hero
-        Heading={"Test Your AI Ideas Before You Scale Them"}
-        description={"Validate your concept with a working AI prototype — ready in just 4 weeks. Our Proof of Concept (PoC) and MVP development services help you explore what’s possible, see real results, and make smart investment decisions before going all in."}
-        ButtonText={"Get in Touch"}
+        Heading={"Digital Transformation Consulting That Drives Real Change"}
+        description={"Your business is ready to grow — we make technology work for it."}
+        ButtonText={"Start Your Transformation"}
         LeftHeading={"Omnisol builds AI that actually works."}
-        LeftDesciption={"Omnisol engineers AI agents that operate like digital teammates: fast, reliable, and fully aligned with your business goals."}
-        cardDescOne={"Agents that make decisions, not just predictions"}
-        cardDescTwo={"Plug-and-play integration with your systems"}
-        cardDescThree={"Secure, monitored, and endlessly scalable"}
-        
+        LeftDesciption={"Whether you’re shifting from spreadsheets, old CRMs, or outdated platforms, Omnisol ensures a seamless migration to your new AI-powered SaaS environment.We handle every step — from audit to migration to validation — so your data works smarter, not harder."}
+        cardDescOne={"Assess your current digital maturity"}
+        cardDescTwo={"Identify technology gaps and opportunities"}
+        cardDescThree={"Design a roadmap to modernize workflows, data, and customer experiences."}
       />
 
     
     <WhyAgentic
-        badgeText={"What We Deliver"}
-        mainHeading={"From Big Ideas to Working Prototypes"}
-        descriptionOne={"We help you turn “what if” into “what works.”Our team designs, tests, and launches small, focused AI versions of your idea so you can see real outcomes — not just slide decks."}
+        badgeText={"Yesss"}
+        mainHeading={"Harness AI to Power Your Digital Evolution"}
+        descriptionOne={"Move beyond upgrades — build intelligence into everything you do. Omnisol integrates AI into your core operations to automate, predict, and optimize performance at every level."}
         cards={[
           {
-            title: "AI Strategy Roadmap",
-            description: "We start by mapping your AI journey — defining goals, project scope, timelines, and budgets so everyone’s on the same page.",
+            title: "Adaption",
+            description: "AI-driven process automation.",
             image: "/Images/Services/AIAgents/Adoption.webp",
           },
           {
-            title: "AI Proof of Concept (PoC)",
-            description: "Next, we build a simple version of your AI idea that proves the technology works. It’s about testing value, not building a full app yet.",
+            title: "Multi-Agent",
+            description: "Predictive analytics for smarter decisions.",
             image: "/Images/Services/AIAgents/MultiAgent.webp",
           },
           {
-            title: "Minimum Viable Product (MVP)",
-            description: "Once the PoC succeeds, we turn it into a real, usable product — with a clean interface, proper integrations, and everything ready for market testing.",
+            title: "Hybrid Teams",
+            description: "Intelligent systems that scale with your business.",
             image: "/Images/Services/AIAgents/Adoption.webp",
           },
         ]}/>
 
          <GradientButton
-          text="Start Your AI Project"
-          width="250px"
-          height="60px"
-          arrowSize="22px"
-          arrowBgSize="42px"
-          fontSize="16px"
-          className="mx-auto  -mt-20"
-        />
+  text="Start Your AI Prject"
+  width="250px"
+  height="60px"
+  arrowSize="22px"
+  arrowBgSize="42px"
+  fontSize="16px"
+  className="mx-auto -mt-20"
+/>
 
-      <div className="flex flex-col lg:flex-row justify-center mx-auto w-[90%] mt-20 p-4">
+      {/* <div className="flex flex-col lg:flex-row justify-center mx-auto w-[90%] mt-20 p-4">
         <motion.div
   className="max-w-[450px] mx-auto lg:mx-0 mb-8 lg:mb-0"
   initial={{ opacity: 0, x: -100 }}    
@@ -89,10 +88,8 @@ const AiPoc = () => {
   />
 </motion.div>
 
-
-  {/* Steps Section */}
   <StepsDecsriptions stepsData={stepsData} direction="right" />
-</div>
+</div> */}
 
 
 
@@ -149,4 +146,4 @@ const AiPoc = () => {
   )
 }
 
-export default AiPoc;
+export default DigitalTransformation;

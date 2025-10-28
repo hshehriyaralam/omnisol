@@ -30,6 +30,16 @@
   --color-NavNewLinkBg: #80FF97;
   --color-NavNewText: #003209;
   --color-heroCardBg: #B158373D;
+  --color-cardBgOne: #FCFFE5;
+  --color-cardBorderOne: #59557257;
+  --color-cardBgTwo: #E8E5FF;
+  --color-cardBgThree: #FFFBEA;
+  --color-cardBgFour: #E5FFFC;
+  --color-cardBgFive: #EBFFE5;
+  --color-cardBgSix:#FFE5F6;
+  --color-cardBgSeven: #E1E0EF;
+  --color-cardBgEight: #E5EEFF;
+  --color-cardBgNine: #FFE5E5;
   --color-cardBorder: #DCE4E8;
   --color-weBuildBg: #140500;
   --color-weBuildText: #FFD2B5;
@@ -47,10 +57,31 @@
 
 
 
+  --color-gray: #F5F5F5;
+  --color-orange-400: #FFF7F0;
 
+  --color-orange-dark: #6D2D05;
 
   --color-text-dark: #1e293b;
   --color-accent: #38bdf8;
+
+  --color-para: #191919;
+  --color-testimonial: #f1faff;
+  --color-testimonial-border: #80BCF9;
+
+  --color-star: #EA5732;
+
+  --color-faq: #D1C0E7;
+
+  --color-header-sub:#FFF0E8 ;
+  --color-header-sub-color:#832E01 ;
+
+  --color-header-box:#F3C8B1 ;
+  --color-header-box-border:#AD532D ;
+
+  --color-engage:#FFD7D7 ;
+  --color-who-border:#dce4e8 ;
+
 
   /* ✅ Custom Spacing / Radius */
   --radius-main: 1rem;
@@ -92,3 +123,29 @@
   font-weight: 800;
   font-style: normal;
 }
+
+.faqs .slick-track {
+  display: flex;
+  gap: 10px;
+}
+
+/* .vertical-slider .slick-slide {
+    opacity: 0.6;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+  }
+  
+  .vertical-slider .slick-slide.slick-center {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .vertical-slider .slick-list {
+    height: 100%;
+  }
+  
+  .vertical-slider .slick-track {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+  } */

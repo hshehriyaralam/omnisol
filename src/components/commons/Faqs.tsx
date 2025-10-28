@@ -1,0 +1,120 @@
+import Slider from "react-slick";
+import type {Settings} from "react-slick";
+import HeadingSection from "./headingSec";
+import SecButton from "./secButton";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
+const Faqs = () => {
+  const settings: Settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const faqs = [
+    {
+      q: "What industries can benefit from AI-powered solutions?",
+      a: "AI solutions can be applied to various industries, including healthcare, manufacturing, retail, fintech, and more. AI can help optimize processes, enhance customer experience, and improve decision-making.",
+    },
+    {
+      q: "What is an AI Proof of Concept (PoC)?",
+      a: "An AI PoC is a small-scale demonstration of how AI can solve specific business challenges. It validates the feasibility and potential value before full implementation.",
+    },
+    {
+      q: "Can you integrate AI into existing systems?",
+      a: "Yes, we specialize in seamless AI integration with existing software and systems through APIs, ensuring minimal disruption to your current operations.",
+    },
+    {
+      q: "How can I get started with Omnisol's AI solutions?",
+      a: "Getting started is easy! Contact us for a consultation where we'll discuss your needs and create a customized AI strategy for your business.",
+    },
+  ];
+
+  return (
+    <section className="relative py-12 sm:py-16 lg:py-20 z-10 overflow-hidden">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <HeadingSection
+          Heading="FAQs"
+          Title="Frequently Asked Questions"
+          Description="Omnisol’s AI development adapts to the rhythm of your business"
+          align="left"
+        />
+      </div>
+
+      {/* Desktop/Tablet: Slick Slider | Mobile: Stack layout */}
+      <div className="mt-6 sm:mt-10 px-2 sm:px-4 lg:px-8">
+        {/* Desktop/Tablet */}
+        <div className="hidden sm:block">
+          <Slider {...settings} className="faqs">
+            {faqs.map((faq, i) => (
+              <FaqCard key={i} faq={faq} />
+            ))}
+          </Slider>
+        </div>
+
+        {/* Mobile (Stacked) */}
+        <div className="flex flex-col gap-4 sm:hidden">
+          {faqs.map((faq, i) => (
+            <div key={i} className="w-full">
+              <FaqCard faq={faq} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const FaqCard = ({ faq }: { faq: { q: string; a: string } }) => (
+  <div className="group h-72 sm:h-80 lg:h-96 bg-faq rounded-2xl flex flex-col justify-end p-4 sm:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-0 sm:mx-2 w-full">
+    {/* Hover background */}
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out rounded-2xl"
+      style={{ backgroundImage: "url('/Faqs_bg.png')" }}
+    ></div>
+
+    {/* Question visible by default */}
+    <div className="flex flex-col justify-end h-full group-hover:hidden relative z-10 transition-all duration-300">
+      <p className="font-semibold text-base sm:text-lg lg:text-xl leading-snug">
+        {faq.q}
+      </p>
+    </div>
+
+    {/* Logo on top-right */}
+    <div className="absolute top-4 right-4 sm:right-6 group-hover:opacity-0 transition-all duration-500 z-10">
+      <img src="/Omnisol_logo.png" alt="" className="w-8 sm:w-10 lg:w-12" />
+    </div>
+
+    {/* Hover content */}
+    <div className="absolute inset-0 p-4 sm:p-6 lg:p-8 opacity-0 group-hover:opacity-100 text-white z-10 transition-all duration-500 flex flex-col justify-between">
+      <h3 className="font-semibold text-base sm:text-lg mb-2 leading-tight">
+        {faq.q}
+      </h3>
+      <p className="text-xs sm:text-sm lg:text-base mb-3 leading-relaxed">
+        {faq.a}
+      </p>
+      <SecButton text="Contact Us" />
+    </div>
+  </div>
+);
+
+export default Faqs;
