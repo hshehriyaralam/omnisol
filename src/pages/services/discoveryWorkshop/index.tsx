@@ -7,26 +7,27 @@ import Hero from "../../../components/commons/hero";
 import LayoutCards from "../../../components/commons/layoutCards";
 import Testimonials from "../../../components/Testimonials";
 import Faqs from "../../../components/commons/Faqs";
+import GradientButton from "../../../ui/Button/Button";
 
 
-const AiConsulting = () => {
+const DiscoveryWorkshop = () => {
 
 
 const cardsData = [
   {
     id: 1,
-    title: "AI Readiness Assessment",
-    description: "Understand where your business stands and what’s needed to adopt AI successfully."
+    title: "Introductory Call",
+    description: "We begin by understanding your goals, challenges, and team structure — setting clear expectations from day one."
   },
   {
     id: 2,
-    title: "Opportunity Mapping",
+    title: "Stakeholder Interviews",
     description:
-      "Spot the AI use cases that deliver the biggest business impact.",
+      "We speak with key decision-makers and end-users to refine requirements and uncover real needs.",
   customDiv: (
-  <div className="w-full h-full flex justify-end relative left-6 mt-1   ">
-   <img src="/Images/Services/LogosSection.webp"
-   className="w-65  h-50    "
+  <div className="w-full h-full flex  items-center  justify-end  relative  ">
+   <img src="/Images/Services/workshop.webp"
+   className="w-[350px]  h-[300px]   absolute  lg:-top-24  lg:left-15"
    alt="LogosSection" />
   </div>
 ),
@@ -36,47 +37,66 @@ const cardsData = [
   },
   {
     id: 3,
-    title: "Strategy & Roadmap Design",
+    title: "Event Storming",
     description:
-      "Create a clear, actionable path from idea to implementation."
+      "Together, we map your business workflows, pinpoint opportunities, and outline how technology can simplify and scale them."
   },
   {
     id: 4,
-    title: "Risk & Compliance Guidance",
-    description: "Ensure your AI initiatives are responsible, secure, and compliant."
+    title: "Visual Prototype",
+    description: "We create interactive design mockups so you can see your idea come to life before development begins."
   },
   {
     id: 5,
-    title: "Executive Enablement",
-    description: "Equip leaders with the insight to make confident AI decisions."
+    title: "Final Presentation",
+    description: "You get a complete package — the prototype, process insights, project plan, estimated costs, and timeline — ready for execution."
   },
 ];
 
   return (
      <>
           <Hero
-            Heading={"Kickstart Your AI Journey with Expert Guidance"}
-            description={"Before you invest, get clarity that saves time, money, and effort. Omnisol’s AI Advisory services help you evaluate readiness, uncover real opportunities, and create a roadmap that leads to results — not confusion."}
-            ButtonText={"Migrate Smarter with Omnisol"}
+            Heading={"Every Vision Needs a Roadmap"}
+            description={"You bring the idea — we bring the technical clarity to make it real.Omnisol’s Discovery Workshop turns your concept into a structured, actionable plan for growth."}
+            ButtonText={"Start Your Workshops"}
             LeftHeading={"Omnisol builds AI that actually works."}
             LeftDesciption={"Whether you’re shifting from spreadsheets, old CRMs, or outdated platforms, Omnisol ensures a seamless migration to your new AI-powered SaaS environment.We handle every step — from audit to migration to validation — so your data works smarter, not harder."}
-            cardDescOne={"Migration: Move without disrupting your operations."}
-            cardDescTwo={"Eliminate duplicates, errors, and outdated records."}
-            cardDescThree={"End-to-end encryption and adherence to global data standards."}
-              ButtonWidth={"320px"}
-              ButtonHeight={"60px"}
-              arrowSize={"20px"}
-              arrowBgSize={"40px"}
-              ButtonTextSize={"15px"}
-              ButtonTextTransalate={"60px"}
-              ButtonarrowTranslate={"-240px"}
+            cardDescOne={"Assess your current digital maturity"}
+            cardDescTwo={"Identify technology gaps and opportunities"}
+            cardDescThree={"Design a roadmap to modernize workflows, data, and customer experiences."}
+            ButtonWidth={"280px"}
+            ButtonHeight={"60px"}
+            arrowSize={"18px"}
+            arrowBgSize={"38px"}
+            ButtonTextSize={"15px"}
+            ButtonTextTransalate={"60px"}
+            ButtonarrowTranslate={"-180px"}
           />
 
           <div className="my-20" >
+            <HeadingSection
+                  Heading={"Yesss"}
+                  Title={"How We Wrap It Up in 7 Business Days"}
+                  Description={"Our Discovery Workshop is fast, focused, and designed to turn ideas into execution. Here’s how we take you from concept to clarity — all within a week."} 
+                  
+                  />
            <LayoutCards 
       cards={cardsData}
       shadowCards={[3]} 
-      mobileHeading={"Kickstart Your AI Journey with Expert Guidance"}
+      mobileHeading={"Every Vision Needs a Roadmap"}
+    />
+
+    <GradientButton
+         text="Book Your Discovery Session"
+            width="300px"
+            height="55px"
+            arrowSize="20px"
+            arrowBgSize="38px"
+            fontSize="14px"
+            hideArrowOnMobile ={false}
+            textTranslate = "60px"
+            arrowTranslate = "-220px"
+            className="mx-auto"
     />
     <Testimonials/>
        </div>
@@ -132,4 +152,4 @@ const cardsData = [
   )
 }
 
-export default AiConsulting
+export default DiscoveryWorkshop

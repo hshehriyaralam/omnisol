@@ -30,7 +30,7 @@ export default function HeadingSection({
         </div>
         {/* :small_orange_diamond: Title */}
         <h2
-          className={`font-main     font-medium text-[26px]  md:text-[34px]  2xl:text-[34px]   leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black max-w-[500px]      ${
+          className={`font-main     font-medium text-[26px]  md:text-[34px]  2xl:text-[34px]   leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black max-w-[480px]      ${
             align === "left" ? "text-left" : "text-center"
           }`}
         >

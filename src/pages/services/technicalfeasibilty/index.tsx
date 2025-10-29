@@ -7,76 +7,93 @@ import Hero from "../../../components/commons/hero";
 import LayoutCards from "../../../components/commons/layoutCards";
 import Testimonials from "../../../components/Testimonials";
 import Faqs from "../../../components/commons/Faqs";
+import GradientButton from "../../../ui/Button/Button";
 
 
-const AiConsulting = () => {
+const TechnicallyFeasibility = () => {
 
 
 const cardsData = [
   {
     id: 1,
-    title: "AI Readiness Assessment",
-    description: "Understand where your business stands and what’s needed to adopt AI successfully."
+    title: "ROI Forecasting",
+    description: "We calculate realistic return expectations and build strategies that directly support revenue growth."
   },
   {
     id: 2,
-    title: "Opportunity Mapping",
+    title: "Risk Mitigation",
     description:
-      "Spot the AI use cases that deliver the biggest business impact.",
+      "We identify possible technical or operational obstacles early and craft solutions to prevent costly surprises.",
   customDiv: (
-  <div className="w-full h-full flex justify-end relative left-6 mt-1   ">
-   <img src="/Images/Services/LogosSection.webp"
-   className="w-65  h-50    "
+  <div className="w-full h-full flex  items-center  justify-end   relative   ">
+   <img src="/Images/Services/technical.png"
+   className="w-[500px]  h-[450px]   absolute lg:-top-62  lg:left-30"
    alt="LogosSection" />
   </div>
 ),
-
-
-
   },
   {
     id: 3,
-    title: "Strategy & Roadmap Design",
+    title: "Technology Alignment",
     description:
-      "Create a clear, actionable path from idea to implementation."
+      "We match your project with the right tools, platforms, and emerging tech to keep it relevant and efficient."
   },
   {
     id: 4,
-    title: "Risk & Compliance Guidance",
-    description: "Ensure your AI initiatives are responsible, secure, and compliant."
+    title: "Cost & Resource Planning",
+    description: "We deliver clear budget projections and resource plans so you can move forward with confidence."
   },
   {
     id: 5,
-    title: "Executive Enablement",
-    description: "Equip leaders with the insight to make confident AI decisions."
+    title: "End-to-End Technical Support",
+    description: "From assessment to execution, we stay involved — ensuring your product is engineered right the first time."
   },
 ];
 
   return (
      <>
           <Hero
-            Heading={"Kickstart Your AI Journey with Expert Guidance"}
-            description={"Before you invest, get clarity that saves time, money, and effort. Omnisol’s AI Advisory services help you evaluate readiness, uncover real opportunities, and create a roadmap that leads to results — not confusion."}
-            ButtonText={"Migrate Smarter with Omnisol"}
+            Heading={"Technical Feasibility That Turns Vision Into Viable Reality"}
+            description={"Before you invest, know exactly what’s possible.Omnisol provides hands-on technical assistance to validate your concept, engineer with precision, and ensure every move delivers measurable ROI."}
+            ButtonText={"Discuss Your Project"}
             LeftHeading={"Omnisol builds AI that actually works."}
-            LeftDesciption={"Whether you’re shifting from spreadsheets, old CRMs, or outdated platforms, Omnisol ensures a seamless migration to your new AI-powered SaaS environment.We handle every step — from audit to migration to validation — so your data works smarter, not harder."}
-            cardDescOne={"Migration: Move without disrupting your operations."}
-            cardDescTwo={"Eliminate duplicates, errors, and outdated records."}
-            cardDescThree={"End-to-end encryption and adherence to global data standards."}
-              ButtonWidth={"320px"}
-              ButtonHeight={"60px"}
-              arrowSize={"20px"}
-              arrowBgSize={"40px"}
-              ButtonTextSize={"15px"}
-              ButtonTextTransalate={"60px"}
-              ButtonarrowTranslate={"-240px"}
+            LeftDesciption={"We work as your technical arm — assessing infrastructure, scalability, and risk while defining the smartest path from concept to implementation.Our goal is simple: help you make informed, confident decisions that save time, reduce cost, and guarantee long-term success."}
+            cardDescOne={"Assess your current digital maturity"}
+            cardDescTwo={"Identify technology gaps and opportunities"}
+            cardDescThree={"Design a roadmap to modernize workflows, data, and customer experiences."}
+            ButtonWidth={"250px"}
+            ButtonHeight={"58px"}
+            arrowSize={"20px"}
+            arrowBgSize={"40px"}
+            ButtonTextSize={"16px"}
+            ButtonTextTransalate={"60px"}
+            ButtonarrowTranslate={"-180px"}
           />
 
           <div className="my-20" >
+            <HeadingSection
+                  Heading={"What You Gain"}
+                  Title={"From Insight to Implementation — With Full Technical Backing"}
+                  Description={"Our Discovery Workshop is fast, focused, and designed to turn ideas into execution."} 
+                  
+                  />
            <LayoutCards 
       cards={cardsData}
       shadowCards={[3]} 
-      mobileHeading={"Kickstart Your AI Journey with Expert Guidance"}
+      mobileHeading={"Every Vision Needs a Roadmap"}
+    />
+
+    <GradientButton
+         text="Let’s Make It Feasible"
+            width="240px"
+            height="55px"
+            arrowSize="20px"
+            arrowBgSize="38px"
+            fontSize="15px"
+            hideArrowOnMobile ={false}
+            textTranslate = "60px"
+            arrowTranslate = "-170px"
+            className="mx-auto"
     />
     <Testimonials/>
        </div>
@@ -132,4 +149,4 @@ const cardsData = [
   )
 }
 
-export default AiConsulting
+export default TechnicallyFeasibility

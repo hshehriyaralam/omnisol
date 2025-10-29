@@ -31,6 +31,13 @@ export    interface HeroSectionProps{
   cardDescOne: string
   cardDescTwo: string
   cardDescThree:string
+  ButtonWidth :string
+  ButtonHeight :string
+  arrowSize :string
+  arrowBgSize :string
+  ButtonTextSize :string
+  ButtonTextTransalate :string
+  ButtonarrowTranslate : string
 }
 
 
@@ -61,3 +68,19 @@ export type StepsSectionProps = {
   stepsData: Step[];
   direction?: "left" | "right"; 
 };
+
+
+
+interface CardData {
+  id: number;
+  title: string;
+  description: string;
+  customDiv?: React.ReactNode;
+}
+
+interface LayoutCardsProps {
+  cards: CardData[];
+  shadowCards?: number[];
+  mobileHeading?: React.ReactNode;
+  mobileIcon?: React.ReactNode;
+}

@@ -16,6 +16,14 @@ const Hero = ({
   cardDescOne,
   cardDescTwo,
   cardDescThree,
+  ButtonWidth,
+  ButtonHeight,
+  arrowSize,
+  arrowBgSize,
+  ButtonTextSize,
+  ButtonTextTransalate,
+  ButtonarrowTranslate
+
 }: HeroSectionProps) => {
   const cardData = [cardDescOne, cardDescTwo, cardDescThree];
 
@@ -115,7 +123,7 @@ const Hero = ({
 
       {/* Hero Content */}
       <div className="relative z-20 container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center gap-4 min-h-[70vh] md:mt-30 mt-20">
-        <h1 className="font-main font-medium text-[26px] md:text-[42px] leading-[36px] md:leading-[52px] tracking-tight max-w-[300px] md:max-w-[900px]">
+        <h1 className="font-main font-medium text-[26px] md:text-[42px] leading-[36px] md:leading-[52px] tracking-tight max-w-[300px] md:max-w-[800px]">
           {Heading}
         </h1>
 
@@ -125,12 +133,15 @@ const Hero = ({
 
               <GradientButton
             text={ButtonText}
-            width="250px"
-            height="55px"
-            arrowSize="22px"
-            arrowBgSize="42px"
-            fontSize="15px"
-          />
+            width={ButtonWidth}
+            height={ButtonHeight}
+            arrowSize={arrowSize}
+            arrowBgSize={arrowBgSize}
+            fontSize={ButtonTextSize}
+            textTranslate={ButtonTextTransalate}
+            arrowTranslate={ButtonarrowTranslate}
+            hideArrowOnMobile={false}    
+                 />
       </div>
 
       {/* ---------- For /services/aiPoc Route ---------- */}

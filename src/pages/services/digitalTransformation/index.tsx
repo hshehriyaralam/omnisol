@@ -37,6 +37,13 @@ const DigitalTransformation = () => {
         cardDescOne={"Assess your current digital maturity"}
         cardDescTwo={"Identify technology gaps and opportunities"}
         cardDescThree={"Design a roadmap to modernize workflows, data, and customer experiences."}
+          ButtonWidth={"300px"}
+        ButtonHeight={"60px"}
+        arrowSize={"18px"}
+        arrowBgSize={"38px"}
+        ButtonTextSize={"15px"}
+        ButtonTextTransalate={"60px"}
+        ButtonarrowTranslate={"-210px"}
       />
 
     
@@ -63,14 +70,17 @@ const DigitalTransformation = () => {
         ]}/>
 
          <GradientButton
-  text="Start Your AI Prject"
-  width="250px"
-  height="60px"
-  arrowSize="22px"
-  arrowBgSize="42px"
-  fontSize="16px"
-  className="mx-auto -mt-20"
-/>
+            text="Start Your AI Prject"
+            width="250px"
+            height="60px"
+            arrowSize="22px"
+            arrowBgSize="42px"
+            fontSize="16px"
+              hideArrowOnMobile ={false}
+            textTranslate = "60px"
+            arrowTranslate = "-180px"
+            className="mx-auto -mt-20"
+          />
 
       {/* <div className="flex flex-col lg:flex-row justify-center mx-auto w-[90%] mt-20 p-4">
         <motion.div

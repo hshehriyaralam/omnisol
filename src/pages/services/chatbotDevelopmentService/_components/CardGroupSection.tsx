@@ -81,69 +81,51 @@ const CardGroupSection = () => {
   ];
 
   return (
-   <section className="flex flex-col lg:flex-row items-start lg:items-center justify-between px-6 lg:px-10 py-16 gap-10">
-  {/* Left: Cards Grid */}
-  <div className="flex-1">
-    <div
-      className="
-        grid
-        grid-cols-1
-        md:grid-cols-2
-        lg:grid-cols-3
-        gap-y-7
-        gap-x-72
-      "
-    >
-      {cardsData.map((card, idx) => (
-        <div
-          key={idx}
-          className="
-            w-full md:flex md:justify-center
-            lg:block
-          "
-        >
-          <div
-            className="
-              w-full md:w-auto
-              max-w-full md:max-w-none
-            "
-            style={{
-              width:
-                window.innerWidth >= 1024
-                  ? card.width
-                  : "100%", 
-              height:
-                window.innerWidth >= 1024
-                  ? card.height
-                  : "auto", 
-            }}
-          >
-            <Card
-              heading={card.heading}
-              text={card.text}
-              bgColor={card.bgColor}
-              borderColor={card.borderColor}
-              width={card.width}
-              height={card.height}
-              className={card.className}
-            />
-          </div>
+    <section className="flex flex-col lg:flex-row items-start lg:items-center justify-between px-4 sm:px-6 lg:px-10 py-12 sm:py-16 gap-8 lg:gap-10">
+      {/* Left: Cards Grid */}
+      <div className="w-full lg:flex-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-y-7 md:gap-x-8 lg:gap-y-7 lg:gap-x-72">
+          {cardsData.map((card, idx) => (
+            <div
+              key={idx}
+              className="
+                w-full
+                flex
+                justify-center
+                md:block
+              "
+            >
+              {/* Mobile: Full width, Desktop: Original width */}
+              <div className="
+                w-full 
+                max-w-full
+                md:w-auto 
+                md:max-w-none
+              ">
+                <Card
+                  heading={card.heading}
+                  text={card.text}
+                  bgColor={card.bgColor}
+                  borderColor={card.borderColor}
+                  width="w-full md:w-[280px]"
+                  height={card.height}
+                  className={card.className}
+                />
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
+      </div>
 
-  {/* Right: Image (Desktop Only) */}
-  <div className="hidden lg:flex flex-1 lg:justify-end">
-    <img
-      src="/Images/Services/Chat-Development-Services/RightSide.png"
-      alt="Illustration"
-      className="w-full max-w-md lg:max-w-[3000%] lg:ml-[693px] -mt-40 object-cover"
-    />
-  </div>
-</section>
-
-
+      {/* Right: Image (Desktop Only) */}
+      <div className="hidden lg:flex flex-1 lg:justify-end">
+        <img
+          src="/Images/Services/Chat-Development-Services/RightSide.png"
+          alt="Illustration"
+          className="w-full max-w-md lg:max-w-[3000%] lg:ml-[693px] -mt-40 object-cover"
+        />
+      </div>
+    </section>
   );
 };
 
