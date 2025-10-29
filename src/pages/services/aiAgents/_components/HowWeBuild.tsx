@@ -105,11 +105,14 @@ const HowWeBuild = () => {
 
          <GradientButton
           text="Start You Agent Project"
-          width="230px"
+          width="250px"
           height="60px"
-          arrowSize="22px"
-          arrowBgSize="40px"
-          fontSize="16px"
+          arrowSize="20px"
+          arrowBgSize="35px"
+          fontSize="15px"
+           hideArrowOnMobile={false}
+        textTranslate = "50px"
+        arrowTranslate = "-180px"
         />
       </div>
     </div>

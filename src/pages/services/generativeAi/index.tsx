@@ -19,6 +19,13 @@ const GenerativeAi = () => {
         cardDescOne={"Agents that make decisions, not just predictions"}
         cardDescTwo={"Plug-and-play integration with your systems"}
         cardDescThree={"Secure, monitored, and endlessly scalable"}
+        ButtonWidth={"250px"}
+        ButtonHeight={"60px"}
+        arrowSize={"20px"}
+        arrowBgSize={"40px"}
+        ButtonTextSize={"16px"}
+        ButtonTextTransalate={"60px"}
+        ButtonarrowTranslate={"-180px"}
       />
 
      <div >

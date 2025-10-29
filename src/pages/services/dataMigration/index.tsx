@@ -19,6 +19,13 @@ const DataMigration = () => {
         cardDescOne={"Migration: Move without disrupting your operations."}
         cardDescTwo={"Eliminate duplicates, errors, and outdated records."}
         cardDescThree={"End-to-end encryption and adherence to global data standards."}
+        ButtonWidth={"320px"}
+        ButtonHeight={"60px"}
+        arrowSize={"20px"}
+        arrowBgSize={"40px"}
+        ButtonTextSize={"15px"}
+        ButtonTextTransalate={"60px"}
+        ButtonarrowTranslate={"-240px"}
       />
 
       <Testimonials />

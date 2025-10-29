@@ -22,9 +22,13 @@ const MissingYourIndustry = () => {
             text="Contact"
             width="200px"
             height="60px"
-            arrowSize="22px"
-            arrowBgSize="45px"
+            arrowSize="20px"
+            arrowBgSize="40px"
             fontSize="18px"
+            textTranslate="60px"
+            arrowTranslate="-110px"
+            hideArrowOnMobile={true}  
+            
           />
     </div> 
     </AnimatedSection>

@@ -20,4 +20,7 @@ export interface GradientButtonProps {
   /** Size of the white circular background behind the arrow (default 50px) */
   arrowBgSize?: string;
   fontSize? : string;
+  hideArrowOnMobile?: boolean;
+  textTranslate?: string; 
+  arrowTranslate?: string;
 }

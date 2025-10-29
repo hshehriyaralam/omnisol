@@ -17,7 +17,10 @@ const LettingSection = () => {
             height="60px"
             arrowSize="22px"
             arrowBgSize="42px"
-            fontSize="18px"
+            fontSize="18px"   
+            textTranslate="60px"
+            arrowTranslate="-110px"
+            hideArrowOnMobile={true}  
           />
       </div>
 

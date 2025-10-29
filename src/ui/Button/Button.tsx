@@ -1,7 +1,13 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import type { GradientButtonProps } from "../../types/Button.types";
 
-const GradientButton: React.FC<GradientButtonProps> = ({
+interface ExtendedGradientButtonProps extends GradientButtonProps {
+  hideArrowOnMobile?: boolean;
+  textTranslate?: string;
+  arrowTranslate?: string;
+}
+
+const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
   type = "button",
   onClick,
   text,
@@ -10,42 +16,34 @@ const GradientButton: React.FC<GradientButtonProps> = ({
   className = "",
   width = "200px",
   height = "60px",
-  textMaxWidth = "130px",
+  fontSize = "16px",
   arrowSize = "40px",
   arrowBgSize = "50px",
-  fontSize = "16px", 
+  hideArrowOnMobile = false,
+  textTranslate = "60px",
+  arrowTranslate = "-90px",
 }) => {
-  const textRef = useRef<HTMLSpanElement>(null);
-  const [isLongText, setIsLongText] = useState(true);
-  const [isShortText, setIsShortText] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    setIsShortText(text.length <= 5);
-    if (textRef.current) {
-      const textWidth = textRef.current.scrollWidth;
-      setIsLongText(textWidth > parseInt(textMaxWidth));
-    }
-  }, [text, textMaxWidth]);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
-  const textHoverClass = isShortText
-    ? "group-hover:translate-x-[80px]"
-    : isLongText
-    ? "group-hover:translate-x-[40px]" // smaller shift for long text
-    : "group-hover:translate-x-[60px]";
-
-  // const iconHoverClass = isShortText
-  //   ? "group-hover:-translate-x-[90px]"
-  //   : isLongText
-  //   ? "group-hover:-translate-x-[50px]" // smaller opposite shift for long text
-  //   : "group-hover:-translate-x-9";
+  const shouldAnimate = !(hideArrowOnMobile && isMobile);
 
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`group relative flex items-center justify-center gap-4
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className={`relative flex items-center justify-center gap-4
         bg-gradient-to-b ${fromColor} ${toColor}
-        text-white rounded-full whitespace-nowrap overflow-hidden
+        text-white rounded-full overflow-hidden
         transition-all duration-500 ease-in-out
         hover:bg-black hover:from-black hover:to-black ${className}`}
       style={{
@@ -57,47 +55,42 @@ const GradientButton: React.FC<GradientButtonProps> = ({
     >
       {/* Text */}
       <span
-        ref={textRef}
-        className={`relative font-poppins transition-all duration-500 ease-in-out ${textHoverClass}`}
-        // ${isShortText
-        //       ? "group-hover:translate-x-[80px]"
-        //       : "group-hover:translate-x-[60px]"
-        // }`}
+        className="relative font-poppins transition-transform duration-500 ease-in-out"
         style={{
-          maxWidth: textMaxWidth,
+          fontSize,
           whiteSpace: "nowrap",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          fontSize, // 👈 font size handled dynamically
+          transform:
+            hovered && shouldAnimate ? `translateX(${textTranslate})` : "translateX(0)",
         }}
       >
         {text}
       </span>
 
-      {/* Icon */}
-      <span
-        className={`relative flex items-center justify-center  bg-white rounded-full
-          transition-all duration-500 ease-in-out
-          ${isShortText
-                ? "group-hover:-translate-x-[90px]"
-                : "group-hover:-translate-x-26"
-          }`}
-        style={{
-          width: arrowBgSize,
-          height: arrowBgSize,
-          minWidth: arrowBgSize,
-          minHeight: arrowBgSize,
-        }}
-      >
-        <img
-          src="/Button/Icon.png"
-          alt="icon"
+      {/* Arrow Circle + Icon */}
+      {!hideArrowOnMobile || !isMobile ? (
+        <span
+          className="relative flex items-center justify-center bg-white rounded-full transition-transform duration-500 ease-in-out"
           style={{
-            width: arrowSize,
-            height: arrowSize,
+            width: arrowBgSize,
+            height: arrowBgSize,
+            minWidth: arrowBgSize,
+            minHeight: arrowBgSize,
+            transform:
+              hovered && shouldAnimate ? `translateX(${arrowTranslate})` : "translateX(0)",
           }}
-        />
-      </span>
+        >
+          <img
+            src="/Button/Icon.png"
+            alt="icon"
+            style={{
+              width: arrowSize,
+              height: arrowSize,
+              transition: "transform 0.5s ease-in-out",
+              transform: hovered ? "translateX(-5px)" : "translateX(0)",
+            }}
+          />
+        </span>
+      ) : null}
     </button>
   );
 };

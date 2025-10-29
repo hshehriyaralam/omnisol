@@ -6,10 +6,10 @@ import MissingYourIndustry from "../components/commons/MissingYourIndustry";
 import GradientSection from "../components/commons/GradientSection";
 import Faqs from "../components/commons/Faqs";
 import Testimonials from "../components/Testimonials";
-// import LettingSection from "../components/commons/LettingSection";
+import LettingSection from "../components/commons/LettingSection";
 import GradientButton from "../ui/Button/Button";
 import WhoWeAre from "../components/commons/WhoWeAre";
-import DynamicBgSection from "../components/commons/DynamicBgSection";
+import WavesBgSection from "../components/commons/WavesBgSection";
 
 const Landingpage = () => {
     return (
@@ -23,15 +23,23 @@ const Landingpage = () => {
                 cardDescOne={"Custom AI Development aligned with your business goals"}
                 cardDescTwo={"Integrates directly with your existing stack"}
                 cardDescThree={"Learns and improves with every iteration"}
-
+                ButtonWidth={"250px"}
+                ButtonHeight={"60px"}
+                arrowSize={"22px"}
+                arrowBgSize={"40px"}
+                ButtonTextSize={"16px"}
+                ButtonTextTransalate={"60px"}
+                ButtonarrowTranslate={"-180px"}
             />
 
             {/* Who We Are Section */}
+            <div  className="w-[90%]  mx-auto">
             <WhoWeAre />
+            </div>
 
-            <section className="w-[95%] mx-auto">
+            <section className="w-[95%] mx-auto ">
                 <AnimatedSection>
-                    <div className=" mt-8  md:mt-20" >
+                    <div className=" mt-8  md:mt-40 2xl:mt-40   mt-80" >
                         <HeadingSection
                             Heading={"Dedicated Development"}
                             Title={"Engagement Models That Fit Your Vision"}
@@ -54,9 +62,15 @@ const Landingpage = () => {
                             </div>
                         </div>
                         <GradientButton
-                            text="Lets discuss your project"
-                            // className="z-50  h-[50px] md:h-[60px] w-[120px] md:w-[150px] text-[14px] md:text-[16px]"
-                            width="w-75"
+                           text={"Lets discuss yuour project"}
+                            width="280px"
+                            height="58px"
+                            arrowSize="18px"
+                            arrowBgSize="35px"
+                            fontSize="14px"
+                            textTranslate="60px"
+                            arrowTranslate="-200px"
+                            hideArrowOnMobile={true}    
                         />
                     </div>
                     <div className="bg-[url('/engage_2.png')] text-white bg-no-repeat bg-cover bg-scroll bg-top-right p-6 rounded-2xl rounded-tr-[110px]">
@@ -74,9 +88,15 @@ const Landingpage = () => {
                             </div>
                         </div>
                         <GradientButton
-                            text="Lets discuss your project"
-                            width="w-75"
-                        // className=" z-50  h-[50px] md:h-[60px] w-[120px] md:w-[150px] text-[14px] md:text-[16px]"
+                         text={"Lets discuss yuour project"}
+                            width="280px"
+                            height="58px"
+                            arrowSize="18px"
+                            arrowBgSize="35px"
+                            fontSize="14px"
+                            textTranslate="60px"
+                            arrowTranslate="-200px"
+                            hideArrowOnMobile={true}    
 
                         />
                         
@@ -84,12 +104,14 @@ const Landingpage = () => {
                     <div>
                     </div>
                 </div>
-                <div className="font-main text-black w-[65%] mx-auto text-center mt-20">
-                    <h4 className="font-semibold text-4xl leading-[1.7]">Our flexible team <span className=""><img className='inline h-10' src='/Images/Hero/Avtars.webp' alt="" /></span>             has a wide range of skills, which lets us look at projects from a complete point of view that combines creativity <span><img className='inline h-10' src="/sunset.png" alt="" /></span> and usefulness <span><img className='inline h-10' src="/ai.png" alt="" /></span>        .</h4>
+                <div className="font-main text-black w-[65%] mx-auto text-center md:mt-20   2xl:mt-20 mt-10">
+                    <h4 className=" font-semibold  md:text-4xl  2xl:text-4xl  text-2xl leading-[1.7]">Our flexible team <span className=""><img className='inline h-10' src='/Images/Hero/Avtars.webp' alt="" /></span> has a wide range of skills, which lets us look at projects from a complete point of view that combines creativity <span><img className='inline h-10' src="/sunset.png" alt="" /></span> and usefulness <span><img className='inline h-10' src="/ai.png" alt="" /></span> .</h4>
                 </div>
             </section>
 
-
+            <div className="mt-20" >
+            <LettingSection />
+            </div>
 
             <AnimatedSection>
                 <div className=" mt-8  md:mt-20" >
@@ -123,7 +145,7 @@ const Landingpage = () => {
                     reverse={false}
                 />
                 <ImageandTextSection
-                    imageSrc="Images/Services/AI-Development/Manufacturing.jpg"
+                    imageSrc="Images/Services/AI-Development/Manufacturing.webp"
                     heading={"Manufacturing"}
                     description={"Omnisol AI delivers cutting-edge AI agents for fintech, optimizing risk assessment, fraud detection, and algorithmic trading for superior financial outcomes."}
                     buttonText={"Read More"}
@@ -132,8 +154,7 @@ const Landingpage = () => {
             </div>
             {/*  Missing Your Industris*/}
             <MissingYourIndustry />
-            {/* <LettingSection /> */}
-            <DynamicBgSection />
+            <WavesBgSection />
             <Testimonials />
             <Faqs />
             <GradientSection />

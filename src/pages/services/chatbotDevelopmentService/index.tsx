@@ -17,6 +17,13 @@ const ChatbotDevelopmentService = () => {
         cardDescOne={"Agents that make decisions, not just predictions"}
         cardDescTwo={"Plug-and-play integration with your systems"}
         cardDescThree={"Secure, monitored, and endlessly scalable"}
+        ButtonWidth={"250px"}
+        ButtonHeight={"60px"}
+        arrowSize={"20px"}
+        arrowBgSize={"40px"}
+        ButtonTextSize={"16px"}
+        ButtonTextTransalate={"60px"}
+        ButtonarrowTranslate={"-180px"}
       />
 
       <AnimatedSection>
@@ -28,6 +35,7 @@ const ChatbotDevelopmentService = () => {
         </div>
       </AnimatedSection>
 
+      
       <CardGroupSection />
       {/* <GradientButton
         text="Contact"
@@ -59,9 +67,16 @@ const ChatbotDevelopmentService = () => {
             align="left"
             button={<GradientButton
               text="Contact"
-              //  className= "w-[200px] h-[60px]"
               fromColor="from-orange"
               toColor="to-orange-100"
+               width = "200px"
+              height = "60px"
+              fontSize = "16px"
+              arrowSize = "26px"
+              arrowBgSize = "40px"
+              hideArrowOnMobile={false}
+              textTranslate = "60px"
+              arrowTranslate = "-110px"
             />}
             imageSrc="/Images/Services/Chat-Development-Services/LogoGroup.png"
           />

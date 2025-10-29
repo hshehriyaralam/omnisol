@@ -9,6 +9,9 @@ import AiPoc from "./pages/services/aiPoc/index";
 import DataMigration from "./pages/services/dataMigration";
 import AiConsulting from "./pages/services/aiConsulting";
 import DigitalTransformation from "./pages/services/digitalTransformation";
+import DiscoveryWorkshop from "./pages/services/discoveryWorkshop";
+import TechnicallyFeasibility from "./pages/services/technicalfeasibilty";
+import UserExperience from "./pages/services/userExperience";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +34,9 @@ const router = createBrowserRouter([
       { path: "/services/datamigration", element: <DataMigration /> },
       { path: "/services/aiconsulting", element: <AiConsulting /> },
       { path: "/services/digitaltransformation", element: <DigitalTransformation /> },
+      { path: "/services/workshop", element: <DiscoveryWorkshop /> },
+      { path: "/services/technicalfeasibility", element: <TechnicallyFeasibility /> },
+      { path: "/services/userexperience", element: <UserExperience /> },
     ],
   },
 ]);

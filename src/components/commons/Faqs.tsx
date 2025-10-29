@@ -1,31 +1,34 @@
 import Slider from "react-slick";
-import type {Settings} from "react-slick";
+import type { Settings } from "react-slick";
+import { useRef } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import HeadingSection from "./headingSec";
 import SecButton from "./secButton";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
 const Faqs = () => {
+  const sliderRef = useRef<Slider | null>(null);
+
   const settings: Settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
       },
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 640,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
       },
     ],
   };
@@ -47,31 +50,53 @@ const Faqs = () => {
       q: "How can I get started with Omnisol's AI solutions?",
       a: "Getting started is easy! Contact us for a consultation where we'll discuss your needs and create a customized AI strategy for your business.",
     },
+    {
+      q: "What are the potential challenges of implementing AI?",
+      a: "Some challenges include data quality, model accuracy, and change management — but our team helps mitigate these effectively.",
+    },
   ];
 
   return (
-    <section className="relative py-12 sm:py-16 lg:py-20 z-10 overflow-hidden">
-      <div className="px-4 sm:px-6 lg:px-8">
+    <section className="w-[90%] mx-auto relative py-12 sm:py-16 lg:py-20 z-10 overflow-hidden">
+      {/* Header + Arrows */}
+      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-12">
         <HeadingSection
           Heading="FAQs"
           Title="Frequently Asked Questions"
           Description="Omnisol’s AI development adapts to the rhythm of your business"
           align="left"
         />
+
+        {/* Arrows on right side */}
+        <div className="flex gap-3 mt-60  mx-20 hidden md:flex">
+          <button
+            aria-label="Previous"
+            onClick={() => sliderRef.current?.slickPrev()}
+            className="p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-all"
+          >
+            <ArrowLeft className="w-7 h-7 text-gray-700" />
+          </button>
+          <button
+            aria-label="Next"
+            onClick={() => sliderRef.current?.slickNext()}
+            className="p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-all"
+          >
+            <ArrowRight className="w-7 h-7 text-gray-700" />
+          </button>
+        </div>
       </div>
 
-      {/* Desktop/Tablet: Slick Slider | Mobile: Stack layout */}
-      <div className="mt-6 sm:mt-10 px-2 sm:px-4 lg:px-8">
-        {/* Desktop/Tablet */}
+      {/* Slider */}
+      <div className="mt-4 sm:mt-10 px-2 sm:px-4 lg:px-8">
         <div className="hidden sm:block">
-          <Slider {...settings} className="faqs">
+          <Slider ref={sliderRef} {...settings} className="faqs">
             {faqs.map((faq, i) => (
               <FaqCard key={i} faq={faq} />
             ))}
           </Slider>
         </div>
 
-        {/* Mobile (Stacked) */}
+        {/* Mobile (Stacked layout) */}
         <div className="flex flex-col gap-4 sm:hidden">
           {faqs.map((faq, i) => (
             <div key={i} className="w-full">
@@ -109,9 +134,12 @@ const FaqCard = ({ faq }: { faq: { q: string; a: string } }) => (
       <h3 className="font-semibold text-base sm:text-lg mb-2 leading-tight">
         {faq.q}
       </h3>
-      <p className="text-xs sm:text-sm lg:text-base mb-3 leading-relaxed">
+
+      {/* ✨ Line Clamp added here (6 lines + ellipsis) */}
+      <p className="text-xs sm:text-sm lg:text-base mb-3 leading-relaxed line-clamp-6">
         {faq.a}
       </p>
+
       <SecButton text="Contact Us" />
     </div>
   </div>

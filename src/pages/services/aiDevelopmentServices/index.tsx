@@ -22,6 +22,13 @@ const AiDevelopmentServices = () => {
         cardDescOne={"Custom AI Development aligned with your business goals"}
         cardDescTwo={"Integrates directly with your existing stack"}
         cardDescThree={"Learns and improves with every iteration"}
+         ButtonWidth={"250px"}
+        ButtonHeight={"60px"}
+        arrowSize={"22px"}
+        arrowBgSize={"40px"}
+        ButtonTextSize={"16px"}
+        ButtonTextTransalate={"60px"}
+        ButtonarrowTranslate={"-180px"}
       />
 
       <div >
