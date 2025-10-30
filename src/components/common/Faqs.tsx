@@ -43,8 +43,6 @@ const Faqs = () => {
                 Heading={"FAQs"}
                 Title={"Frequently Asked Questions"}
                 Description={"Omnisol’s AI development adapts to the rhythm of your business "}
-                headingAlign='start'
-                titleAlign='left'
             />
             <Slider {...settings}>
                 <div className="group h-80 sm:h-90 lg:h-100 bg-faq rounded-xl flex flex-col justify-end p-4 sm:p-5 lg:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-2 sm:mx-3">

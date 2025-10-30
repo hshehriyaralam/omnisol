@@ -1,65 +1,75 @@
 import React from "react";
 import type { GradientButtonProps } from "../../types/Button.types";
+import { useRef, useEffect, useState } from "react";
 
 const GradientButton: React.FC<GradientButtonProps> = ({
+  type = "button",
+  onClick,
   text,
   fromColor = "from-[#FD741D]",
   toColor = "to-[#A72201]",
   className = "",
 }) => {
+  const textRef = useRef<HTMLSpanElement>(null);
+  const [isLongText, setIsLongText] = useState(false);
+  const [isShortText, setIsShortText] = useState(false);
+
+  useEffect(() => {
+    setIsShortText(text.length <= 5);
+    if (textRef.current) {
+      const textWidth = textRef.current.scrollWidth;
+      setIsLongText(textWidth > 130);
+    }
+  }, [text]);
+
   return (
-    // <button 
-    //   className={`group relative flex items-center justify-between 
-    //     bg-linear-to-b ${fromColor} ${toColor} 
-    //     text-white px-6 py-4 md:px-3 md:py-5 rounded-full 
-    //     w-[200px] md:w-[230px] h-[60px] md:h-[60px]
-    //     overflow-hidden transition-all duration-500 ease-in-out
-    //      hover:bg-black hover:from-black hover:to-black ${className}`}
-    // >
-    //   {/* Text */}
-    //   <span
-    //     className="relative text-base md:text-lg md:px-5 font-poppins 
-    //     transition-all duration-500 ease-in-out 
-    //     group-hover:translate-x-[110px]"
-    //   >
-    //     {text}
-    //   </span>
-
-    //   {/* Icon */}
-    //   <span
-    //     className="relative w-10 h-10  md:w-[50px] md:h-[50px] 
-    //     bg-white rounded-full flex items-center justify-center
-    //     transition-all duration-500 ease-in-out 
-    //     group-hover:-translate-x-40"
-    //   >
-
-    //     <img src="/Button/Icon.png" className="w-6 h-6" alt="" />
-    //   </span>
-    // </button>
     <button
-      className={`group relative flex items-center justify-between gap-x-3
-    rounded-full bg-gradient-to-b ${fromColor} ${toColor}
-    h-[60px] w-[200px] overflow-hidden transition-all duration-500 !hover:bg-black`}
+      type={type}
+      onClick={onClick}
+      className={`group relative flex items-center justify-center gap-4 md:gap-5
+        bg-linear-to-b ${fromColor} ${toColor} 
+        text-white px-6 py-4 md:px-3 md:py-5 rounded-full 
+        min-w-[200px] md:min-w-[230px] h-[60px] md:h-[60px]
+        whitespace-nowrap overflow-hidden 
+        transition-all duration-500 ease-in-out
+        hover:bg-black hover:from-black hover:to-black ${className}`}
+      style={{
+        width: isLongText ? "auto" : undefined,
+        paddingRight: isLongText ? "24px" : undefined,
+        paddingLeft: isLongText ? "24px" : undefined,
+      }}
     >
       {/* Text */}
       <span
-        className="absolute left-6 text-white font-main whitespace-nowrap
-      transition-all duration-500 ease-in-out
-      group-hover:left-[95%] group-hover:-translate-x-full"
+        ref={textRef}
+        className={`relative text-base md:text-lg md:px-5 font-poppins 
+        transition-all duration-500 ease-in-out
+        ${!isLongText
+            ? isShortText
+              ? "group-hover:translate-x-[115px]"
+              : "group-hover:translate-x-[105px]"
+            : ""
+          }`}
       >
         {text}
       </span>
 
       {/* Icon */}
       <span
-        className="absolute right-6 w-10 h-10 md:w-[50px] md:h-[50px]
-      bg-white rounded-full flex items-center justify-center
-      transition-all duration-500 ease-in-out
-      group-hover:right-[130px]"
+        className={`relative w-10 h-10 md:w-[50px] md:h-[50px] 
+        bg-white rounded-full flex items-center justify-center
+        transition-all duration-500 ease-in-out
+      ${!isLongText
+            ? isShortText
+              ? "group-hover:-translate-x-[140px]"
+              : "group-hover:-translate-x-38"
+            : ""
+          }`}
       >
-        <img src="/Button/Icon.png" className="w-6 h-6" alt="" />
+        <img src="/Button/Icon.png" className="w-6 h-6" alt="icon" />
       </span>
     </button>
+
 
   );
 };

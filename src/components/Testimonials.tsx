@@ -47,8 +47,6 @@ const Testimonials = () => {
             <HeadingSection
                 Heading={"Loved by Human"}
                 Title={"What clients think about OmnisolAI"}
-                headingAlign='start'
-                titleAlign='left'
             />
             <div className="w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-x-4 overflow-x-auto pb-4 sm:pb-0">

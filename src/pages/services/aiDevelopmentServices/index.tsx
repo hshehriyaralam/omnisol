@@ -32,7 +32,7 @@ const AiDevelopmentServices = () => {
           <HeadingSection
             Heading={"Simply with AI"}
             Title={"How It Works"}
-            Description={"We don’t do guesswork. We build intelligence — step by step."} imageSrc={""} heading={""} description={""} />
+            Description={"We don’t do guesswork. We build intelligence — step by step."}  />
         </div>
         <HowItWorks />
         <AnimatedSection>
@@ -40,7 +40,7 @@ const AiDevelopmentServices = () => {
             <HeadingSection
               Heading={"Industries"}
               Title={"Your industry, our intelligence."}
-              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."} imageSrc={""} heading={""} description={""} />
+              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."}  />
           </div>
         </AnimatedSection>
         {/* Images and text Sections */}

@@ -8,4 +8,6 @@ export interface GradientButtonProps {
   icon?: IconDefinition;  
   iconColor?: string;
   className?: string;
+  onClick?: () => void;
+  type?: "button" | "submit";
 }
