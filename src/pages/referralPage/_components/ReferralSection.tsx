@@ -1,5 +1,5 @@
 import React from "react";
-import GradientButton from "@/ui/Button/Button"; 
+import GradientButton from "@/ui/Button/Button";
 
 const ReferralSection: React.FC = () => {
   return (
@@ -30,7 +30,13 @@ const ReferralSection: React.FC = () => {
 
           {/* Button below input */}
           <div className="flex justify-start mt-6">
-            <GradientButton text="Invite" />
+            <GradientButton text="Invite" width="140px"
+              height="60px"
+              textTranslate="70px"
+              arrowTranslate="-70px"
+              fontSize="15px"
+              arrowSize="20px"
+              arrowBgSize="47px" />
           </div>
         </div>
 
@@ -46,19 +52,19 @@ const ReferralSection: React.FC = () => {
             </p>
 
             {/* Input with icon */}
-           <div className="relative w-full">
-  <img
-    src="/ReferralPage/Input.png"
-    alt="link"
-    className="absolute right-1.5 sm:right-[15px] lg:right-[50px] top-1/2 -translate-y-1/2 w-6 h-6 "
-  />
-  <input
-    type="text"
-    readOnly
-    value="https://omnisol.ai/54akljQMN"
-    className="w-full border border-inputbg rounded-lg pl-4 pr-9 py-2 text-center   text-orangetext bg-inputbg font-main font-normal text-[18px] leading-[38px] tracking-[-0.018em]   outline-none"
-  />
-</div>
+            <div className="relative w-full">
+              <img
+                src="/ReferralPage/Input.png"
+                alt="link"
+                className="absolute right-1.5 sm:right-[15px] lg:right-[50px] top-1/2 -translate-y-1/2 w-6 h-6 "
+              />
+              <input
+                type="text"
+                readOnly
+                value="https://omnisol.ai/54akljQMN"
+                className="w-full border border-inputbg rounded-lg pl-4 pr-9 py-2 text-center   text-orangetext bg-inputbg font-main font-normal text-[18px] leading-[38px] tracking-[-0.018em]   outline-none"
+              />
+            </div>
           </div>
 
           {/* Icons below input */}
@@ -111,34 +117,34 @@ const ReferralSection: React.FC = () => {
       </div>
 
       {/* Bottom Text */}
-    <div className="text-center max-w-3xl mx-auto leading-relaxed px-3">
-  {/* Line 1 */}
-  <p className="flex flex-wrap items-center justify-center gap-3 font-main font-bold text-[16.4px] md:text-[35.27px] leading-8 md:leading-[50.81px] tracking-[-0.01em] text-black opacity-80">
-    <span>Every great AI product</span>
-    <img
-      src="/ReferralPage/Background.png"
-      alt="AI Earth"
-      className="inline-block w-6 h-6 md:w-10 md:h-10"
-    />
-    <span>starts small —</span>
-  </p>
+      <div className="text-center max-w-3xl mx-auto leading-relaxed px-3">
+        {/* Line 1 */}
+        <p className="flex flex-wrap items-center justify-center gap-3 font-main font-bold text-[16.4px] md:text-[35.27px] leading-8 md:leading-[50.81px] tracking-[-0.01em] text-black opacity-80">
+          <span>Every great AI product</span>
+          <img
+            src="/ReferralPage/Background.png"
+            alt="AI Earth"
+            className="inline-block w-6 h-6 md:w-10 md:h-10"
+          />
+          <span>starts small —</span>
+        </p>
 
-  {/* Line 2 */}
-  <p className="flex flex-wrap items-center justify-center gap-3 font-main font-bold text-[16.4px] md:text-[35.27px] leading-8 md:leading-[50.81px] tracking-[-0.01em] text-black opacity-80 mt-2">
-    <span>with clarity, confidence, and proof.</span>
-  </p>
+        {/* Line 2 */}
+        <p className="flex flex-wrap items-center justify-center gap-3 font-main font-bold text-[16.4px] md:text-[35.27px] leading-8 md:leading-[50.81px] tracking-[-0.01em] text-black opacity-80 mt-2">
+          <span>with clarity, confidence, and proof.</span>
+        </p>
 
-  {/* Line 3 */}
-  <p className="flex flex-wrap items-center justify-center gap-2 font-main font-bold text-[16.4px] md:text-[35.27px] leading-8 md:leading-[50.81px] tracking-[-0.01em] text-black opacity-80 mt-3">
-    <span>Omnisol</span>
-    <img
-      src="/ReferralPage/Star.png"
-      alt="Omnisol Icon"
-      className="inline-block w-6 h-6 md:w-10 md:h-10"
-    />
-    <span>helps you get there faster.</span>
-  </p>
-</div>
+        {/* Line 3 */}
+        <p className="flex flex-wrap items-center justify-center gap-2 font-main font-bold text-[16.4px] md:text-[35.27px] leading-8 md:leading-[50.81px] tracking-[-0.01em] text-black opacity-80 mt-3">
+          <span>Omnisol</span>
+          <img
+            src="/ReferralPage/Star.png"
+            alt="Omnisol Icon"
+            className="inline-block w-6 h-6 md:w-10 md:h-10"
+          />
+          <span>helps you get there faster.</span>
+        </p>
+      </div>
 
 
     </section>

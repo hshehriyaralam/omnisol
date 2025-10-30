@@ -41,6 +41,13 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+
+  useEffect(() => {
+  const handleScroll = () => setServiceOpen(false);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
     <nav className="relative w-full bg-hero py-4 px-4 md:px-10 flex justify-between items-center">
       {/* Background overlay gradient */}
@@ -292,7 +299,7 @@ const Navbar = () => {
           </li>
 
           <li className="relative">
-            <Link to="/careers" className="cursor-pointer">
+            <Link to="/hiring/hiring3" className="cursor-pointer">
               We are hiring
             </Link>
             <span className="absolute bg-NavNewLinkBg px-1.5 py-0.3 rounded-sm -top-3 right-[-24px] text-[10px] text-NavNewText font-semibold rotate-[-8deg]">

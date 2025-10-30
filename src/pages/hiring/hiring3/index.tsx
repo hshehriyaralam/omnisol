@@ -1,4 +1,4 @@
-import HeadingSection from "../../../components/common/headingSec";
+import HeadingSection from "@/components/commons/headingSec";
 import OpenPositions from "./_components/OpenPositionSection"
 
 const Hiring3 = () => {

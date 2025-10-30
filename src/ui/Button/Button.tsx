@@ -1,12 +1,10 @@
-import React, { useEffect, useState, } from "react";
+import React, { useEffect, useState } from "react";
 import type { GradientButtonProps } from "../../types/Button.types";
-
 interface ExtendedGradientButtonProps extends GradientButtonProps {
   hideArrowOnMobile?: boolean;
   textTranslate?: string;
   arrowTranslate?: string;
 }
-
 const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
   type = "button",
   onClick,
@@ -25,16 +23,13 @@ const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [hovered, setHovered] = useState(false);
-
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
   const shouldAnimate = !(hideArrowOnMobile && isMobile);
-
   return (
     <button
       type={type}
@@ -42,7 +37,7 @@ const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`relative flex items-center justify-center gap-4
-         ${fromColor} ${toColor}
+        bg-gradient-to-b ${fromColor} ${toColor}
         text-white rounded-full overflow-hidden
         transition-all duration-500 ease-in-out
         hover:bg-black hover:from-black hover:to-black ${className}`}
@@ -65,7 +60,6 @@ const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
       >
         {text}
       </span>
-
       {/* Arrow Circle + Icon */}
       {!hideArrowOnMobile || !isMobile ? (
         <span
@@ -94,5 +88,9 @@ const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
     </button>
   );
 };
-
 export default GradientButton;
+
+
+
+
+

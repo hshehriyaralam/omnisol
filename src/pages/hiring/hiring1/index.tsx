@@ -1,4 +1,4 @@
-import HeadingSection from "../../../components/common/headingSec";
+import HeadingSection from "../../../components/commons/headingSec";
 import LongForm from "./_components/LongForm";
 import UploadResume from "./_components/UploadResumeSection"
 

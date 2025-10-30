@@ -2,7 +2,7 @@ import React from "react";
 
 const UploadResume: React.FC = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 border border-uploadborder mt-8 sm:mt-10 md:mt-12 lg:mt-20 mb-8 sm:mb-10 md:mb-12 lg:mb-18  opacity-100 rotate-0 rounded-md p-6 bg-uploadbg">
+    <div className="w-full max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto    px-4 sm:px-6 lg:px-8 border border-uploadborder mt-8 sm:mt-10 md:mt-12 lg:mt-20 mb-8 sm:mb-10 md:mb-12 lg:mb-18  opacity-100 rotate-0 rounded-md p-6 bg-uploadbg">
       <h2 className="font-Lato font-normal text-[32px] leading-[52px] tracking-[0px] text-black">Upload Resume</h2>
 
       <p className="font-Roboto font-normal text-[18px] leading-[30px] tracking-[0px] text-formtext mb-4">

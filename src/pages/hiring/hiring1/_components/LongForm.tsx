@@ -229,13 +229,20 @@ const LongForm: React.FC = () => {
         </div>
       </div>
 
-    
+
       <div className="mt-10">
         <GradientButton
-              text="Apply"
-              fromColor="from-orange"
-              toColor="to-orange-100"
-            />
+          text="Apply"
+          fromColor="from-orange"
+          toColor="to-orange-100"
+          width="200px"
+          height="60px"
+          textTranslate="100px"
+          arrowTranslate="-95px"
+          fontSize="14px"
+          arrowSize="20px"
+          arrowBgSize="50px"
+        />
       </div>
     </form>
   );

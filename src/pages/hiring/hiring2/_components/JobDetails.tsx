@@ -1,5 +1,6 @@
 import React from "react";
 import GradientButton from "../../../../ui/Button/Button"
+import { Link } from "react-router-dom";
 
 const JobDetails: React.FC = () => {
   return (
@@ -125,16 +126,25 @@ const JobDetails: React.FC = () => {
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going
             </p>
           </div>
-        <div className="hidden md:block">
-          {/* Apply button */}
-          <GradientButton
-            text="Apply"
-            fromColor="from-orange"
-            toColor="to-orange-100"
-          />
+          <div className="hidden md:block">
+          <Link to="/hiring/hiring1">
+            {/* Apply button */}
+            <GradientButton
+              text="Apply Now"
+              fromColor="from-orange"
+              toColor="to-orange-100"
+              width="200px"
+              height="60px"
+              textTranslate="85px"
+              arrowTranslate="-115px"
+              fontSize="15px"
+              arrowSize="20px"
+              arrowBgSize="47px"
+            />
+          </Link>
           </div>
-  {/* responsive icon for mobile screen */}
-  
+          {/* responsive icon for mobile screen */}
+
           <div className="order-3 items-center lg:order-3 mt-8 w-full block lg:hidden">
             <p className="text-darktext text-[17px] font-main font-normal text-center leading-[24px] tracking-[0] mb-3">Share this:</p>
             <div className="flex items-center justify-center  gap-4 flex-wrap">
@@ -149,18 +159,27 @@ const JobDetails: React.FC = () => {
         </div>
 
         {/* ✅ RIGHT SIDEBAR */}
-        <aside className="w-full lg:w-[360px]  flex-shrink-0 order-1 lg:order-2">
+        <aside className="w-full lg:w-[360px]  shrink-0 order-1 lg:order-2">
           {/* Apply Button */}
           <div className="bg-bgmedium font-main">
             <div className="p-6 mb-8 text-center">
               <h1 className="font-main text-darktext font-bold text-left text-[17px] leading-[100%] tracking-[0] mb-10 block lg:hidden">
                 PRODUCT DESIGNER
               </h1>
+              <Link to="/hiring/hiring1">
               <GradientButton
                 text="Apply Now"
                 fromColor="from-orange"
                 toColor="to-orange-100"
+                width="200px"
+                height="60px"
+                textTranslate="85px"
+                arrowTranslate="-115px"
+                fontSize="15px"
+                arrowSize="20px"
+                arrowBgSize="47px"
               />
+              </Link>
             </div>
 
 

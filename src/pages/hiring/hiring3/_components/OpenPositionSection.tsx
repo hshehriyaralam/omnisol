@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 interface Job {
@@ -143,12 +143,13 @@ text-[28px] leading-[38px]">Open Positions</h2>
           hidden sm:block
         "
       >
+        <Link to="/hiring/hiring2">
         <img
           src="/HiringPage/ArrowIcon.png"
           alt="arrow icon"
-          onClick={() => navigate(job.path)}
           className="w-6 h-4 opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
         />
+        </Link>
       </div>
 
       {/* Arrow for mobile (right center only visible on small screens) */}
@@ -158,12 +159,15 @@ text-[28px] leading-[38px]">Open Positions</h2>
           sm:hidden
         "
       >
+        {/* for responisve screen */}
+
+      <Link to="/hiring/hiring2">
         <img
           src="/HiringPage/ArrowIcon.png"
           alt="arrow icon"
-          onClick={() => navigate(job.path)}
           className="w-6 h-4 opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
         />
+        </Link>
       </div>
     </div>
   ))}

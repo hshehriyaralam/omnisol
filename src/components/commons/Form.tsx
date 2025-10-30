@@ -32,7 +32,7 @@ const Form: React.FC<ContactFormProps> = ({onSubmit}) => {
 
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-10 px-4">
+    <section className="min-h-screen flex items-center justify-center py-25 px-4">
       <div className="w-full max-w-5xl bg-formbg rounded-2xl p-8 shadow-sm">
         <h2 className="text-2xl  font-main font-medium text-black mb-8 text-[30.23px] leading-[86.89px] tracking-[-0.018em]">
           Get in touch
@@ -137,10 +137,17 @@ const Form: React.FC<ContactFormProps> = ({onSubmit}) => {
           {/* Submit Button */}
           <div className="sm:col-span-2 flex ">
             <GradientButton
-            type="submit"
+              type="submit"
               text="Book a meeting"
               fromColor="from-orange"
               toColor="to-orange-100"
+              width="225px"
+              height="70px"
+              textTranslate = "70px"
+              arrowTranslate = "-150px"
+              fontSize = "16px"
+              arrowSize = "20px"
+              arrowBgSize = "50px"
             />
           </div>
         </form>
