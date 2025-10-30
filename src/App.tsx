@@ -12,12 +12,21 @@ import DigitalTransformation from "./pages/services/digitalTransformation";
 import DiscoveryWorkshop from "./pages/services/discoveryWorkshop";
 import TechnicallyFeasibility from "./pages/services/technicalfeasibilty";
 import UserExperience from "./pages/services/userExperience";
+import ErrorPage from "./pages/ErrorPage"
+import ContactPage from "./pages/ContactPage";
+import Hiring1 from "./pages/hiring/hiring1";
+import Hiring2 from "./pages/hiring/hiring2";
+import Hiring3 from "./pages/hiring/hiring3";
+import ReferralPage from "./pages/referralPage";
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage
+     />,
     children: [
       { index: true, element: <Landingpage /> },
       {
@@ -37,6 +46,14 @@ const router = createBrowserRouter([
       { path: "/services/workshop", element: <DiscoveryWorkshop /> },
       { path: "/services/technicalfeasibility", element: <TechnicallyFeasibility /> },
       { path: "/services/userexperience", element: <UserExperience /> },
+      { path: "/services/aiDevelopmentServices", element: <AiDevelopmentServices />},
+      { path: "/services/chatbotDevelopmentService", element: <ChatbotDevelopmentService />},
+      { path: "/contact", element: <ContactPage />},
+      {path: "/hiring/hiring1", element:<Hiring1 />},
+      {path: "/hiring/hiring2", element:<Hiring2 />},
+      {path: "/hiring/hiring3", element:<Hiring3 />},
+      {path: "/referralPage", element:<ReferralPage />},
+
     ],
   },
 ]);

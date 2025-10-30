@@ -36,7 +36,7 @@ const AiDevelopmentServices = () => {
           <HeadingSection
             Heading={"Simply with AI"}
             Title={"How It Works"}
-            Description={"We don’t do guesswork. We build intelligence — step by step."} imageSrc={""}  />
+            Description={"We don’t do guesswork. We build intelligence — step by step."}  />
         </div>
         <HowItWorks />
         <AnimatedSection>

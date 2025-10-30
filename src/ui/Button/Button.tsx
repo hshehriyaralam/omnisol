@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, } from "react";
 import type { GradientButtonProps } from "../../types/Button.types";
 
 interface ExtendedGradientButtonProps extends GradientButtonProps {
@@ -42,7 +42,7 @@ const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`relative flex items-center justify-center gap-4
-        bg-gradient-to-b ${fromColor} ${toColor}
+         ${fromColor} ${toColor}
         text-white rounded-full overflow-hidden
         transition-all duration-500 ease-in-out
         hover:bg-black hover:from-black hover:to-black ${className}`}

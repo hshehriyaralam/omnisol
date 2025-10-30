@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
 
@@ -11,6 +11,8 @@
   --font-main: "Gilroy", sans-serif;
   --font-poppins: "Poppins", sans-serif;
   --font-libresans: "Libre Sans", sans-serif;
+  --font-Roboto: "Roboto", sans-serif;
+  
 
   /* ✅ Custom Colors */
   --color-orange: #FD741D;
@@ -52,6 +54,24 @@
 
 
 
+  --color-formbg:#F4F4F4;
+  --color-formtext: #263540;
+  --color-foamborder:#BFCFE3;
+  --color-foamtext:#B4C2D5;
+  --color-white:#FFFFFF;
+  --color-uploadborder: #DDDDDD;
+  --color-uploadbg: #FBFAFA;
+  --color-inputborder: #007DBA;
+  --color-lightbg: #FCFCFD;
+  --color-bgborder:#D4D4D4;
+  --color-bgmedium: #F9F9F9;
+  --color-darktext: #001833;
+  --color-bodrerbottom: #1B1B1B;
+  --color-lightborder: #DCE4E8;
+  --color-inputbg:#FEF9F0;
+  --color-orangetext:#B93307;
+  
+  
 
 
 
