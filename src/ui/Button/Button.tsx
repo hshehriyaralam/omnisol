@@ -60,7 +60,8 @@ const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
       >
         {text}
       </span>
-      {/* Arrow Circle + Icon */}
+
+      {/* Arrow Circle (moves) */}
       {!hideArrowOnMobile || !isMobile ? (
         <span
           className="relative flex items-center justify-center bg-white rounded-full transition-transform duration-500 ease-in-out"
@@ -73,14 +74,16 @@ const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
               hovered && shouldAnimate ? `translateX(${arrowTranslate})` : "translateX(0)",
           }}
         >
+          {/* Arrow Icon (fixed position inside the moving bg) */}
           <img
             src="/Button/Icon.png"
             alt="icon"
+            className="absolute"
             style={{
               width: arrowSize,
               height: arrowSize,
-              transition: "transform 0.5s ease-in-out",
-              transform: hovered ? "translateX(-5px)" : "translateX(0)",
+              transition: "transform 0.3s ease-in-out",
+              transform: hovered ? "translateX(-3px)" : "translateX(0)",
             }}
           />
         </span>

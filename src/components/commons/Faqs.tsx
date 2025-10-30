@@ -110,7 +110,7 @@ const Faqs = () => {
 };
 
 const FaqCard = ({ faq }: { faq: { q: string; a: string } }) => (
-  <div className="group h-72 sm:h-80 lg:h-96 bg-faq rounded-2xl flex flex-col justify-end p-4 sm:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-0 sm:mx-2 w-full">
+  <div className="group h-72 sm:h-80 lg:h-96 bg-faq rounded-2xl flex flex-col justify-end p-4 sm:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-0 sm:mx-2 w-full ">
     {/* Hover background */}
     <div
       className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out rounded-2xl"

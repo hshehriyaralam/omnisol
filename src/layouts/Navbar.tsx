@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import logo from "/Images/Logo.webp";
 import GradientButton from "../ui/Button/Button";
 import SecButton from "../components/commons/secButton";
@@ -15,6 +16,7 @@ const Navbar = () => {
   });
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const serviceButtonRef = useRef<HTMLSpanElement | null>(null);
 
   const toggleDropdown = (section: keyof typeof openDropdowns) => {
     setOpenDropdowns((prev) => ({
@@ -25,14 +27,40 @@ const Navbar = () => {
 
   const handleLinkClick = () => {
     setServiceOpen(false);
+    setMenuOpen(false);
   };
 
-  // Close dropdown if user clicks outside
+  const handleServiceMouseEnter = () => setServiceOpen(true);
+  const handleServiceMouseLeave = (event: React.MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.relatedTarget as Node) &&
+      serviceButtonRef.current &&
+      !serviceButtonRef.current.contains(event.relatedTarget as Node)
+    ) {
+      setServiceOpen(false);
+    }
+  };
+
+  const handleDropdownMouseEnter = () => setServiceOpen(true);
+  const handleDropdownMouseLeave = (event: React.MouseEvent) => {
+    if (
+      serviceButtonRef.current &&
+      !serviceButtonRef.current.contains(event.relatedTarget as Node) &&
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.relatedTarget as Node)
+    ) {
+      setServiceOpen(false);
+    }
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        !dropdownRef.current.contains(event.target as Node) &&
+        serviceButtonRef.current &&
+        !serviceButtonRef.current.contains(event.target as Node)
       ) {
         setServiceOpen(false);
       }
@@ -47,15 +75,46 @@ const Navbar = () => {
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+  useEffect(() => {
+    const handleScroll = () => setServiceOpen(false);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const mobileMenuLinks = {
+    services: [
+      { to: "/services/aidevelopmentservices", label: "AI Development" },
+      { to: "/services/aiagents", label: "AI Agents" },
+      { to: "/services/chatbotdevelopmentservice", label: "Chatbot Development" },
+      { to: "/services/generativeai", label: "Generative AI" },
+      { to: "/services/datamigration", label: "Data Migration" },
+    ],
+    consulting: [
+      { to: "/services/aiconsulting", label: "AI Consulting" },
+      { to: "/services/aipoc", label: "AI POC" },
+      { to: "/services/digitaltransformation", label: "Digital Transformation" },
+      { to: "/services/technicalfeasibility", label: "Technical Feasibility" },
+      { to: "/services/userexperience", label: "User Experience & Design" },
+    ],
+    company: [
+      { to: "/services/workshop", label: "Workshop" },
+      { to: "/about", label: "About Us" },
+      { to: "/careers", label: "Careers" },
+      { to: "/contact", label: "Contact" },
+    ],
+  };
 
   return (
     <nav className="relative w-full bg-hero py-4 px-4 md:px-10 flex justify-between items-center">
-      {/* Background overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-40 pointer-events-none"></div>
 
-      {/* Left Section */}
-      <div className="flex items-center gap-3 md:gap-6 z-50">
-        <Link to="/" className="flex items-center gap-2 cursor-pointer">
+      {/* Left Section (Logo + Desktop Menu) */}
+      <div
+        className={`flex items-center gap-3 md:gap-6 md:z-50 transition-all duration-300 ${
+          menuOpen ? "opacity-0 pointer-events-none" : "opacity-100 z-50"
+        }`}
+      >
+        <Link to="/" className="flex items-center gap-2 cursor-pointer relative z-50">
           <img
             src={logo}
             alt="Omnisol AI Logo"
@@ -68,186 +127,52 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8 font-main font-medium text-[16px] text-white">
-          {/* Services Dropdown (Animated) */}
-          <li className="relative" >
-            <div ref={dropdownRef} >
+          <li className="relative">
             <span
+              ref={serviceButtonRef}
               className="cursor-pointer transition-all select-none"
-              onClick={() => setServiceOpen((prev) => !prev)}
+              onMouseEnter={handleServiceMouseEnter}
+              onMouseLeave={handleServiceMouseLeave}
             >
               Services +
             </span>
-            </div>
 
             <AnimatePresence>
               {serviceOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -40 }}
+                  ref={dropdownRef}
+                  initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
                   className="fixed top-[90px] left-0 right-0 w-full bg-white text-black shadow-lg z-40"
+                  onMouseEnter={handleDropdownMouseEnter}
+                  onMouseLeave={handleDropdownMouseLeave}
                 >
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 h-[calc(100vh-90px)] overflow-y-auto">
                     <div className="flex flex-col lg:flex-row gap-8">
-                      {/* Left Columns */}
                       <div className="w-full lg:w-4/6">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-                          {/* Services */}
-                          <div>
-                            <h3 className="font-medium mb-6 text-2xl">
-                              Services
-                            </h3>
-                            <ul className="space-y-4 text-base font-normal">
-                              <li>
-                                <Link
-                                  to="/services/aidevelopmentservices"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  AI Development
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/services/aiagents"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  AI Agents
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/services/chatbotdevelopmentservice"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  Chatbot Development
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/services/generativeai"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  Generative AI
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/services/datamigration"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  Data Migration
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          {/* Consulting */}
-                          <div>
-                            <h3 className="font-medium mb-6 text-2xl">
-                              Consulting
-                            </h3>
-                            <ul className="space-y-4 text-base font-normal">
-                              <li>
-                                <Link
-                                  to="/services/aiconsulting"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  AI Consulting
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/services/aipoc"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  AI POC
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/services/digitaltransformation"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  Digital Transformation
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/services/technicalfeasibility"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  Technical Feasibility
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/services/userexperience"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  User Experience & Design
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          {/* Company */}
-                          <div>
-                            <h3 className="font-medium mb-6 text-2xl">
-                              Company
-                            </h3>
-                            <ul className="space-y-4 text-base font-normal">
-                              <li>
-                                <Link
-                                  to="/services/workshop"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  Workshop
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/about"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  About Us
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/careers"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  Careers
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/contact"
-                                  onClick={handleLinkClick}
-                                  className="hover:text-blue-600"
-                                >
-                                  Contact
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
+                          {Object.entries(mobileMenuLinks).map(([title, links]) => (
+                            <div key={title}>
+                              <h3 className="font-medium mb-6 text-2xl capitalize">{title}</h3>
+                              <ul className="space-y-4 text-base font-normal">
+                                {links.map((link) => (
+                                  <li key={link.to}>
+                                    <Link
+                                      to={link.to}
+                                      onClick={handleLinkClick}
+                                      className="hover:text-blue-600 transition-colors duration-200"
+                                    >
+                                      {link.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
                         </div>
 
-                        {/* Engagement Models */}
                         <div className="bg-header-sub p-6 rounded-xl">
                           <h4 className="font-semibold mb-2 text-header-sub-color">
                             Engagement Models we have
@@ -270,7 +195,6 @@ const Navbar = () => {
                         </div>
                       </div>
 
-                      {/* Right Banner */}
                       <div className="w-full lg:w-2/6 bg-[url('/FooterAssests/Bg.png')] bg-cover bg-right bg-no-repeat text-white p-6 rounded-lg flex flex-col justify-between">
                         <div>
                           <h4 className="text-2xl mb-4 font-semibold">
@@ -293,7 +217,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <Link to="/blog" className="cursor-pointer">
+            <Link to="/blog" className="cursor-pointer hover:text-gray-300 transition-colors duration-200">
               Blog
             </Link>
           </li>
@@ -326,7 +250,9 @@ const Navbar = () => {
 
       {/* Mobile Hamburger */}
       <div
-        className="md:hidden z-50 cursor-pointer flex flex-col justify-center items-center w-8 h-8"
+        className={`md:hidden z-[999] cursor-pointer flex flex-col justify-center items-center w-8 h-8 ${
+          menuOpen ? "hidden" : "" // 👈 Hide hamburger icon when menu is open
+        }`}
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <span
@@ -348,52 +274,87 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 bg-white w-full h-full z-40 overflow-y-auto font-main transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 right-0 bg-white w-full h-full z-[900] overflow-y-auto font-main transition-transform duration-500 ease-in-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-200">
           <h2 className="text-xl font-medium text-black">Menu</h2>
-          <i
-            className="fa-solid fa-xmark text-black text-xl cursor-pointer"
+          <button
+            className="text-black text-xl cursor-pointer"
             onClick={() => setMenuOpen(false)}
-          ></i>
+          >
+            ✕
+          </button>
         </div>
 
-        {/* Mobile Dropdowns */}
         <div className="p-5 space-y-5">
-          {["services", "consulting", "company"].map((key) => (
-            <div key={key} className="border-b border-gray-100 pb-4">
+          {Object.entries(mobileMenuLinks).map(([section, links]) => (
+            <div
+              className="border-b border-gray-100 pb-4 mt-6" // 👈 Added mt-6 for spacing between dropdowns
+              key={section}
+            >
               <div
                 className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleDropdown(key as keyof typeof openDropdowns)}
+                onClick={() => toggleDropdown(section as keyof typeof openDropdowns)}
               >
-                <span className="text-lg font-medium text-black capitalize">
-                  {key}
+                <span className="text-xl font-medium text-black capitalize">
+                  {/* 👆 increased from text-lg to text-xl */}
+                  {section}
                 </span>
-                <i
-                  className={`fa-solid ${
-                    openDropdowns[key as keyof typeof openDropdowns]
-                      ? "fa-chevron-up"
-                      : "fa-chevron-down"
-                  } text-sm text-gray-600`}
-                ></i>
+                {openDropdowns[section as keyof typeof openDropdowns] ? (
+                  <ChevronUp className="text-gray-600 w-5 h-5" />
+                ) : (
+                  <ChevronDown className="text-gray-600 w-5 h-5" />
+                )}
               </div>
+
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openDropdowns[key as keyof typeof openDropdowns]
+                  openDropdowns[section as keyof typeof openDropdowns]
                     ? "max-h-96 opacity-100 mt-3"
                     : "max-h-0 opacity-0"
                 }`}
               >
                 <div className="pl-4 space-y-3">
-                  <p className="text-gray-600 text-sm">
-                    Example submenu links can go here...
-                  </p>
+                  {links.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      onClick={handleLinkClick}
+                      className="block text-gray-600 text-base hover:text-blue-600 transition-colors duration-200"
+                    >
+                      {/* 👆 increased from text-sm to text-base */}
+                      {link.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
+
+          {/* Additional Links */}
+          <div className="space-y-6 ">
+            <Link
+              to="/blog"
+              onClick={handleLinkClick}
+              className="block text-xl font-medium text-black hover:text-blue-600 transition-colors duration-200"
+            >
+              {/* 👆 increased from text-lg to text-xl */}
+              Blog
+            </Link>
+            <Link
+              to="/hiring/hiring3"
+              onClick={handleLinkClick}
+              className="block text-xl font-medium text-black hover:text-blue-600 transition-colors duration-200 relative"
+            >
+              {/* 👆 increased from text-lg to text-xl */}
+              We are hiring
+              <span className="absolute bg-NavNewLinkBg px-1.5 py-0.3 rounded-sm -top-3 right-0 text-[10px] text-NavNewText font-semibold rotate-[-8deg]">
+                NEW
+              </span>
+            </Link>
+          </div>
 
           {/* CTA Card */}
           <div className="bg-[url('/FooterAssests/Bg.png')] bg-cover bg-no-repeat bg-right text-white rounded-lg p-6 mt-6">

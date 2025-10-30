@@ -10,6 +10,8 @@ import LettingSection from "../components/commons/LettingSection";
 import GradientButton from "../ui/Button/Button";
 import WhoWeAre from "../components/commons/WhoWeAre";
 import WavesBgSection from "../components/commons/WavesBgSection";
+import AISolutionWeDeliver from "../components/commons/AISolutionWeDeliver";
+import OurProcess from "../components/commons/OurProcess";
 
 const Landingpage = () => {
     return (
@@ -32,14 +34,13 @@ const Landingpage = () => {
                 ButtonarrowTranslate={"-180px"}
             />
 
-            {/* Who We Are Section */}
-            <div  className="w-[90%]  mx-auto">
-            <WhoWeAre />
-            </div>
+            {/* All in One Section */}
+            <AISolutionWeDeliver />
+            <OurProcess />
 
-            <section className="w-[95%] mx-auto ">
+            <section className="w-[95%] mx-auto  ">
                 <AnimatedSection>
-                    <div className=" mt-8  md:mt-40 2xl:mt-40   mt-80" >
+                    <div >
                         <HeadingSection
                             Heading={"Dedicated Development"}
                             Title={"Engagement Models That Fit Your Vision"}
@@ -113,8 +114,12 @@ const Landingpage = () => {
             <LettingSection />
             </div>
 
+            <div  className="w-[90%]  mx-auto">
+            <WhoWeAre />
+            </div>
+
             <AnimatedSection>
-                <div className=" mt-8  md:mt-20" >
+                <div className=" mt-80    md:mt-20" >
                     <HeadingSection
                         Heading={"Industries"}
                         Title={"Your industry, our intelligence."}
