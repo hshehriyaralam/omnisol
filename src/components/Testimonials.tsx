@@ -69,7 +69,7 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`flex flex-col bg-testimonial border-2 p-3 sm:p-4 w-full sm:w-48 lg:w-50 flex-shrink-0 rounded-[14px] gap-y-3 cursor-pointer transition-all duration-700 ease-out hover:opacity-100 hover:shadow-lg relative overflow-hidden hover:ring-2 hover:ring-blue-200 ${
+                className={`flex flex-col bg-testimonial border-2 p-3 sm:p-4 w-full sm:w-48 lg:w-50 shrink-0 rounded-[14px] gap-y-3 cursor-pointer transition-all duration-700 ease-out hover:opacity-100 hover:shadow-lg relative overflow-hidden hover:ring-2 hover:ring-blue-200 ${
                   activeTestimonial === index
                     ? "opacity-100 transform shadow-2xl border-blue-400 ring-2 ring-blue-200"
                     : "opacity-50 border-testimonial-border"
@@ -119,7 +119,7 @@ const Testimonials = () => {
                 <i className="fa-solid fa-star"></i>
                 <i className="fa-solid fa-star"></i>
                 <i className="fa-solid fa-star"></i>
-                <span className="font-main text-black inline-block pl-4 text-lg leading-[1]">
+                <span className="font-main text-black inline-block pl-4 text-lg leading-none">
                   5.0
                 </span>
               </div>
