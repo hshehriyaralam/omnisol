@@ -36,11 +36,14 @@ const GradientButton: React.FC<ExtendedGradientButtonProps> = ({
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative flex items-center justify-center gap-4
+      className={`relative flex items-center justify-center cursor-pointer gap-4
         bg-gradient-to-b ${fromColor} ${toColor}
-        text-white rounded-full overflow-hidden
+        text-white rounded-full 
         transition-all duration-500 ease-in-out
-        hover:bg-black hover:from-black hover:to-black ${className}`}
+        hover:bg-black hover:from-black hover:to-black 
+        overflow-hidden
+        ${className}`
+      }
       style={{
         width,
         height,

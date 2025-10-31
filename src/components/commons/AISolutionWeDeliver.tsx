@@ -67,11 +67,17 @@ const AISolutionWeDeliver = () => {
   };
 
   return (
-    <section className="w-full min-h-screen relative overflow-hidden mt-30 flex flex-col md:block">
-      {/* Parent wrapper for heading + images */}
+    <section  className="w-full relative   overflow-hidden  flex flex-col md:block min-h-[auto]">
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start w-full relative">
+        
         {/* Left side — Heading + Image */}
-        <div className="flex flex-col   items-center md:items-start w-full md:w-1/2 relative">
+        <motion.div
+          initial={{ x: -80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          viewport={{once : false,amount: 0.3}}
+          className="flex flex-col items-center md:items-start w-full md:w-1/2 relative"
+        >
           {/* Heading Section */}
           <div
             className="
@@ -80,9 +86,8 @@ const AISolutionWeDeliver = () => {
               mx-auto 
               md:ml-20 
               h-auto 
-              md:h-[240px] 
-              md:mb-0 
-              mt-8 
+              md:h-[200px]  /* 👇 Reduced vertical gap */
+              mt-4           /* 👇 Reduced margin-top */
               text-center 
               md:text-left
             "
@@ -96,7 +101,17 @@ const AISolutionWeDeliver = () => {
           </div>
 
           {/* Image Section */}
-          <div className="w-full flex items-center justify-center md:justify-start relative ">
+          <div
+            className="
+              w-full 
+              flex 
+              items-center 
+              justify-center 
+              md:justify-start 
+              relative 
+              mt-[-10px]  /* 👇 Reduced spacing between heading & image */
+            "
+          >
             <img
               src="/Images/Landing/Hand.webp"
               className="relative lg:-left-30 lg:w-[1200px] -left-18"
@@ -113,21 +128,21 @@ const AISolutionWeDeliver = () => {
               alt="finger-Image"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Right side — Card Slider */}
-        <div className="w-full md:w-1/2 flex flex-col items-center mt-[-40px] md:mt-0 lg:mt-70">
+        <div className="w-full md:w-1/2 flex flex-col items-center mt-[-20px] md:mt-0 lg:mt-60">
           {/* Arrow Controls */}
           <div className="hidden md:flex justify-center items-center gap-6 mb-8 relative left-50">
             <button
               onClick={prevSlide}
-              className="p-3 bg-gray-200 rounded-full hover:bg-gray-300 transition-all duration-300"
+              className="p-3 cursor-pointer rounded-full border border-arrowBorder transition-all duration-300"
             >
               <ArrowLeft className="w-6 h-6 text-gray-800" />
             </button>
             <button
               onClick={nextSlide}
-              className="p-3 bg-gray-200 rounded-full hover:bg-gray-300 transition-all duration-300"
+              className="p-3 cursor-pointer rounded-full border border-arrowBorder transition-all duration-300"
             >
               <ArrowRight className="w-6 h-6 text-gray-800" />
             </button>
@@ -136,7 +151,7 @@ const AISolutionWeDeliver = () => {
           {/* Slider Container */}
           <div
             ref={sliderRef}
-            className="w-[90%] md:w-[850px]   h-[420px] overflow-hidden rounded-[30px] relative cursor-grab active:cursor-grabbing"
+            className="w-[90%] md:w-[850px] h-[420px] overflow-hidden rounded-[30px] relative cursor-grab active:cursor-grabbing"
           >
             <motion.div
               className="flex gap-4"

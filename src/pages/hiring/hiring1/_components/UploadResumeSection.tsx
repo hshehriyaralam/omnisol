@@ -40,7 +40,7 @@ const UploadResume: React.FC = () => {
         <button
           type="button"
           onClick={handleButtonClicks}
-          className="flex items-center justify-center gap-2 border border-foamtext text-formtext font-Roboto font-normal text-[16px] leading-6 tracking-[0px] text-center align-middle  rounded-md px-5 py-2.5 transition-colors duration-200"
+          className="flex items-center cursor-pointer justify-center gap-2 border border-foamtext text-formtext font-Roboto font-normal text-[16px] leading-6 tracking-[0px] text-center align-middle  rounded-md px-5 py-2.5 transition-colors duration-200"
         >
           <img src="/public/Upload/Linkedin.png" alt="LinkedIn Icon" className="w-4 h-4" />
           Apply with LinkedIn

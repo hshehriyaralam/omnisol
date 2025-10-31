@@ -1,9 +1,7 @@
 
-import React from "react";
-
 const Footer: React.FC = () => {
   return (
-    <footer className="relative w-full bg-footerBg text-black overflow-hidden shadow-[inset_0px_95px_123.6px_-32px_rgba(119,118,141,0.25)]">
+<footer className="relative w-full bg-footerBg text-black overflow-hidden shadow-[inset_0px_95px_123.6px_-32px_rgba(119,118,141,0.25)]">
       {/* ✅ TOP SHADOW IMAGE */}
       <div className="hidden lg:flex justify-center">
         <img
@@ -79,7 +77,7 @@ const Footer: React.FC = () => {
                   Share Your Referral Code and Earn Rewards!
                 </p>
 
-                <button className="bg-white text-textColor text-[20px] py-[12px] px-[24px] rounded-[6px] font-normal font-poppins">
+                <button className="bg-white text-textColor text-[20px] py-[12px] px-[24px] rounded-[6px] font-normal font-poppins cursor-pointer">
                   Get Your Referral Code Now
                 </button>
               </div>
@@ -239,6 +237,8 @@ const Footer: React.FC = () => {
        
       </div>
     </footer>
+
+
   );
 };
 

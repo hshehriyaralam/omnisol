@@ -5,6 +5,8 @@
 @import "tailwindcss";
 
 
+
+
 /* 🎨 Tailwind Theme Tokens (Design System) */
 @theme {
   /* ✅ Custom Fonts */
@@ -48,6 +50,10 @@
   --color-AiCardBg: #F5F5F5;
   --color-AiCardText: #191919;
   --color-rounedCardBg: #B21A1A;
+  --color-arrowBorder: #DEDEDE;
+  --color-faqText: #404040;
+
+
 
 
 
@@ -101,6 +107,8 @@
 
   --color-engage:#FFD7D7 ;
   --color-who-border:#dce4e8 ;
+
+  --color-glass-bg:#9FE0FF ;
 
 
   /* ✅ Custom Spacing / Radius */
