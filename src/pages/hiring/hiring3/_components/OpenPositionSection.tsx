@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 interface Job {
@@ -10,7 +10,6 @@ interface Job {
 }
 
 export default function OpenPositions() {
-  const navigate = useNavigate();
 
   const categories = [
     "All", // 👈 Added this line

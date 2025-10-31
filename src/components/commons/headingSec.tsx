@@ -6,6 +6,9 @@ export default function HeadingSection({
   align = "center",
   button,
   imageSrc,
+  imageWidth,
+  imageHeight,
+  extraClass = "",
   imageAlt = "Section Image",
 }: HeadingsTypes) {
   const alignmentClasses =
@@ -14,7 +17,7 @@ export default function HeadingSection({
       : "items-center text-center md:flex-col";
   return (
     <div
-      className={`flex flex-col md:flex-row gap-8 md:gap-12 px-4 py-8 md:py-16 ${alignmentClasses}`}
+      className={`flex flex-col md:flex-row gap-8 md:gap-8 px-4 py-8 md:py-16 ${alignmentClasses}`}
     >
       {/* Left Content Section */}
       <div
@@ -49,11 +52,14 @@ export default function HeadingSection({
       </div>
       {/* Right Side Image (Optional) */}
       {imageSrc && (
-        <div className="flex-1 flex justify-right ">
+        <div className="flex-1 flex justify-right">
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="w-full max-w-[400px] md:max-w-[530px] h-auto object-contain"
+            className={`object-contain 
+        ${imageWidth ? `w-[${imageWidth}]` : "w-full"} 
+        ${imageHeight ? `h-[${imageHeight}]` : "h-auto"} 
+        ${extraClass || ""}`}
           />
         </div>
       )}
