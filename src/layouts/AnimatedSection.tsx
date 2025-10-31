@@ -40,7 +40,7 @@ export default function AnimatedSection({ children }: { children: React.ReactNod
         willChange: "transform, opacity",
         backfaceVisibility: "hidden",
         WebkitFontSmoothing: "antialiased",
-        overflow: "hidden",
+        // overflow: "hidden",
       }}
     >
       {children}

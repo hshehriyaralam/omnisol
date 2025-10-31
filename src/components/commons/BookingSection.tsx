@@ -40,7 +40,7 @@ const BookingSection = () => {
             <button
               key={day}
               onClick={() => handleDateClick(day)}
-              className={`w-10 h-10 rounded-full flex items-center justify-center ${
+              className={`w-10 h-10 cursor-pointer rounded-full flex items-center justify-center ${
                 selectedDate === day
                   ? "bg-blue-500 text-white"
                   : "bg-gray-100 hover:bg-gray-200"
@@ -56,7 +56,7 @@ const BookingSection = () => {
         </p>
 
         <div className="mt-8">
-          <button className="border border-gray-300 rounded-full px-6 py-2 text-sm hover:bg-gray-100">
+          <button className="border border-gray-300  cursor-pointer rounded-full px-6 py-2 text-sm hover:bg-gray-100">
             Troubleshooting
           </button>
         </div>

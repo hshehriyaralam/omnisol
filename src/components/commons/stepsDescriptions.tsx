@@ -14,7 +14,7 @@ const StepsDescriptions: React.FC<StepsSectionProps> = ({
       initial={{ x: xDirection, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       className="w-full lg:w-[100%] order-1 lg:order-1"
     >
       {stepsData.map((step, index) => (

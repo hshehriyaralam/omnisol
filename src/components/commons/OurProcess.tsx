@@ -1,3 +1,4 @@
+import AnimatedSection from "@/layouts/AnimatedSection"
 import GradientButton from "../../ui/Button/Button"
 import StepsDescriptions from "./stepsDescriptions"
 
@@ -10,28 +11,32 @@ const OurProcess = () => {
   ]
 
   return (
-    <section className="flex lg:flex-row flex-col w-full min-h-screen">
-      {/* Description section - Mobile: First, Desktop: Left */}
-      <div className="lg:w-[55%] w-full lg:p-16 lg:px-20 order-2 lg:order-1  px-10">
+    <section className="flex   lg:flex-row flex-col w-full min-h-screen overflow-hidden md:mt-0 mt-10">
+      {/* Left Section - StepsDescriptions (No Animation) */}
+      <div className="lg:w-[55%] w-full lg:p-16 lg:px-20 order-2 lg:order-1 px-10">
         <StepsDescriptions stepsData={stepsData} />
         <GradientButton
-        text={"Let's Get Started"}
-        width={"220px"}
-        height={"60px"}
-        arrowSize={"18px"}
-        arrowBgSize={"35px"}
-        fontSize={"15px"}
-        textTranslate={"60px"}
-        arrowTranslate={"-150px"}
-        hideArrowOnMobile={false}
-        className="my-5  md:my-2 mx-auto  md:mx-0"   
+          text={"Let's Get Started"}
+          width={"220px"}
+          height={"60px"}
+          arrowSize={"18px"}
+          arrowBgSize={"35px"}
+          fontSize={"15px"}
+          textTranslate={"60px"}
+          arrowTranslate={"-150px"}
+          hideArrowOnMobile={false}
+          className="my-5 md:my-2 mx-auto md:mx-0"
         />
       </div>
 
-      {/* Image section - Mobile: Second, Desktop: Right */}
-      <div className="flex flex-col lg:w-[35%] w-full order-1 lg:order-2">
-        {/* Heading Section - Mobile: Centered, Desktop: Right Aligned */}
-        <div className="flex flex-col items-center lg:items-end text-center lg:text-right flex-1 gap-2 lg:p-0 p-6">
+      {/* Right Section - Heading + Image (Animated with Framer Motion) */}
+
+      <div
+        className="flex flex-col lg:w-[35%] w-full order-1 lg:order-2"
+      >
+        {/* Heading Section */}
+        <AnimatedSection>
+        <div className="flex flex-col items-center lg:items-end text-center lg:text-right flex-1 gap-2 lg:p-0 p-6  ">
           <div className="px-6 py-2 border border-badgeBorder w-[120px] bg-badgeBg rounded-full flex items-center justify-center">
             <h1 className="font-poppins text-[13px] font-normal leading-[100%] text-badgeText">
               All-in-One
@@ -41,14 +46,14 @@ const OurProcess = () => {
           <h2 className="font-main font-medium text-[26px] md:text-[32px] 2xl:text-[34px] leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black max-w-[480px]">
             Our Process
           </h2>
-          
-          {/* Description */}
+
           <p className="font-main font-medium text-[16px] md:text-[18px] tracking-[-0.018em] text-gray-700 lg:max-w-[300px] 2xl:max-w-[750px] max-w-[300px]">
             Since 2023, we've been helping businesses of all sizes desig
           </p>
         </div>
+        </AnimatedSection>
 
-        {/* Image Section - Hidden on mobile, visible on desktop */}
+        {/* Image Section (Animated together with heading) */}
         <div className="relative hidden lg:flex">
           <img
             src="/Images/Landing/TwoHands.webp"
@@ -61,6 +66,7 @@ const OurProcess = () => {
             alt="Bowl-Image"
           />
         </div>
+
       </div>
     </section>
   )

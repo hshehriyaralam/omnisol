@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import HeadingSection from "./headingSec";
 import SecButton from "./secButton";
+import AnimatedSection from "@/layouts/AnimatedSection";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -57,29 +58,33 @@ const Faqs = () => {
   ];
 
   return (
-    <section className="w-[90%] mx-auto relative py-12 sm:py-16 lg:py-20 z-10 overflow-hidden">
+    <section className="w-[90%] mx-auto relative py-12 sm:py-16 lg:py-20 z-10 ">
       {/* Header + Arrows */}
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-12">
+        <AnimatedSection>
+
         <HeadingSection
           Heading="FAQs"
           Title="Frequently Asked Questions"
           Description="Omnisol’s AI development adapts to the rhythm of your business"
           align="left"
         />
+        </AnimatedSection>
+
 
         {/* Arrows on right side */}
         <div className="flex gap-3 mt-60  mx-20 hidden md:flex">
           <button
             aria-label="Previous"
             onClick={() => sliderRef.current?.slickPrev()}
-            className="p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-all"
+            className="p-3 rounded-full border border-gray-300 hover:bg-gray-100  cursor-pointer transition-all"
           >
             <ArrowLeft className="w-7 h-7 text-gray-700" />
           </button>
           <button
             aria-label="Next"
             onClick={() => sliderRef.current?.slickNext()}
-            className="p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-all"
+            className="p-3 rounded-full border border-gray-300 hover:bg-gray-100  cursor-pointer transition-all"
           >
             <ArrowRight className="w-7 h-7 text-gray-700" />
           </button>
@@ -87,6 +92,7 @@ const Faqs = () => {
       </div>
 
       {/* Slider */}
+      <AnimatedSection>
       <div className="mt-4 sm:mt-10 px-2 sm:px-4 lg:px-8">
         <div className="hidden sm:block">
           <Slider ref={sliderRef} {...settings} className="faqs">
@@ -105,12 +111,14 @@ const Faqs = () => {
           ))}
         </div>
       </div>
+      </AnimatedSection>
+
     </section>
   );
 };
 
 const FaqCard = ({ faq }: { faq: { q: string; a: string } }) => (
-  <div className="group h-72 sm:h-80 lg:h-96 bg-faq rounded-2xl flex flex-col justify-end p-4 sm:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-0 sm:mx-2 w-full ">
+  <div className="group h-72 sm:h-80 lg:h-96 bg-faq/40 rounded-2xl flex flex-col justify-end p-4 sm:p-6 opacity-90 hover:opacity-100 transition-all duration-500 relative font-main overflow-hidden mx-0 sm:mx-2 w-full ">
     {/* Hover background */}
     <div
       className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out rounded-2xl"
@@ -119,14 +127,14 @@ const FaqCard = ({ faq }: { faq: { q: string; a: string } }) => (
 
     {/* Question visible by default */}
     <div className="flex flex-col justify-end h-full group-hover:hidden relative z-10 transition-all duration-300">
-      <p className="font-semibold text-base sm:text-lg lg:text-xl leading-snug">
+      <p className="font-medium text-base sm:text-lg lg:text-xl leading-snug  text-faqText">
         {faq.q}
       </p>
     </div>
 
     {/* Logo on top-right */}
-    <div className="absolute top-4 right-4 sm:right-6 group-hover:opacity-0 transition-all duration-500 z-10">
-      <img src="/Omnisol_logo.png" alt="" className="w-8 sm:w-10 lg:w-12" />
+    <div className="absolute top-0 left-1 sm:right-6 group-hover:opacity-0 transition-all duration-500 z-10">
+      <img src="/Omnisol_logo.png" alt="" className="w-8 sm:w-10 lg:w-35" />
     </div>
 
     {/* Hover content */}

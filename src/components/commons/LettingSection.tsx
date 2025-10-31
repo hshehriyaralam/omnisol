@@ -1,7 +1,10 @@
+import AnimatedSection from "@/layouts/AnimatedSection";
 import GradientButton from "../../ui/Button/Button";
 
 const LettingSection = () => {
   return (
+    <AnimatedSection>
+
     <section className="w-full bg-bgDark text-white py-16 md:py-20 px-6 md:px-20 flex flex-col md:flex-row justify-between items-start md:items-center gap-20 md:gap-32">
       {/* Left Side */}
       <div className="max-w-xl">
@@ -48,6 +51,8 @@ const LettingSection = () => {
         <span className="absolute top-1/2 left-0 right-0 h-px bg-line transform -translate-y-1/2"></span>
       </div>
     </section>
+    </AnimatedSection>
+
   );
 };
 

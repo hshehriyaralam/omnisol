@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import logo from "/Images/Logo.webp";
@@ -13,23 +13,28 @@ const Navbar = () => {
     services: false,
     consulting: false,
     company: false,
+    engagement: false,
   });
+
+  const location = useLocation();
+  const bgColor = location.pathname === "/" ? "bg-white" : "bg-hero";
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const serviceButtonRef = useRef<HTMLSpanElement | null>(null);
 
-  const toggleDropdown = (section: keyof typeof openDropdowns) => {
-    setOpenDropdowns((prev) => ({
-      ...prev,
-      [section]: !prev[section],
-    }));
-  };
+  // ✅ Close all dropdowns when menu closes
+  useEffect(() => {
+    if (!menuOpen) {
+      setOpenDropdowns({
+        services: false,
+        consulting: false,
+        company: false,
+        engagement: false,
+      });
+    }
+  }, [menuOpen]);
 
-  const handleLinkClick = () => {
-    setServiceOpen(false);
-    setMenuOpen(false);
-  };
-
+  // ✅ Desktop hover open/close
   const handleServiceMouseEnter = () => setServiceOpen(true);
   const handleServiceMouseLeave = (event: React.MouseEvent) => {
     if (
@@ -54,6 +59,7 @@ const Navbar = () => {
     }
   };
 
+  // ✅ Click outside closes dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -69,17 +75,17 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
-  useEffect(() => {
-  const handleScroll = () => setServiceOpen(false);
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  // ✅ Scroll close dropdown
   useEffect(() => {
     const handleScroll = () => setServiceOpen(false);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLinkClick = () => {
+    setServiceOpen(false);
+    setMenuOpen(false);
+  };
 
   const mobileMenuLinks = {
     services: [
@@ -105,12 +111,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative w-full bg-hero py-4 px-4 md:px-10 flex justify-between items-center">
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-40 pointer-events-none"></div>
+    <nav className={`relative w-full ${bgColor} py-4 px-4 md:px-10 flex justify-between items-center`}>
+      {location.pathname !== "/" && (
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-40 pointer-events-none"></div>
+      )}
 
-      {/* Left Section (Logo + Desktop Menu) */}
+      {/* Left Section */}
       <div
-        className={`flex items-center gap-3 md:gap-6 md:z-50 transition-all duration-300 ${
+        className={`flex items-center gap-3 md:gap-12 md:z-50 transition-all duration-300 ${
           menuOpen ? "opacity-0 pointer-events-none" : "opacity-100 z-50"
         }`}
       >
@@ -126,25 +134,37 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 font-main font-medium text-[16px] text-white">
-          <li className="relative">
+        <ul className={`hidden md:flex items-center gap-8 font-main font-medium text-[16px] ${location.pathname !== "/" ? "text-white" : "text-black"}`}>
+          {/* ✅ Services Dropdown */}
+          <li className="relative flex items-center gap-1">
             <span
               ref={serviceButtonRef}
-              className="cursor-pointer transition-all select-none"
+              className="cursor-pointer transition-all select-none flex items-center gap-1"
               onMouseEnter={handleServiceMouseEnter}
               onMouseLeave={handleServiceMouseLeave}
             >
-              Services +
+              Services
+              <motion.span
+                animate={{ rotate: serviceOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {serviceOpen ? (
+                  <ChevronUp className="w-4 h-4" />
+                ) : (
+                  <ChevronDown className="w-4 h-4" />
+                )}
+              </motion.span>
             </span>
 
+            {/* ✅ Services Menu */}
             <AnimatePresence>
               {serviceOpen && (
                 <motion.div
                   ref={dropdownRef}
-                  initial={{ opacity: 0, y: -20 }}
+                  initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }} // ⬅️ Reduced delay
                   className="fixed top-[90px] left-0 right-0 w-full bg-white text-black shadow-lg z-40"
                   onMouseEnter={handleDropdownMouseEnter}
                   onMouseLeave={handleDropdownMouseLeave}
@@ -173,6 +193,7 @@ const Navbar = () => {
                           ))}
                         </div>
 
+                        {/* Engagement Section */}
                         <div className="bg-header-sub p-6 rounded-xl">
                           <h4 className="font-semibold mb-2 text-header-sub-color">
                             Engagement Models we have
@@ -195,6 +216,7 @@ const Navbar = () => {
                         </div>
                       </div>
 
+                      {/* Right Side */}
                       <div className="w-full lg:w-2/6 bg-[url('/FooterAssests/Bg.png')] bg-cover bg-right bg-no-repeat text-white p-6 rounded-lg flex flex-col justify-between">
                         <div>
                           <h4 className="text-2xl mb-4 font-semibold">
@@ -251,28 +273,16 @@ const Navbar = () => {
       {/* Mobile Hamburger */}
       <div
         className={`md:hidden z-[999] cursor-pointer flex flex-col justify-center items-center w-8 h-8 ${
-          menuOpen ? "hidden" : "" // 👈 Hide hamburger icon when menu is open
+          menuOpen ? "hidden" : ""
         }`}
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen(true)}
       >
-        <span
-          className={`block w-6 h-[2px] bg-white transition-all duration-300 ${
-            menuOpen ? "rotate-45 translate-y-[8px]" : ""
-          }`}
-        />
-        <span
-          className={`block w-6 h-[2px] bg-white my-[6px] transition-all duration-300 ${
-            menuOpen ? "opacity-0" : ""
-          }`}
-        />
-        <span
-          className={`block w-6 h-[2px] bg-white transition-all duration-300 ${
-            menuOpen ? "-rotate-45 -translate-y-[8px]" : ""
-          }`}
-        />
+        <span className="block w-6 h-[2px] bg-white mb-[6px]" />
+        <span className="block w-6 h-[2px] bg-white mb-[6px]" />
+        <span className="block w-6 h-[2px] bg-white" />
       </div>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Menu */}
       <div
         className={`fixed top-0 right-0 bg-white w-full h-full z-[900] overflow-y-auto font-main transition-transform duration-500 ease-in-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
@@ -289,72 +299,83 @@ const Navbar = () => {
         </div>
 
         <div className="p-5 space-y-5">
-          {Object.entries(mobileMenuLinks).map(([section, links]) => (
-            <div
-              className="border-b border-gray-100 pb-4 mt-6" // 👈 Added mt-6 for spacing between dropdowns
-              key={section}
-            >
+          {Object.entries({ ...mobileMenuLinks, engagement: [] }).map(([section, links]) => (
+            <div className="border-b border-gray-100 pb-4 mt-6" key={section}>
               <div
                 className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleDropdown(section as keyof typeof openDropdowns)}
+                onClick={() =>
+                  setOpenDropdowns({
+                    services: false,
+                    consulting: false,
+                    company: false,
+                    engagement: false,
+                    [section]: !openDropdowns[section as keyof typeof openDropdowns],
+                  })
+                }
               >
                 <span className="text-xl font-medium text-black capitalize">
-                  {/* 👆 increased from text-lg to text-xl */}
-                  {section}
+                  {section === "engagement" ? "Engagement Models" : section}
                 </span>
                 {openDropdowns[section as keyof typeof openDropdowns] ? (
-                  <ChevronUp className="text-gray-600 w-5 h-5" />
+                  <ChevronUp className="text-gray-600 w-5 h-5 transition-transform duration-300" />
                 ) : (
-                  <ChevronDown className="text-gray-600 w-5 h-5" />
+                  <ChevronDown className="text-gray-600 w-5 h-5 transition-transform duration-300" />
                 )}
               </div>
 
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openDropdowns[section as keyof typeof openDropdowns]
-                    ? "max-h-96 opacity-100 mt-3"
-                    : "max-h-0 opacity-0"
-                }`}
+              <motion.div
+                initial={false}
+                animate={{
+                  height: openDropdowns[section as keyof typeof openDropdowns]
+                    ? "auto"
+                    : 0,
+                  opacity: openDropdowns[section as keyof typeof openDropdowns] ? 1 : 0,
+                }}
+                transition={{ duration: 0.5, ease: "easeInOut" }} // ⬅️ Smooth, slower dropdown
+                className="overflow-hidden"
               >
-                <div className="pl-4 space-y-3">
-                  {links.map((link) => (
-                    <Link
-                      key={link.to}
-                      to={link.to}
-                      onClick={handleLinkClick}
-                      className="block text-gray-600 text-base hover:text-blue-600 transition-colors duration-200"
-                    >
-                      {/* 👆 increased from text-sm to text-base */}
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+                {section !== "engagement" && (
+                  <div className="pl-4 space-y-3 mt-3">
+                    {links.map((link) => (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        onClick={handleLinkClick}
+                        className="block text-gray-600 text-base hover:text-blue-600 transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {section === "engagement" && (
+                  <div className="bg-header-sub p-6 rounded-xl mt-4 flex flex-col gap-6">
+                    <div>
+                      <h4 className="font-semibold mb-2 text-header-sub-color text-lg">
+                        Engagement Models we have
+                      </h4>
+                      <p className="text-sm text-black opacity-70">
+                        For tailored AI solutions specific to your needs.
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="border border-header-box-border rounded-lg p-4 bg-header-box">
+                        <h4 className="text-header-box-border font-medium">
+                          Project-based delivery
+                        </h4>
+                      </div>
+                      <div className="border border-header-box-border rounded-lg p-4 bg-header-box">
+                        <h4 className="text-header-box-border font-medium">
+                          Dedicated Team
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
             </div>
           ))}
-
-          {/* Additional Links */}
-          <div className="space-y-6 ">
-            <Link
-              to="/blog"
-              onClick={handleLinkClick}
-              className="block text-xl font-medium text-black hover:text-blue-600 transition-colors duration-200"
-            >
-              {/* 👆 increased from text-lg to text-xl */}
-              Blog
-            </Link>
-            <Link
-              to="/hiring/hiring3"
-              onClick={handleLinkClick}
-              className="block text-xl font-medium text-black hover:text-blue-600 transition-colors duration-200 relative"
-            >
-              {/* 👆 increased from text-lg to text-xl */}
-              We are hiring
-              <span className="absolute bg-NavNewLinkBg px-1.5 py-0.3 rounded-sm -top-3 right-0 text-[10px] text-NavNewText font-semibold rotate-[-8deg]">
-                NEW
-              </span>
-            </Link>
-          </div>
 
           {/* CTA Card */}
           <div className="bg-[url('/FooterAssests/Bg.png')] bg-cover bg-no-repeat bg-right text-white rounded-lg p-6 mt-6">

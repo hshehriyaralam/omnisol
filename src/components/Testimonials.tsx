@@ -1,3 +1,4 @@
+import AnimatedSection from '@/layouts/AnimatedSection';
 import { useState } from 'react';
 
 const Testimonials = () => {
@@ -42,6 +43,8 @@ const Testimonials = () => {
     ];
 
     return (
+        <AnimatedSection>
+
         <section className='relative  py-16 sm:py-20 lg:py-30 z-10'>
              <div
       className={`flex flex-col md:flex-row gap-8 md:gap-12 px-4 py-8  md:mx-40  2xl:mx-60 text-center  md:text-left 2xl:text-left `}
@@ -113,6 +116,8 @@ const Testimonials = () => {
             </div>
 
         </section>
+        </AnimatedSection>
+
     );
 }
 

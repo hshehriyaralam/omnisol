@@ -1,5 +1,9 @@
+import AnimatedSection from "@/layouts/AnimatedSection";
+import GradientButton from "@/ui/Button/Button";
+
 const GradientSection = () => {
   return (
+    <AnimatedSection>
     <section className="relative w-full my-10 px-4 sm:px-6 lg:px-10">
       <div
         className="relative w-full max-w-[1200px] mx-auto rounded-[45px] flex flex-col justify-center items-center text-center 
@@ -16,9 +20,9 @@ const GradientSection = () => {
             Ready to Revolutionize Your Business with AI?
           </h2>
 
-          <button
+          {/* <button
             className="mt-10 sm:mt-12 bg-black text-white rounded-full px-8 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 sm:gap-4 
-            hover:bg-gray-900 transition-all duration-300"
+            hover:bg-gray-900 transition-all cursor-pointer duration-300"
           >
             <span className="text-base sm:text-lg font-medium font-poppins">
               Let’s Get Started
@@ -28,10 +32,25 @@ const GradientSection = () => {
               alt="Arrow Icon"
               className="w-6 sm:w-6 h-6 sm:h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:translate-x-1"
             />
-          </button>
+          </button> */}
+          <GradientButton 
+            text={"Let’s Get Started"}
+            width={"300px"}
+            height = {"60px"}
+            fontSize = {"17px"}
+            arrowSize = {"30px"}
+            arrowBgSize = {"50px"}
+            hideArrowOnMobile = {true}
+            textTranslate = {"80px"}
+            arrowTranslate = {"-180px"}
+            className="mt-6"
+          
+          />
         </div>
       </div>
     </section>
+    </AnimatedSection>
+
   );
 };
 

@@ -372,7 +372,7 @@ const Waves: React.FC<WavesProps> = ({
     function onTouchMove(e: TouchEvent) {
       const touch = e.touches[0];
       updateMouse(touch.clientX, touch.clientY);
-      e.preventDefault();
+      // e.preventDefault();
     }
 
     function updateMouse(x: number, y: number) {
@@ -406,7 +406,7 @@ const Waves: React.FC<WavesProps> = ({
     // Add event listeners
     window.addEventListener('resize', onResize);
     window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('touchmove', onTouchMove, { passive: false });
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     // Cleanup function
@@ -448,7 +448,7 @@ const Waves: React.FC<WavesProps> = ({
 // Waves Background Section Component
 const WavesBgSection: React.FC = () => {
   return (
-    <section className="relative w-full h-[600px] overflow-hidden text-white flex md:py-40 2xl:py-40 py-20 justify-center">
+    <section className="relative w-full h-[600px]  text-white flex md:py-40 2xl:py-40 py-20 justify-center">
       {/* Waves Background */}
       <Waves
         lineColor="#918a8aff"

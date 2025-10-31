@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 interface Job {
@@ -10,10 +10,9 @@ interface Job {
 }
 
 export default function OpenPositions() {
-  const navigate = useNavigate();
 
   const categories = [
-    "All", // 👈 Added this line
+    "All", 
     "AI Engr",
     "Python expert",
     "Support",
@@ -78,7 +77,7 @@ text-[28px] leading-[38px]">Open Positions</h2>
       <button
         key={cat}
         onClick={() => setActiveCategory(cat)}
-        className={`whitespace-nowrap text-left font-medium font-main leading-10 text-[16px] sm:text-[24px] md:text-[27px] lg:text-[20.23px] tracking-[-0.018em] transition-colors duration-200 ${
+        className={`whitespace-nowrap text-left cursor-pointer  font-medium font-main leading-10 text-[16px] sm:text-[24px] md:text-[27px] lg:text-[20.23px] tracking-[-0.018em] transition-colors duration-200 ${
           activeCategory === cat
             ? "text-orange-600"
             : "text-black hover:text-orange"
