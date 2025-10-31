@@ -7,6 +7,10 @@ export  interface HeadingsTypes{
   button?: React.ReactNode;
   imageSrc?: string;
   imageAlt?: string;
+  extraClass?: string;
+  imageWidth?: string;
+  imageMaxWidth?: string;
+  imageHeight?: string;
 }
 
 
