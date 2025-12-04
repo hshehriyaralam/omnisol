@@ -331,7 +331,7 @@ const Navbar = () => {
                     : 0,
                   opacity: openDropdowns[section as keyof typeof openDropdowns] ? 1 : 0,
                 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }} // ⬅️ Smooth, slower dropdown
+                transition={{ duration: 0.5, ease: "easeInOut" }} 
                 className="overflow-hidden"
               >
                 {section !== "engagement" && (
