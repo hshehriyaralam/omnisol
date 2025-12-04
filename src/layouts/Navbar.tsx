@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import logo from "/Images/Logo.webp";
 import GradientButton from "../ui/Button/Button";
 import SecButton from "../components/commons/secButton";
 
@@ -124,7 +123,7 @@ const Navbar = () => {
       >
         <Link to="/" className="flex items-center gap-2 cursor-pointer relative z-50">
           <img
-            src={logo}
+            src={'/Images/Logo.webp'}
             alt="Omnisol AI Logo"
             className="w-[34px] h-[34px] object-contain"
           />
