@@ -17,6 +17,7 @@ const Navbar = () => {
 
   const location = useLocation();
   const bgColor = location.pathname === "/" ? "bg-white" : "bg-hero";
+  const bgColorHumberge = location.pathname === "/" ? "bg-black" : "bg-white";
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const serviceButtonRef = useRef<HTMLSpanElement | null>(null);
@@ -276,9 +277,9 @@ const Navbar = () => {
         }`}
         onClick={() => setMenuOpen(true)}
       >
-        <span className="block w-6 h-[2px] bg-white mb-[6px]" />
-        <span className="block w-6 h-[2px] bg-white mb-[6px]" />
-        <span className="block w-6 h-[2px] bg-white" />
+        <span className={`block w-6 h-[2px] ${bgColorHumberge} mb-[6px]`} />
+        <span className={`block w-6 h-[2px] ${bgColorHumberge}  mb-[6px]`} />
+        <span className={`block w-6 h-[2px] ${bgColorHumberge} `} />
       </div>
 
       {/* ✅ Mobile Menu */}
