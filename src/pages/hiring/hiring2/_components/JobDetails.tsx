@@ -8,9 +8,9 @@ const JobDetails: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row flex-wrap gap-10 lg:gap-20">
         {/* ✅ LEFT COLUMN — JOB DETAILS */}
         <div className="flex-1 order-2 lg:order-1">
-          <h1 className="font-main text-darktext font-bold text-[36px] leading-[100%] tracking-[0] mb-10 hidden md:block">
+          <h2 className="font-main text-darktext font-bold text-[36px] leading-[100%] tracking-[0] mb-10 hidden md:block">
             PRODUCT DESIGNER
-          </h1>
+          </h2>
 
           {/* Who we’re looking for */}
           <div className="mb-8">
@@ -163,9 +163,9 @@ const JobDetails: React.FC = () => {
           {/* Apply Button */}
           <div className="bg-bgmedium font-main">
             <div className="p-6 mb-8 text-center">
-              <h1 className="font-main text-darktext font-bold text-left text-[17px] leading-[100%] tracking-[0] mb-10 block lg:hidden">
+              <h2 className="font-main text-darktext font-bold text-left text-[17px] leading-[100%] tracking-[0] mb-10 block lg:hidden">
                 PRODUCT DESIGNER
-              </h1>
+              </h2>
               <Link to="/hiring/hiring1">
               <GradientButton
                 text="Apply Now"

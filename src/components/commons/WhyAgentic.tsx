@@ -17,9 +17,9 @@ const WhyAgentic: React.FC<WhyAgenticProps> = ({
       <div className="flex flex-col items-center justify-center text-center px-4 py-8 gap-2">
         {/* Badge */}
         <div className="px-5 py-2 border border-badgeBorder bg-badgeBg rounded-full">
-          <h1 className="font-poppins text-[14px] md:text-[16px] font-normal leading-[100%] text-badgeText">
+          <h2 className="font-poppins text-[14px] md:text-[16px] font-normal leading-[100%] text-badgeText">
             {badgeText}
-          </h1>
+          </h2>
         </div>
 
         {/* Heading */}

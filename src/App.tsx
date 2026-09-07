@@ -18,6 +18,9 @@ import Hiring1 from "./pages/hiring/hiring1";
 import Hiring2 from "./pages/hiring/hiring2";
 import Hiring3 from "./pages/hiring/hiring3";
 import ReferralPage from "./pages/referralPage";
+import Blog from "./pages/blog";
+import About from "./pages/about";
+import Careers from "./pages/careers";
 
 
 
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
      />,
     children: [
       { index: true, element: <Landingpage /> },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
       {
         path: "/services/aidevelopmentservices",
         element: <AiDevelopmentServices />,
@@ -48,6 +55,8 @@ const router = createBrowserRouter([
       { path: "/services/userexperience", element: <UserExperience /> },
       { path: "/services/aiDevelopmentServices", element: <AiDevelopmentServices />},
       { path: "/services/chatbotDevelopmentService", element: <ChatbotDevelopmentService />},
+      { path: "/about", element: <About />},
+      { path: "/careers", element: <Careers />},
       { path: "/contact", element: <ContactPage />},
       {path: "/hiring/hiring1", element:<Hiring1 />},
       {path: "/hiring/hiring2", element:<Hiring2 />},

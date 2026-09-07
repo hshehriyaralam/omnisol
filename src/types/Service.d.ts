@@ -11,6 +11,7 @@ export  interface HeadingsTypes{
   imageWidth?: string;
   imageMaxWidth?: string;
   imageHeight?: string;
+  h1?: boolean;
 }
 
 
@@ -88,3 +89,10 @@ interface LayoutCardsProps {
   mobileHeading?: React.ReactNode;
   mobileIcon?: React.ReactNode;
 }
+
+
+export type  SEOProps =  {
+  title: string;
+  description: string;
+  canonical: string;
+};

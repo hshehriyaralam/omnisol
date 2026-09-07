@@ -8,11 +8,17 @@ import MissingYourIndustry from "../../../components/commons/MissingYourIndustry
 import AnimatedSection from "../../../layouts/AnimatedSection";
 import LettingSection from "../../../components/commons/LettingSection"
 import GradientSection from "../../../components/commons/GradientSection"
+import SEO from "@/components/commons/SEO";
 
 
 const AiAgents = () => {
   return (
     <>
+    <SEO
+  title="AI Agent Development Services | Omnisol AI"
+  description="Build intelligent AI agents with Omnisol AI to automate tasks and improve business efficiency."
+  canonical="https://omnisol-jet.vercel.app/services/aiagents"
+/>
       <Hero
         Heading={"Build Autonomous Workflows with AI Agent Development Services"}
         description={"Create intelligent agents that learn, adapt, and act — automating complex work so your team can focus on growth."}
@@ -61,7 +67,9 @@ const AiAgents = () => {
             <HeadingSection
               Heading={"Industries"}
               Title={"Your industry, our intelligence."}
-              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."} />
+              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."} 
+              h1={false}
+              />
           </div>
         </AnimatedSection>
         {/* Images and text Sections */}

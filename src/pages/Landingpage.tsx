@@ -12,17 +12,23 @@ import WavesBgSection from "../components/commons/WavesBgSection";
 import AISolutionWeDeliver from "../components/commons/AISolutionWeDeliver";
 import OurProcess from "../components/commons/OurProcess";
 import HeroSection from "./LandingComponents/herosection";
+import SEO from "@/components/commons/SEO";
 
 const Landingpage = () => {
   return (
     <>
+    <SEO
+      title="Omnisol AI - Business Intelligence Solutions"
+      description="Omnisol AI delivers powerful business intelligence solutions that help businesses make smarter, faster, and more data-driven decisions."
+      canonical="https://omnisol-jet.vercel.app/"
+    />
     <HeroSection />
       {/* All in One Section */}
       <AISolutionWeDeliver />
       <OurProcess />
 
      <section 
-  className="w-[95%] mx-auto overflow-hidden relative"  // ✅ overflow-x-hidden ko overflow-hidden me change kiya (prevent both x & y scroll glitches)
+  className="w-[95%] mx-auto overflow-hidden relative" 
 >
   <AnimatedSection>
     <div>
@@ -132,7 +138,7 @@ const Landingpage = () => {
           <img
             className="inline h-10"
             src="/Images/Hero/Avtars.webp"
-            alt=""
+            alt="Avtars"
           />
         </span>{" "}
         has a wide range of skills, which lets us look at projects from a

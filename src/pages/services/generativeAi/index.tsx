@@ -6,10 +6,16 @@ import MissingYourIndustry from "../../../components/commons/MissingYourIndustry
 import Hero from "../../../components/commons/hero";
 import AiServiceCards from "./_components/AiServiceCards";
 import LackOfVisibility from "./_components/LackOfVisibility";
+import SEO from "@/components/commons/SEO";
 
 const GenerativeAi = () => {
   return (
     <>
+    <SEO
+  title="Generative AI Services | Omnisol AI"
+  description="Leverage generative AI solutions to create smarter, faster, and more innovative business experiences."
+  canonical="https://omnisol-jet.vercel.app/services/generativeai"
+/>
       <Hero
         Heading={"Reimagine What Your Business Can Create with Generative AI"}
         description={"TFrom AI copilots to full-scale generative ecosystems, Omnisol helps you move from automation to true co-creation with AI."}

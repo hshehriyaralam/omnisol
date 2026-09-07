@@ -34,9 +34,9 @@ const HowWeBuild = () => {
       <AnimatedSection>
       <div className="flex flex-col items-center md:items-start  xl:items-start  2xl:xl:items-center   justify-center px-6 md:px-20  lg:px-32 py-8 gap-2  md:mx-16  ">
         <div className="px-5 py-2 border border-weBuildText rounded-full">
-          <h1 className="font-poppins text-[14px] md:text-[16px] font-normal leading-[100%] text-weBuildText">
+          <h2 className="font-poppins text-[14px] md:text-[16px] font-normal leading-[100%] text-weBuildText">
             How We Build Them
-          </h1>
+          </h2>
         </div>
 
         <h2 className="font-main font-medium text-[26px] md:text-[40px] leading-[110%] md:leading-[46px] tracking-[-0.01em] text-white  text-center  md:text-left  xl:text-left  2xl:text-left   max-w-[800px]">

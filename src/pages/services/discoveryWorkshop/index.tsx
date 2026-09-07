@@ -8,6 +8,7 @@ import LayoutCards from "../../../components/commons/layoutCards";
 import Testimonials from "../../../components/Testimonials";
 import Faqs from "../../../components/commons/Faqs";
 import GradientButton from "../../../ui/Button/Button";
+import SEO from "@/components/commons/SEO";
 
 
 const DiscoveryWorkshop = () => {
@@ -55,6 +56,13 @@ const cardsData = [
 
   return (
      <>
+
+
+     <SEO
+  title="AI Workshops | Omnisol AI"
+  description="Discover AI opportunities through practical workshops designed to align technology with your business goals."
+  canonical="https://omnisol-jet.vercel.app/services/workshop"
+/>
           <Hero
             Heading={"Every Vision Needs a Roadmap"}
             description={"You bring the idea — we bring the technical clarity to make it real.Omnisol’s Discovery Workshop turns your concept into a structured, actionable plan for growth."}

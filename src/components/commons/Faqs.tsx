@@ -134,7 +134,7 @@ const FaqCard = ({ faq }: { faq: { q: string; a: string } }) => (
 
     {/* Logo on top-right */}
     <div className="absolute top-0 left-1 sm:right-6 group-hover:opacity-0 transition-all duration-500 z-10">
-      <img src="/Omnisol_logo.png" alt="" className="w-8 sm:w-10 lg:w-35" />
+      <img src="/Omnisol_logo.png" alt="Omnisol_logo" className="w-8 sm:w-10 lg:w-35" />
     </div>
 
     {/* Hover content */}

@@ -8,6 +8,7 @@ import LayoutCards from "../../../components/commons/layoutCards";
 import Testimonials from "../../../components/Testimonials";
 import Faqs from "../../../components/commons/Faqs";
 import GradientButton from "../../../ui/Button/Button";
+import SEO from "@/components/commons/SEO";
 
 
 const TechnicallyFeasibility = () => {
@@ -52,6 +53,11 @@ const cardsData = [
 
   return (
      <>
+     <SEO
+  title="Technical Feasibility Services | Omnisol AI"
+  description="Evaluate the technical feasibility of your AI and technology ideas before investing in full-scale development."
+  canonical="https://omnisol-jet.vercel.app/services/technicalfeasibility"
+/>
           <Hero
             Heading={"Technical Feasibility That Turns Vision Into Viable Reality"}
             description={"Before you invest, know exactly what’s possible.Omnisol provides hands-on technical assistance to validate your concept, engineer with precision, and ensure every move delivers measurable ROI."}
