@@ -58,7 +58,7 @@ const cardsData = [
 
      <SEO
   title="AI Consulting Services | Omnisol AI"
-  description="Omnisol AI offers expert AI consulting services to help businesses assess readiness, identify opportunities, and create actionable roadmaps for successful AI adoption."
+  description="Get an actionable AI strategy from readiness assessment through opportunity mapping, prioritization, and a roadmap aligned with your business goals."
   canonical="https://omnisol-jet.vercel.app/services/aiconsulting"
 />
           <Hero

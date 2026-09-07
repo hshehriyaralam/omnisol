@@ -13,7 +13,7 @@ const Hiring1 = () => {
         <>        
 <SEO
   title="Product Designer Position | Omnisol AI Careers"
-  description="Join Omnisol AI as a Product Designer and contribute to creating innovative AI solutions. We are looking for talented individuals passionate about design and technology to help shape the future of AI-driven products."
+    description="Apply for the Product Designer position at Omnisol AI and help shape clear, human-centered experiences for intelligent business products."
   canonical="https://omnisol-jet.vercel.app/hiring/hiring1"
 />
         <HeadingSection

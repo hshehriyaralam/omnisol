@@ -20,7 +20,7 @@ const ContactPage: React.FC = () => {
     <>
     <SEO
   title="Contact Omnisol AI | Let's Build Your AI Solution"
-  description="Get in touch with Omnisol AI to discuss your AI development needs. Our team is ready to help you create innovative solutions that drive business success."
+  description="Contact Omnisol AI to discuss your product idea, automation challenge, or AI development project and plan a practical path from concept to delivery."
   canonical="https://omnisol-jet.vercel.app/contact"
 />
     <section className="w-full px-6 md:px-12 lg:px-28 py-16 bg-white flex flex-col lg:flex-row items-start justify-between gap-18">

@@ -31,7 +31,7 @@ const AiPoc = () => {
     <>
     <SEO
   title="AI Proof of Concept Services | Omnisol AI"
-  description="Omnisol AI offers AI Proof of Concept (PoC) services to help businesses validate their AI ideas, test feasibility, and build working prototypes before full-scale development."
+  description="Test an AI idea before making a larger investment with a focused proof of concept, working prototype, and evidence-based path to scale."
   canonical="https://omnisol-jet.vercel.app/services/aipoc"
 />
 

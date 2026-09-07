@@ -56,7 +56,7 @@ const cardsData = [
      <>
      <SEO
   title="User Experience Services | Omnisol AI"
-  description="Omnisol AI provides user experience (UX) services to design intuitive, engaging, and AI-enhanced digital experiences. Our team focuses on research, prototyping, and seamless design-to-development continuity to ensure your users have a superior experience."
+  description="Design intuitive AI-powered products through user research, prototyping, and production-ready UX that keeps the experience connected to development."
   canonical="https://omnisol-jet.vercel.app/services/userexperience"
 />
           <Hero
