@@ -13,7 +13,7 @@ const DataMigration = () => {
     <>
     <SEO
   title="Data Migration Services | Omnisol AI"
-  description="Omnisol AI provides expert data migration services to seamlessly transfer your data from legacy systems to modern, AI-ready platforms. Ensure data integrity, security, and efficiency during your migration process."
+  description="Move fragmented or legacy data into clean, secure, AI-ready systems with a migration process built around integrity, validation, and scale."
   canonical="https://omnisol-jet.vercel.app/services/datamigration"
 />
       <Hero

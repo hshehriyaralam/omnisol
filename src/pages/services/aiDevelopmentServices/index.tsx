@@ -16,7 +16,7 @@ const AiDevelopmentServices = () => {
     <>
     <SEO
   title="AI Development Services | Omnisol AI"
-  description="Omnisol AI provides custom AI development services to build intelligent systems that automate processes, analyze data, and enhance decision-making for businesses across industries."
+  description="Build custom AI software with Omnisol AI to automate workflows, understand business data, and support better decisions across your organization."
   canonical="https://omnisol-jet.vercel.app/services/aidevelopmentservices"
 />
 

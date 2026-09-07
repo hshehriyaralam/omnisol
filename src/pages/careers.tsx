@@ -16,7 +16,7 @@ const Careers = () => {
    <>
 <SEO
   title="Careers at Omnisol AI | Build the Future With Us"
-  description="Join Omnisol AI and be part of a team that is shaping the future of business intelligence. Explore our career opportunities and help us create innovative solutions."
+  description="Explore careers at Omnisol AI and work with a team designing practical AI products, thoughtful user experiences, and software that improves how businesses operate."
   canonical="https://omnisol-jet.vercel.app/careers"
 />
      <HeroSection />
