@@ -27,9 +27,9 @@ export default function HeadingSection({
       >
         {/* :small_blue_diamond: Heading */}
         <div className="px-6 py-2 border border-badgeBorder  bg-badgeBg rounded-full flex items-center justify-center">
-          <h1 className="font-poppins text-[14px]   font-normal leading-[100%] text-badgeText">
+          <h2 className="font-poppins text-[14px]   font-normal leading-[100%] text-badgeText">
             {Heading}
-          </h1>
+          </h2>
         </div>
         {/* :small_orange_diamond: Title */}
         <h2

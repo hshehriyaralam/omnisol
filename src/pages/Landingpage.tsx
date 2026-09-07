@@ -16,10 +16,7 @@ import HeroSection from "./LandingComponents/herosection";
 const Landingpage = () => {
   return (
     <>
-    
-
     <HeroSection />
-
       {/* All in One Section */}
       <AISolutionWeDeliver />
       <OurProcess />

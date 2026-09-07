@@ -51,9 +51,9 @@ const Testimonials = () => {
           {/* Left Content Section */}
           <div className={`flex flex-col justify-center flex-1 gap-4`}>
             <div className=" w-[180px] px-6 py-2  bg-badgeBg border border-badgeBorder rounded-full flex items-center justify-center mx-auto  md:mx-0   2xl:mx-0">
-              <h1 className="font-poppins text-[14px]   font-normal leading-[100%] text-badgeText">
+              <h2 className="font-poppins text-[14px]   font-normal leading-[100%] text-badgeText">
                 Loved by Human
-              </h1>
+              </h2>
             </div>
             <h2
               className={`font-main   font-medium text-[26px]  md:text-[36px]  2xl:text-[36px]   leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black `}

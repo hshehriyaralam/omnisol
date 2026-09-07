@@ -10,9 +10,9 @@ const MissingYourIndustry = () => {
     >
       {/* 📝 Text Section */}
       <div className="flex flex-col gap-3 text-center md:text-left  md:mx-8 mx-0 1xl:mx-10 2xl:mx-10  ">
-        <h1 className="font-main font-bold text-[20px]  md:text-[26px] text-black">
+        <h2 className="font-main font-bold text-[20px]  md:text-[26px] text-black">
           Missing your industry?
-        </h1>
+        </h2>
         <p className="max-w-300px]   font-main font-medium text-[16px]  md:text-[20px] text-black">
           Contact us to get customized solution for you
         </p>
