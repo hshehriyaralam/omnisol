@@ -128,9 +128,9 @@ const Navbar = () => {
             alt="Omnisol AI Logo"
             className="w-[34px] h-[34px] object-contain"
           />
-          <h1 className="font-main font-medium text-[22px] md:text-[26px] tracking-[-0.018em] text-NavLinks">
+          <h2 className="font-main font-medium text-[22px] md:text-[26px] tracking-[-0.018em] text-NavLinks">
             Omnisol AI
-          </h1>
+          </h2>
         </Link>
 
         {/* Desktop Menu */}
