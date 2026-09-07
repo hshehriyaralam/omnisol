@@ -1,0 +1,20 @@
+import type { SEOProps } from "@/types/Service";
+import { Helmet } from "react-helmet-async";
+
+const SEO = ({ title, description, canonical }: SEOProps) => {
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta
+        name="description"
+        content={description}
+      />
+      <link
+        rel="canonical"
+        href={canonical}
+      />
+    </Helmet>
+  );
+};
+
+export default SEO;

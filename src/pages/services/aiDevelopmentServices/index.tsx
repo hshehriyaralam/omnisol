@@ -8,11 +8,18 @@ import HeadingSection from "../../../components/commons/headingSec";
 import ImageandTextSection from "../../../components/commons/ImageAndTextSection";
 import MissingYourIndustry from "../../../components/commons/MissingYourIndustry";
 import Hero from "../../../components/commons/hero";
+import SEO from "@/components/commons/SEO";
 
 
 const AiDevelopmentServices = () => {
   return (
     <>
+    <SEO
+  title="AI Development Services | Omnisol AI"
+  description="Build powerful AI solutions with Omnisol AI's expert AI development services."
+  canonical="https://omnisol-jet.vercel.app/services/aidevelopmentservices"
+/>
+
       <Hero
         Heading={"Build Intelligent, Automated Systems with Custom AI Development Services"}
         description={"Transform your business operations with AI that learns, adapts, and delivers measurable results — designed, developed, and deployed by Omnisol."}

@@ -7,6 +7,7 @@ import Hero from "../../../components/commons/hero";
 import LayoutCards from "../../../components/commons/layoutCards";
 import Testimonials from "../../../components/Testimonials";
 import Faqs from "../../../components/commons/Faqs";
+import SEO from "@/components/commons/SEO";
 
 
 const AiConsulting = () => {
@@ -54,6 +55,12 @@ const cardsData = [
 
   return (
      <>
+
+     <SEO
+  title="AI Consulting Services | Omnisol AI"
+  description="Get expert AI consulting to identify opportunities, develop strategies, and implement effective AI solutions."
+  canonical="https://omnisol-jet.vercel.app/services/aiconsulting"
+/>
           <Hero
             Heading={"Kickstart Your AI Journey with Expert Guidance"}
             description={"Before you invest, get clarity that saves time, money, and effort. Omnisol’s AI Advisory services help you evaluate readiness, uncover real opportunities, and create a roadmap that leads to results — not confusion."}

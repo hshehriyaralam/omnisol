@@ -8,6 +8,7 @@ import AnimatedSection from "../../../layouts/AnimatedSection";
 import LettingSection from "../../../components/commons/LettingSection"
 import GradientSection from "../../../components/commons/GradientSection"
 import GradientButton from "../../../ui/Button/Button";
+import SEO from "@/components/commons/SEO";
 // import StepsDecsriptions from "../../../components/commons/stepsDescriptions";
 // import { motion } from "framer-motion";
 
@@ -28,6 +29,12 @@ const DigitalTransformation = () => {
 
   return (
     <>
+    <SEO
+  title="Digital Transformation Services | Omnisol AI"
+  description="Transform your business with AI-powered digital transformation strategies and intelligent technology solutions."
+  canonical="https://omnisol-jet.vercel.app/services/digitaltransformation"
+/>
+
       <Hero
         Heading={"Digital Transformation Consulting That Drives Real Change"}
         description={"Your business is ready to grow — we make technology work for it."}
@@ -109,7 +116,9 @@ const DigitalTransformation = () => {
             <HeadingSection
               Heading={"Industries"}
               Title={"Your industry, our intelligence."}
-              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."} />
+              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."}
+              h1={false}
+              />
           </div>
         </AnimatedSection>
         {/* Images and text Sections */}

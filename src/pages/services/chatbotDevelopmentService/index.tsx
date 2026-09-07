@@ -10,10 +10,17 @@ import MissingYourIndustry from "@/components/commons/MissingYourIndustry";
 import LettingSection from "@/components/commons/LettingSection"
 import GradientSection from "@/components/commons/GradientSection"
 import Faqs from "../../../components/commons/Faqs";
+import SEO from "@/components/commons/SEO";
 
 const ChatbotDevelopmentService = () => {
   return (
     <>
+    <SEO
+  title="Chatbot Development Services | Omnisol AI"
+  description="Create intelligent AI chatbots that improve customer engagement and automate business processes."
+  canonical="https://omnisol-jet.vercel.app/services/chatbotdevelopmentservice"
+/>
+
       <Hero
         Heading={"No Small Talk. Only Smart Talk."}
         description={" Our AI chatbots don’t just chat — they understand, act, and deliver. We design AI chatbots that go beyond scripted replies."}

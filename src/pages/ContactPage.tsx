@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import HeadingSection from "../components/commons/headingSec";
 import Form from "../components/commons/Form";
 import BookingSection from "../components/commons/BookingSection";
+import SEO from "@/components/commons/SEO";
+import Testimonials from "@/components/Testimonials";
+import MissingYourIndustry from "@/components/commons/MissingYourIndustry";
+import WavesBgSection from "@/components/commons/WavesBgSection";
+import GradientSection from "@/components/commons/GradientSection";
+import Faqs from "@/components/commons/Faqs";
 
 const ContactPage: React.FC = () => {
   const [showBooking, setShowBooking] = useState(false);
@@ -11,6 +17,12 @@ const ContactPage: React.FC = () => {
   };
 
   return (
+    <>
+      <SEO
+  title="Contact Omnisol AI"
+  description="Get in touch with Omnisol AI to discuss AI development, business intelligence, and digital transformation solutions."
+  canonical="https://omnisol-jet.vercel.app/contact"
+/>
     <section className="w-full px-6 md:px-12 lg:px-28 py-16 bg-white flex flex-col lg:flex-row items-start justify-between gap-18">
       {!showBooking && (
         <>
@@ -21,6 +33,7 @@ const ContactPage: React.FC = () => {
               Title="A project with OmnisolAI"
               Description="Dozens of US startups and SMEs are thriving on the sheer talent and dedication of our talented teams."
               align="left"
+              h1={true}
             />
 
             {/* CONTACT DETAILS (Visible only on desktop) */}
@@ -155,7 +168,15 @@ const ContactPage: React.FC = () => {
           <BookingSection />
         </div>
       )}
+      
+      <MissingYourIndustry />
+      <WavesBgSection/>
+      <Testimonials />
+      <Faqs />
+      <GradientSection />
     </section>
+    </>
+
   );
 };
 

@@ -16,7 +16,7 @@ const HowItWorks = () => (
                     </div>
                     <div className="hidden lg:flex absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
                         <div className="p-2 rounded-full w-7 h-7 flex justify-center items-center bg-black">
-                            <img src="/arrow.png" alt="" />
+                            <img src="/arrow.png" alt="arrow.png" />
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ const HowItWorks = () => (
                     </div>
                     <div className="hidden lg:flex absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
                         <div className="p-2 rounded-full w-7 h-7 flex justify-center items-center bg-black">
-                            <img src="/arrow.png" alt="" />
+                            <img src="/arrow.png" alt="arrow.png" />
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ const HowItWorks = () => (
                     </div>
                     <div className="hidden lg:flex absolute top-1/2 right-[-7px] z-10 translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full flex justify-center items-center">
                         <div className="p-2 rounded-full w-7 h-7 flex justify-center items-center bg-black">
-                            <img src="/arrow.png" alt="" />
+                            <img src="/arrow.png" alt="arrow.png" />
                         </div>
                     </div>
                 </div>

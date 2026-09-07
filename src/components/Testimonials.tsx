@@ -156,7 +156,7 @@ const Testimonials = () => {
 
         {/* Large image on desktop, unchanged */}
         <div className="hidden lg:block absolute top-[75%] right-0 -translate-y-1/2 w-1/4">
-          <img src="/testimonial_img.png" alt="" />
+          <img src="/testimonial_img.png" alt="testimonials_image" />
         </div>
       </section>
     </AnimatedSection>

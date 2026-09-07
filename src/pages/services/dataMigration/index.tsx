@@ -5,11 +5,17 @@ import ImageandTextSection from "../../../components/commons/ImageAndTextSection
 import MissingYourIndustry from "../../../components/commons/MissingYourIndustry";
 import Hero from "../../../components/commons/hero";
 import Testimonials from "../../../components/Testimonials";
+import SEO from "@/components/commons/SEO";
 
 
 const DataMigration = () => {
   return (
     <>
+    <SEO
+  title="Data Migration Services | Omnisol AI"
+  description="Secure and efficient data migration solutions designed to help businesses modernize their data infrastructure."
+  canonical="https://omnisol-jet.vercel.app/services/datamigration"
+/>
       <Hero
         Heading={"Turn Your Mess into AI SaaS"}
         description={"Transform outdated, fragmented data into structured intelligence.Our Data Migration Services make it effortless to move from legacy chaos to modern, AI-ready systems — clean, secure, and optimized for scale."}

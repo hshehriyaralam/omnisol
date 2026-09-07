@@ -8,6 +8,7 @@ import LayoutCards from "../../../components/commons/layoutCards";
 import Testimonials from "../../../components/Testimonials";
 import Faqs from "../../../components/commons/Faqs";
 import GradientButton from "../../../ui/Button/Button";
+import SEO from "@/components/commons/SEO";
 
 
 const UserExperience = () => {
@@ -53,6 +54,11 @@ const cardsData = [
 
   return (
      <>
+     <SEO
+  title="User Experience Services | Omnisol AI"
+  description="Create engaging and intuitive digital experiences with user-focused design and AI-powered solutions."
+  canonical="https://omnisol-jet.vercel.app/services/userexperience"
+/>
           <Hero
             Heading={"Design That Thinks, Learns, and Feels Human"}
             description={"We design interfaces that don’t just look good — they understand.Omnisol combines human intuition with AI precision to craft digital experiences that evolve with your users and deliver real impact."}

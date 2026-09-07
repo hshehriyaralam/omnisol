@@ -10,6 +10,7 @@ import GradientSection from "../../../components/commons/GradientSection"
 import GradientButton from "../../../ui/Button/Button";
 import StepsDecsriptions from "../../../components/commons/stepsDescriptions";
 import { motion } from "framer-motion";
+import SEO from "@/components/commons/SEO";
 
 
 const AiPoc = () => {
@@ -28,6 +29,12 @@ const AiPoc = () => {
 
   return (
     <>
+    <SEO
+  title="AI Proof of Concept Services | Omnisol AI"
+  description="Validate your AI ideas with practical proof of concept solutions designed to reduce risk and accelerate innovation."
+  canonical="https://omnisol-jet.vercel.app/services/aipoc"
+/>
+
       <Hero
         Heading={"Test Your AI Ideas Before You Scale Them"}
         description={"Validate your concept with a working AI prototype — ready in just 4 weeks. Our Proof of Concept (PoC) and MVP development services help you explore what’s possible, see real results, and make smart investment decisions before going all in."}
@@ -95,6 +102,7 @@ const AiPoc = () => {
     Title="A Clear, Practical Approach to Building AI Solutions"
     Description="We move quickly — but thoughtfully. Our process is designed to reduce risk, align with your business goals, and deliver visible progress every step of the way."
     align="left"
+    h1={false}
   />
 </motion.div>
 
@@ -111,7 +119,9 @@ const AiPoc = () => {
             <HeadingSection
               Heading={"Industries"}
               Title={"Your industry, our intelligence."}
-              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."} />
+              Description={" Omnisol AI development adapts to the rhythm of your business — whether that’s predicting demand, automating logistics, or personalizing customer experiences."} 
+              h1={false}
+              />
           </div>
         </AnimatedSection>
         {/* Images and text Sections */}
