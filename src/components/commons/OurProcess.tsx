@@ -38,9 +38,9 @@ const OurProcess = () => {
         <AnimatedSection>
         <div className="flex flex-col items-center lg:items-end text-center lg:text-right flex-1 gap-2 lg:p-0 p-6  ">
           <div className="px-6 py-2 border border-badgeBorder w-[120px] bg-badgeBg rounded-full flex items-center justify-center">
-            <h1 className="font-poppins text-[13px] font-normal leading-[100%] text-badgeText">
+            <h2 className="font-poppins text-[13px] font-normal leading-[100%] text-badgeText">
               All-in-One
-            </h1>
+            </h2>
           </div>
 
           <h2 className="font-main font-medium text-[26px] md:text-[32px] 2xl:text-[34px] leading-[110%] md:leading-[42px] tracking-[-0.01em] text-black max-w-[480px]">
