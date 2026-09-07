@@ -58,9 +58,9 @@ const cardsData = [
      <>
 
 
-     <SEO
-  title="AI Workshops | Omnisol AI"
-  description="Discover AI opportunities through practical workshops designed to align technology with your business goals."
+<SEO
+  title="AI Discovery Workshop | Omnisol AI"
+  description="Omnisol AI's Discovery Workshop helps businesses turn ideas into actionable plans. In just 7 business days, we provide a structured roadmap for AI implementation, ensuring clarity and direction for your project."
   canonical="https://omnisol-jet.vercel.app/services/workshop"
 />
           <Hero

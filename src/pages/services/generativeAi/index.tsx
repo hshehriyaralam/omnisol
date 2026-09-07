@@ -13,7 +13,7 @@ const GenerativeAi = () => {
     <>
     <SEO
   title="Generative AI Services | Omnisol AI"
-  description="Leverage generative AI solutions to create smarter, faster, and more innovative business experiences."
+  description="Omnisol AI provides generative AI services to help businesses create intelligent agents and solutions that enhance creativity, automate content generation, and drive innovation across industries."
   canonical="https://omnisol-jet.vercel.app/services/generativeai"
 />
       <Hero

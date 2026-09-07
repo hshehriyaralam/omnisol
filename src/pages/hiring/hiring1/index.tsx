@@ -11,9 +11,9 @@ import GradientSection from "@/components/commons/GradientSection";
 const Hiring1 = () => {
     return (
         <>        
-        <SEO
-  title="Hiring at Omnisol AI"
-  description="Explore career and hiring opportunities at Omnisol AI."
+<SEO
+  title="Product Designer Position | Omnisol AI Careers"
+  description="Join Omnisol AI as a Product Designer and contribute to creating innovative AI solutions. We are looking for talented individuals passionate about design and technology to help shape the future of AI-driven products."
   canonical="https://omnisol-jet.vercel.app/hiring/hiring1"
 />
         <HeadingSection

@@ -15,7 +15,7 @@ const Blog = () => {
    <>
    <SEO
   title="Omnisol AI Blog - AI & Business Intelligence Insights"
-  description="Explore AI, business intelligence, technology, and smarter business strategies from Omnisol AI."
+  description="Explore AI, business intelligence, technology, and smarter business strategies through the latest insights from Omnisol AI."
   canonical="https://omnisol-jet.vercel.app/blog"
 />
 
