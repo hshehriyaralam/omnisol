@@ -31,7 +31,7 @@ const DigitalTransformation = () => {
     <>
     <SEO
   title="Digital Transformation Services | Omnisol AI"
-  description="Transform your business with AI-powered digital transformation strategies and intelligent technology solutions."
+  description="Omnisol AI offers comprehensive digital transformation services to help businesses modernize their operations, integrate AI technologies, and enhance customer experiences. Drive innovation and efficiency with our expert solutions."
   canonical="https://omnisol-jet.vercel.app/services/digitaltransformation"
 />
 

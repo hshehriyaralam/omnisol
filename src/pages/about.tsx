@@ -15,7 +15,7 @@ const About = () => {
    <>
  <SEO
   title="About Omnisol AI - AI & Business Intelligence"
-  description="Learn about Omnisol AI and how we help businesses leverage artificial intelligence and business intelligence solutions."
+  description="Learn about Omnisol AI, a leading provider of AI and business intelligence solutions that empower businesses to make smarter, data-driven decisions."
   canonical="https://omnisol-jet.vercel.app/about"
 />
     <HeroSection />

@@ -55,7 +55,7 @@ const cardsData = [
      <>
      <SEO
   title="Technical Feasibility Services | Omnisol AI"
-  description="Evaluate the technical feasibility of your AI and technology ideas before investing in full-scale development."
+  description="Omnisol AI offers technical feasibility services to help businesses validate their AI concepts, assess infrastructure, and ensure successful implementation. Our expert team provides hands-on support to turn your vision into a viable reality."
   canonical="https://omnisol-jet.vercel.app/services/technicalfeasibility"
 />
           <Hero

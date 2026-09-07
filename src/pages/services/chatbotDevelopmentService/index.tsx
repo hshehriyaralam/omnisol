@@ -17,7 +17,7 @@ const ChatbotDevelopmentService = () => {
     <>
     <SEO
   title="Chatbot Development Services | Omnisol AI"
-  description="Create intelligent AI chatbots that improve customer engagement and automate business processes."
+  description="Omnisol AI offers advanced chatbot development services that create intelligent, responsive, and scalable AI chatbots for businesses. Enhance customer engagement and streamline operations with our custom chatbot solutions."
   canonical="https://omnisol-jet.vercel.app/services/chatbotdevelopmentservice"
 />
 
