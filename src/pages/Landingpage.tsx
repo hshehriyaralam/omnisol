@@ -19,7 +19,7 @@ const Landingpage = () => {
     <>
     <SEO
       title="Omnisol AI - Business Intelligence Solutions"
-      description="Omnisol AI helps businesses turn complex workflows and data into practical AI solutions, from intelligent automation to decision-support systems built for growth."
+     description="Omnisol AI helps businesses turn complex workflows and data into practical AI solutions, intelligent automation, and smarter decision-making."
       canonical="https://omnisol-jet.vercel.app/"
     />
     <HeroSection />
