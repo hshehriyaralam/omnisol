@@ -11,5 +11,12 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'), // <--- important line
     },
   },
-  
+  build: {
+    rollupOptions: {
+      input: 'index.html',
+    },
+  },
+  ssr: {
+    noExternal: ['react-slick'],
+  },
 })

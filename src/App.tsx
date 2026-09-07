@@ -24,7 +24,7 @@ import Careers from "./pages/careers";
 
 
 
-const router = createBrowserRouter([
+export const routes = [
   {
     path: "/",
     element: <MainLayout />,
@@ -65,10 +65,10 @@ const router = createBrowserRouter([
 
     ],
   },
-]);
+];
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={createBrowserRouter(routes)} />;
 }
 
 export default App;

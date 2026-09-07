@@ -138,7 +138,7 @@ const Hero = ({
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           backgroundImage:
-            window.innerWidth < 768
+            isMobile
               ? `
           linear-gradient(
             to bottom,
